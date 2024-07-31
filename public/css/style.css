@@ -7,92 +7,116 @@ body {
     padding: 0;
     overflow: hidden;
 }
+
 #bg-video {
-    position: fixed; /* Đảm bảo video nằm trên */
+    position: fixed;
+    /* Đảm bảo video nằm trên */
     top: 0;
     left: 0;
     width: 100%;
     height: 1080px;
-    object-fit: cover; /* Đảm bảo video bao phủ toàn bộ chiều rộng và chiều cao */
-    z-index: 1; /* Đảm bảo video nằm trên */
-    pointer-events: none; /* Đảm bảo video không cản trở thao tác với các phần tử khác */
+    object-fit: cover;
+    /* Đảm bảo video bao phủ toàn bộ chiều rộng và chiều cao */
+    z-index: 1;
+    /* Đảm bảo video nằm trên */
+    pointer-events: none;
+    /* Đảm bảo video không cản trở thao tác với các phần tử khác */
     overflow: hidden;
 }
+
 .scroll-container {
     width: 100%;
     height: 100%;
-    overflow: auto; /* Cho phép cuộn nội bộ */
-    -ms-overflow-style: none; /* Ẩn thanh cuộn cho IE và Edge */
-    scrollbar-width: none; /* Ẩn thanh cuộn cho Firefox */
+    overflow: auto;
+    /* Cho phép cuộn nội bộ */
+    -ms-overflow-style: none;
+    /* Ẩn thanh cuộn cho IE và Edge */
+    scrollbar-width: none;
+    /* Ẩn thanh cuộn cho Firefox */
 }
 
 .scroll-container::-webkit-scrollbar {
-    display: none; /* Ẩn thanh cuộn cho Webkit (Chrome, Safari) */
+    display: none;
+    /* Ẩn thanh cuộn cho Webkit (Chrome, Safari) */
 }
+
 .container-fixed {
     position: relative;
     width: 100%;
-    height: 3629px;
-    z-index: 3; /* Đảm bảo nội dung nằm trên video */
+    height: auto;
+    z-index: 3;
+    /* Đảm bảo nội dung nằm trên video */
     margin-top: 100px;
 }
+
 .main-content {
     width: 100%;
-    height: 3629px;
-    margin: 0 auto; /* Căn giữa container theo chiều ngang */
+    height: auto;
+    margin: 0 auto;
+    /* Căn giữa container theo chiều ngang */
     overflow: hidden;
     z-index: 3;
 }
 
 .container-2 {
     width: 100%;
-    height: 3629px;
+    height: auto;
     box-sizing: border-box;
     z-index: 3;
 }
+
 .content-a {
     width: 100%;
     height: 690px;
 }
+
 .content-b {
     width: 100%;
     height: 2549px;
 }
+
 /* Navigation styles */
 .nav-container {
     width: 100%;
     height: 120px;
-    padding: 20px 0; /* Điều chỉnh padding nếu cần */
-    background: linear-gradient(
-        0deg,
-        rgba(0, 46.78, 92.44, 0.8) 0%,
-        rgba(0, 46.78, 92.44, 0.8) 100%
-    );
+    padding: 20px 0;
+    /* Điều chỉnh padding nếu cần */
+    background: linear-gradient(0deg,
+            rgba(0, 46.78, 92.44, 0.8) 0%,
+            rgba(0, 46.78, 92.44, 0.8) 100%);
     border-bottom: 1px white solid;
     backdrop-filter: blur(15px);
     gap: 80px;
     display: flex;
-    justify-content: center; /* Căn giữa nội dung */
+    justify-content: center;
+    /* Căn giữa nội dung */
     align-items: center;
-    position: fixed; /* Đảm bảo nav-container luôn nằm trên cùng */
+    position: fixed;
+    /* Đảm bảo nav-container luôn nằm trên cùng */
     top: 0;
     left: 0;
     z-index: 3;
 }
 
 .nav-item {
-    display: flex; /* Đảm bảo sử dụng Flexbox */
-    justify-content: center; /* Căn giữa theo chiều ngang */
-    align-items: center; /* Căn giữa theo chiều dọc */
+    display: flex;
+    /* Đảm bảo sử dụng Flexbox */
+    justify-content: center;
+    /* Căn giữa theo chiều ngang */
+    align-items: center;
+    /* Căn giữa theo chiều dọc */
     padding: 4px;
     gap: 8px;
     white-space: nowrap;
 }
 
 .nav-item a {
-    text-decoration: none; /* Loại bỏ gạch chân mặc định của thẻ a */
-    color: inherit; /* Sử dụng màu chữ của cha */
+    text-decoration: none;
+    /* Loại bỏ gạch chân mặc định của thẻ a */
+    color: inherit;
+    /* Sử dụng màu chữ của cha */
 }
+
 .nav-item.active a {
     position: relative;
 }
@@ -102,18 +126,23 @@ body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: -10px; /* Khoảng cách giữa gạch chân và nav-item */
-    width: 110%; /* Chiều dài của gạch chân, lớn hơn nav-item */
+    bottom: -10px;
+    /* Khoảng cách giữa gạch chân và nav-item */
+    width: 110%;
+    /* Chiều dài của gạch chân, lớn hơn nav-item */
     height: 2px;
-    background-color: #99ffff; /* Màu gạch chân */
+    background-color: #99ffff;
+    /* Màu gạch chân */
 }
 
 .nav-item.active {
-    border-bottom-color: #99ffff; /* Màu đường gạch chân khi active */
+    border-bottom-color: #99ffff;
+    /* Màu đường gạch chân khi active */
 }
 
 .nav-item.active a {
-    color: #99ffff; /* Màu chữ khi active */
+    color: #99ffff;
+    /* Màu chữ khi active */
 }
 
 .nav-item-text {
@@ -123,6 +152,7 @@ body {
     text-transform: uppercase;
     word-wrap: break-word;
 }
+
 .nav-item-default a {
     color: white;
 }
@@ -215,7 +245,8 @@ body {
 
 .image-container {
     display: flex;
-    white-space: nowrap; /* Đảm bảo các phần tử không bị xuống dòng */
+    white-space: nowrap;
+    /* Đảm bảo các phần tử không bị xuống dòng */
     margin-top: 14px;
 }
 
@@ -228,9 +259,12 @@ body {
 }
 
 .image-item img {
-    width: 100%; /* Đảm bảo ảnh chiếm toàn bộ kích thước của .image-item */
-    height: 100%; /* Đảm bảo ảnh chiếm toàn bộ kích thước của .image-item */
-    object-fit: cover; /* Đảm bảo ảnh không bị biến dạng */
+    width: 100%;
+    /* Đảm bảo ảnh chiếm toàn bộ kích thước của .image-item */
+    height: 100%;
+    /* Đảm bảo ảnh chiếm toàn bộ kích thước của .image-item */
+    object-fit: cover;
+    /* Đảm bảo ảnh không bị biến dạng */
 }
 
 .text-overlay {
@@ -245,10 +279,13 @@ body {
     font-weight: 700;
     top: 80%;
     box-sizing: border-box;
-    word-wrap: break-word; /* Bẻ gãy từ để xuống dòng */
-    white-space: normal; /* Cho phép xuống dòng bình thường */
+    word-wrap: break-word;
+    /* Bẻ gãy từ để xuống dòng */
+    white-space: normal;
+    /* Cho phép xuống dòng bình thường */
     z-index: 3;
 }
+
 .image-item::after {
     content: "";
     position: absolute;
@@ -260,6 +297,7 @@ body {
     z-index: 2;
     pointer-events: none;
 }
+
 .image-item:nth-child(1) {
     top: 20%;
     left: 21.5%;
@@ -273,13 +311,18 @@ body {
     transform: perspective(800px) rotateY(30deg) translateZ(-350px);
     transform-origin: center right;
 }
+
 .image-item:nth-child(3) {
-    top: 20%; /* Giữ vị trí trung tâm theo chiều dọc */
-    left: 10%; /* Đặt ở giữa theo chiều ngang */
-    transform: perspective(800px) translateX(-50%) translateZ(0px); /* Đặt ở trung tâm và không thay đổi kích thước */
+    top: 20%;
+    /* Giữ vị trí trung tâm theo chiều dọc */
+    left: 10%;
+    /* Đặt ở giữa theo chiều ngang */
+    transform: perspective(800px) translateX(-50%) translateZ(0px);
+    /* Đặt ở trung tâm và không thay đổi kích thước */
     transform-origin: center;
     z-index: 2;
 }
+
 .image-item:nth-child(4) {
     top: 20%;
     right: 12%;
@@ -297,60 +340,82 @@ body {
 
 /*svg box home*/
 .custom-container {
-    margin-top: 30px; /* Khoảng cách từ phần tử phía trên */
+    margin-top: 30px;
+    /* Khoảng cách từ phần tử phía trên */
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%; /* Đảm bảo chiếm toàn bộ chiều rộng */
-    box-sizing: border-box; /* Bao gồm padding và border trong chiều rộng và chiều cao */
+    width: 100%;
+    /* Đảm bảo chiếm toàn bộ chiều rộng */
+    box-sizing: border-box;
+    /* Bao gồm padding và border trong chiều rộng và chiều cao */
 }
+
 .custom-box {
-    cursor: pointer; /* Thay đổi con trỏ khi di chuyển chuột qua */
+    cursor: pointer;
+    /* Thay đổi con trỏ khi di chuyển chuột qua */
 }
 
 svg {
-    pointer-events: auto; /* Đảm bảo rằng SVG có thể nhận được sự kiện chuột */
+    pointer-events: auto;
+    /* Đảm bảo rằng SVG có thể nhận được sự kiện chuột */
 }
+
 .row {
-    margin-top: 50px; /* Để đảm bảo phần tử này không chồng lên phần tử trên */
+    margin-top: 50px;
+    /* Để đảm bảo phần tử này không chồng lên phần tử trên */
 }
+
 /*content-b*/
 /* Container tổng */
 .container-custom-2 {
-    width: calc(
-        100% - 400px
-    ); /* Chiều rộng của container trừ đi 200px lề trái và 200px lề phải */
+    width: calc(100% - 400px);
+    /* Chiều rộng của container trừ đi 200px lề trái và 200px lề phải */
     height: 701px;
-    margin: 0 200px; /* Lề trái và phải 200px */
-    box-sizing: border-box; /* Đảm bảo padding và border được tính trong kích thước tổng */
-    display: flex; /* Sử dụng Flexbox để căn giữa nội dung */
-    justify-content: center; /* Căn giữa nội dung theo chiều ngang */
-    background-color: rgba(
-        255,
-        255,
-        255,
-        0.8
-    ); /* Nền màu trắng với độ mờ 80% */
-    border-radius: 40px 40px 0 0; /* Bo tròn 2 góc trên */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Tạo hiệu ứng đổ bóng nhẹ cho container */
+    margin: 0 200px;
+    /* Lề trái và phải 200px */
+    box-sizing: border-box;
+    /* Đảm bảo padding và border được tính trong kích thước tổng */
+    display: flex;
+    /* Sử dụng Flexbox để căn giữa nội dung */
+    justify-content: center;
+    /* Căn giữa nội dung theo chiều ngang */
+    background-color: rgba(255,
+            255,
+            255,
+            0.8);
+    /* Nền màu trắng với độ mờ 80% */
+    border-radius: 40px 40px 0 0;
+    /* Bo tròn 2 góc trên */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Tạo hiệu ứng đổ bóng nhẹ cho container */
     margin-top: 154px;
 }
+
 /* Row để chứa các box */
 
 /* Cột để chứa các box */
 .custom-col {
-    display: flex; /* Đảm bảo các phần tử nằm trên cùng một hàng */
-    gap: 72px; /* Khoảng cách giữa các phần tử */
-    justify-content: center; /* Căn giữa các phần tử con */
+    display: flex;
+    /* Đảm bảo các phần tử nằm trên cùng một hàng */
+    gap: 72px;
+    /* Khoảng cách giữa các phần tử */
+    justify-content: center;
+    /* Căn giữa các phần tử con */
 }
 
 /* Box với kích thước và kiểu dáng cụ thể */
 .box {
-    display: flex; /* Sử dụng Flexbox để căn chỉnh nội dung trong box */
-    justify-content: center; /* Căn giữa nội dung theo chiều ngang */
-    align-items: center; /* Căn giữa nội dung theo chiều dọc */
-    border: 1px solid #000; /* Border cho box */
-    box-sizing: border-box; /* Đảm bảo padding và border được tính trong kích thước tổng */
+    display: flex;
+    /* Sử dụng Flexbox để căn chỉnh nội dung trong box */
+    justify-content: center;
+    /* Căn giữa nội dung theo chiều ngang */
+    align-items: center;
+    /* Căn giữa nội dung theo chiều dọc */
+    border: 1px solid #000;
+    /* Border cho box */
+    box-sizing: border-box;
+    /* Đảm bảo padding và border được tính trong kích thước tổng */
 }
 
 /* Kích thước của các box */
@@ -370,16 +435,20 @@ svg {
     height: 599px;
 }
 
+
 /* Điều chỉnh cho màn hình nhỏ */
 @media (max-width: 768px) {
     .container-custom-2 {
-        padding: 0 10px; /* Thêm padding nhỏ cho các màn hình nhỏ */
+        padding: 0 10px;
+        /* Thêm padding nhỏ cho các màn hình nhỏ */
     }
 
     .row {
-        gap: 20px; /* Khoảng cách nhỏ hơn giữa các box trên màn hình nhỏ */
+        gap: 20px;
+        /* Khoảng cách nhỏ hơn giữa các box trên màn hình nhỏ */
     }
 }
+
 /*box 1*/
 .header-section-box-1 {
     display: flex;
@@ -424,8 +493,10 @@ svg {
     width: 2px;
     height: 288px;
     background-color: #6698ca;
-    position: absolute; /* Căn chỉnh chính xác trong container */
-    left: 0; /* Ví dụ căn chỉnh về bên trái, điều chỉnh nếu cần */
+    position: absolute;
+    /* Căn chỉnh chính xác trong container */
+    left: 0;
+    /* Ví dụ căn chỉnh về bên trái, điều chỉnh nếu cần */
     top: 30%;
 }
 
@@ -458,27 +529,35 @@ svg {
     font-weight: 600;
     word-wrap: break-word;
 }
+
 .description-container {
-    display: flex; /* Sử dụng Flexbox để căn chỉnh các phần tử bên trong */
-    align-items: center; /* Căn giữa theo chiều dọc */
-    gap: 16px; /* Khoảng cách giữa dấu cộng và nội dung */
+    display: flex;
+    /* Sử dụng Flexbox để căn chỉnh các phần tử bên trong */
+    align-items: center;
+    /* Căn giữa theo chiều dọc */
+    gap: 16px;
+    /* Khoảng cách giữa dấu cộng và nội dung */
 }
 
 .description-content {
-    margin-left: 8px; /* Khoảng cách từ dấu cộng đến nội dung */
+    margin-left: 8px;
+    /* Khoảng cách từ dấu cộng đến nội dung */
 }
 
 /* Đảm bảo văn bản có thể bọc dòng */
 .description-content span {
     display: block;
-    line-height: 1.5; /* Tăng khoảng cách giữa các dòng */
+    line-height: 1.5;
+    /* Tăng khoảng cách giữa các dòng */
 }
+
 /*box 2*
 /* Container cho hình ảnh */
 .custom-image-wrapper {
     width: 100%;
     height: 100%;
-    position: relative; /* Để các hình ảnh con được đặt chính xác */
+    position: relative;
+    /* Để các hình ảnh con được đặt chính xác */
     margin-top: -2%;
 }
 
@@ -505,4 +584,283 @@ svg {
     box-shadow: 0px 4px 21px rgba(0, 0, 0, 0.25);
     border-radius: 26.71px;
     border: 5px solid white;
+}
+
+/*box 3**/
+/*svg logo*/
+.box-3 {
+    position: relative;
+    z-index: 1;
+    width: 1520px;
+    height: 829px;
+    background-color: rgba(78, 149, 219, 0.7);
+    /* Màu xanh biển nhạt với độ trong suốt 30% */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Tạo hiệu ứng đổ bóng nhẹ */
+    margin-top: -1.1%;
+}
+
+.box-main-container {
+    width: 1520px;
+    height: auto;
+    padding: 33.77px;
+    opacity: 0.15;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 84.43px;
+    margin-top: -3px;
+}
+
+.inner-box {
+    width: 954.09px;
+    height: 607.92px;
+    margin: 0;
+    /* Bỏ thuộc tính margin */
+    margin-top: -31px;
+    margin-left: 50.5%;
+    position: relative;
+    z-index: 1;
+}
+
+.info-share-container {
+    width: 803px;
+    /* Đặt chiều rộng theo kích thước từ Figma */
+    height: 129px;
+    /* Đặt chiều cao theo kích thước từ Figma */
+    display: flex;
+    /* Sử dụng Flexbox để căn chỉnh nội dung */
+    z-index: 3;
+    /* Đặt thứ tự xếp chồng của phần tử */
+    position: absolute;
+    /* Đặt vị trí tuyệt đối */
+    top: 15%;
+    /* Đặt vị trí ở giữa theo chiều dọc */
+    left: 50%;
+    /* Đặt vị trí ở giữa theo chiều ngang */
+    transform: translate(-50%, -50%);
+    /* Dịch chuyển về giữa */
+}
+
+.background-white {
+    margin-top: -49%;
+}
+
+.bordered-box {
+    margin-top: -40%;
+    margin-right: 18.9%;
+}
+
+/*des*/
+
+
+.title-1 {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-family: Roboto;
+    font-weight: 600;
+    word-wrap: break-word;
+}
+
+.title-2 {
+    text-align: center;
+    color: #003F7D;
+    font-size: 44px;
+    font-family: Philosopher;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.separator {
+    width: 130px;
+    height: 6px;
+    background: #003F7D;
+    border-radius: 100px;
+}
+
+.description {
+    color: #F0F0F0;
+    font-size: 20px;
+    font-family: Roboto;
+    font-weight: 400;
+    word-wrap: break-word;
+    white-space: nowrap;
+}
+
+/*box card*/
+.negative-margin-top {
+    margin-top: -37%;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* or any specific height you need */
+}
+
+.button-text-2 {
+    background-color: #0054A6;
+    color: white;
+    padding: 10px 28px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 18px;
+    font-family: Roboto, sans-serif;
+    font-weight: 600;
+}
+
+.button-wrapper {
+    margin-top: -32%;
+    margin-left: -3%;
+}
+
+.text-custom-primary {
+    color: #0054A6;
+}
+
+.text-container {
+    text-align: left;
+    /* Align text to the left */
+}
+
+.custom-badge-container {
+    width: auto;
+    height: auto;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background: #E6EEF7;
+    border-radius: 46px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+}
+
+.card-img-custom {
+    width: 361px;
+    height: 197px;
+    object-fit: cover;
+    /* Ensures the image covers the area without distortion */
+}
+
+/*box 4*/
+.container-box{
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+.box-4 {
+        position: relative;
+    width: 694px;
+    height: 535px;
+      z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+
+.container-custom-3 {
+    width: calc(100% - 400px);
+    /* Chiều rộng của container trừ đi 200px lề trái và 200px lề phải */
+    height: auto;
+    margin: 0 200px;
+    /* Lề trái và phải 200px */
+    box-sizing: border-box;
+    /* Đảm bảo padding và border được tính trong kích thước tổng */
+    display: flex;
+    /* Sử dụng Flexbox để căn giữa nội dung */
+    justify-content: center;
+    /* Căn giữa nội dung theo chiều ngang */
+    background-color: rgba(255,
+            255,
+            255,
+            0.8);
+    /* Nền màu trắng với độ mờ 80% */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Tạo hiệu ứng đổ bóng nhẹ cho container */
+}
+
+.title-3 {
+    text-align: center;
+    color: #4D4D4D;
+    font-size: 20px;
+    font-family: Roboto;
+    font-weight: 600;
+    word-wrap: break-word;
+}
+
+.description-1 {
+    color: #4D4D4D;
+    font-size: 20px;
+    font-family: Roboto;
+    font-weight: 400;
+    word-wrap: break-word;
+    white-space: nowrap;
+}
+
+.separator-1 {
+    width: 222px;
+    height: 6px;
+    background: #003F7D;
+    border-radius: 100px;
+}
+
+/*box card 4*/
+.container-custom-margin {
+    margin-top: -35%;
+}
+
+.card-custom {
+    width: 362px;
+    height: 359px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top-custom {
+    width: 100%;
+    height: 197px;
+    object-fit: cover;
+}
+
+.card-title-custom {
+    color: #0054A6;
+    font-size: 20px;
+    font-family: Roboto, sans-serif;
+    font-weight: 700;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.card-text-custom {
+    color: #666666;
+    font-size: 16px;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    line-height: 21px;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+.card-img-top-custom {
+    width: 362px;
+    height: 197px;
+    object-fit: cover;
+}
+
+/*container*/
+.container-footer {
+    position: relative; /* Để có thể sử dụng thuộc tính top */
+    margin-top: -15%;
+    background: linear-gradient(0deg, rgba(0, 37, 73, 0.80) 0%, rgba(0, 37, 73, 0.80) 100%);
+
 }

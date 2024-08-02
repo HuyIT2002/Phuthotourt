@@ -28,23 +28,21 @@ body {
     width: 100%;
     height: 100%;
     overflow: auto;
-    /* Cho phép cuộn nội bộ */
     -ms-overflow-style: none;
-    /* Ẩn thanh cuộn cho IE và Edge */
     scrollbar-width: none;
-    /* Ẩn thanh cuộn cho Firefox */
+
 }
 
 .scroll-container::-webkit-scrollbar {
     display: none;
-    /* Ẩn thanh cuộn cho Webkit (Chrome, Safari) */
 }
 
 .container-fixed {
     position: relative;
+      z-index: 3;
     width: 100%;
     height: auto;
-    z-index: 3;
+  
     /* Đảm bảo nội dung nằm trên video */
     margin-top: 100px;
 }
@@ -59,10 +57,11 @@ body {
 }
 
 .container-2 {
+
     width: 100%;
     height: auto;
     box-sizing: border-box;
-    z-index: 3;
+
 }
 
 .content-a {
@@ -380,10 +379,7 @@ svg {
     /* Sử dụng Flexbox để căn giữa nội dung */
     justify-content: center;
     /* Căn giữa nội dung theo chiều ngang */
-    background-color: rgba(255,
-            255,
-            255,
-            0.8);
+    background-color: rgba(255, 255, 255, 0.8);
     /* Nền màu trắng với độ mờ 80% */
     border-radius: 40px 40px 0 0;
     /* Bo tròn 2 góc trên */
@@ -434,7 +430,6 @@ svg {
     width: 619px;
     height: 599px;
 }
-
 
 /* Điều chỉnh cho màn hình nhỏ */
 @media (max-width: 768px) {
@@ -654,7 +649,6 @@ svg {
 
 /*des*/
 
-
 .title-1 {
     text-align: center;
     color: white;
@@ -666,7 +660,7 @@ svg {
 
 .title-2 {
     text-align: center;
-    color: #003F7D;
+    color: #003f7d;
     font-size: 44px;
     font-family: Philosopher;
     font-weight: 700;
@@ -676,12 +670,12 @@ svg {
 .separator {
     width: 130px;
     height: 6px;
-    background: #003F7D;
+    background: #003f7d;
     border-radius: 100px;
 }
 
 .description {
-    color: #F0F0F0;
+    color: #f0f0f0;
     font-size: 20px;
     font-family: Roboto;
     font-weight: 400;
@@ -703,7 +697,7 @@ svg {
 }
 
 .button-text-2 {
-    background-color: #0054A6;
+    background-color: #0054a6;
     color: white;
     padding: 10px 28px;
     border-radius: 6px;
@@ -720,7 +714,7 @@ svg {
 }
 
 .text-custom-primary {
-    color: #0054A6;
+    color: #0054a6;
 }
 
 .text-container {
@@ -735,7 +729,7 @@ svg {
     padding-right: 12px;
     padding-top: 8px;
     padding-bottom: 8px;
-    background: #E6EEF7;
+    background: #e6eef7;
     border-radius: 46px;
     overflow: hidden;
     justify-content: center;
@@ -751,16 +745,19 @@ svg {
 }
 
 /*box 4*/
-.container-box{
+.container-box {
     display: flex;
-    justify-content: center; /* Căn giữa theo chiều ngang */
-    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: center;
+    /* Căn giữa theo chiều ngang */
+    align-items: center;
+    /* Căn giữa theo chiều dọc */
 }
+
 .box-4 {
-        position: relative;
+    position: relative;
     width: 694px;
     height: 535px;
-      z-index: 1;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -780,10 +777,7 @@ svg {
     /* Sử dụng Flexbox để căn giữa nội dung */
     justify-content: center;
     /* Căn giữa nội dung theo chiều ngang */
-    background-color: rgba(255,
-            255,
-            255,
-            0.8);
+    background-color: rgba(255, 255, 255, 0.8);
     /* Nền màu trắng với độ mờ 80% */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     /* Tạo hiệu ứng đổ bóng nhẹ cho container */
@@ -791,7 +785,7 @@ svg {
 
 .title-3 {
     text-align: center;
-    color: #4D4D4D;
+    color: #4d4d4d;
     font-size: 20px;
     font-family: Roboto;
     font-weight: 600;
@@ -799,7 +793,7 @@ svg {
 }
 
 .description-1 {
-    color: #4D4D4D;
+    color: #4d4d4d;
     font-size: 20px;
     font-family: Roboto;
     font-weight: 400;
@@ -810,7 +804,7 @@ svg {
 .separator-1 {
     width: 222px;
     height: 6px;
-    background: #003F7D;
+    background: #003f7d;
     border-radius: 100px;
 }
 
@@ -833,7 +827,7 @@ svg {
 }
 
 .card-title-custom {
-    color: #0054A6;
+    color: #0054a6;
     font-size: 20px;
     font-family: Roboto, sans-serif;
     font-weight: 700;
@@ -859,8 +853,408 @@ svg {
 
 /*container*/
 .container-footer {
-    position: relative; /* Để có thể sử dụng thuộc tính top */
+    position: relative;
+    /* Để có thể sử dụng thuộc tính top */
+    margin-top: -14.7%;
+    background: linear-gradient(0deg,
+            rgba(0, 37, 73, 0.8) 0%,
+            rgba(0, 37, 73, 0.8) 100%);
+}
+
+/* bài viêt*/
+.container-fluid {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
     margin-top: -15%;
-    background: linear-gradient(0deg, rgba(0, 37, 73, 0.80) 0%, rgba(0, 37, 73, 0.80) 100%);
+    margin-bottom: 48px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.rotated-box {
+    width: 386px;
+    height: 106px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-box {
+    position: absolute;
+    color: #0054a6;
+    font-size: 40px;
+    font-family: "Philosopher", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 80px;
+    white-space: nowrap;
+}
+
+.content-section-1 {
+    margin-left: 200px;
+    display: flex;
+    /* Sử dụng Flexbox để sắp xếp các phần tử con theo hàng */
+    align-items: flex-start;
+    /* Căn giữa các phần tử con theo chiều dọc */
+    width: 100%;
+    /* Đảm bảo phần tử chiếm toàn bộ chiều ngang của phần tử chứa */
+    margin-top: -20%;
+    /* Điều chỉnh khoảng cách phía trên nếu cần */
+    margin-bottom: 20%;
+    /* Điều chỉnh khoảng cách phía dưới nếu cần */
+    gap: 24px;
+    /* Giảm khoảng cách giữa các phần tử con */
+        position: relative;
+      z-index: 1;
+}
+
+.container-custom-4,
+.container-custom-5 {
+    box-sizing: border-box;
+    /* Đảm bảo padding và border được tính trong kích thước tổng */
+    display: flex;
+    /* Sử dụng Flexbox để căn giữa nội dung bên trong */
+    justify-content: center;
+    /* Căn giữa nội dung theo chiều ngang */
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Nền màu trắng với độ mờ 80% */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Tạo hiệu ứng đổ bóng nhẹ cho container */
+    margin: 0;
+    /* Đặt lại margin để không gây vấn đề */
+    padding: 0;
+    /* Đặt padding về 0 nếu có */
+    border: none;
+    /* Đặt border về none nếu có */
+    /* position: relative;
+    z-index: 3; */
+    
 
 }
+
+
+.container-custom-4 {
+    width: 1134px;
+    height: 604px;
+    position: relative;
+    box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    overflow: hidden;
+    backdrop-filter: blur(15px);
+            position: relative;
+      z-index: 1;
+}
+
+.header-section-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Căn giữa nội dung theo chiều dọc */
+
+}
+
+.background-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    box-sizing: border-box;
+}
+
+.carousel-container {
+    width: 1134px;
+    height: 386px;
+    position: absolute;
+    top: 0;
+    display: flex;
+    gap: 0;
+}
+
+.carousel-item {
+    width: 1134px;
+    height: 386px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.carousel-item.active {
+    display: block;
+    /* Show the active item */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gradient-overlay {
+    width: 1134px;
+    height: 386px;
+    background: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.2) 0%,
+            rgba(0, 0, 0, 0.2) 100%);
+}
+
+.indicator-container {
+    position: absolute;
+    left: 1010px;
+    top: 560px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    /* Đảm bảo căn chỉnh theo chiều dọc */
+}
+
+.indicator {
+    width: 16px;
+    height: 16px;
+    /* Đặt chiều cao bằng chiều rộng */
+    background: white;
+    border-radius: 50%;
+    border: 1px #0054a6 solid;
+    backdrop-filter: blur(30px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.indicator svg {
+    width: 28px;
+    height: 28px;
+}
+
+.indicator.active {
+    width: 16px;
+    height: 16px;
+    background: none;
+    border: none;
+    color: white;
+}
+
+.controls-container {
+    position: absolute;
+    left: 1050px;
+    top: 405px;
+    display: flex;
+    gap: 4px;
+}
+
+.control-left,
+.control-right {
+    width: 28px;
+    height: 28px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.text-container-custom-3 {
+    width: 845px;
+    height: auto;
+    position: absolute;
+    top: 410px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+.title-container-custom-3 {
+    color: #0054a6;
+    font-size: 38px;
+    font-family: Philosopher;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.description-container-custom-3 {
+    color: #4d4d4d;
+    font-size: 18px;
+    font-family: Roboto;
+    font-weight: 400;
+    line-height: 27px;
+    word-wrap: break-word;
+    height: 82px;
+}
+
+.custom-text {
+    color: #0054a6;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: Roboto;
+    word-wrap: break-word;
+    margin-left: 24px;
+}
+
+/*card*/
+.header-section-2 {
+    border-radius: 15px;
+    /* Bo góc của phần tử */
+    overflow: hidden;
+
+}
+
+.container-custom-5 {
+   width: 362px;
+      height: 604px;
+}
+
+.container-card {
+    width: 100%;
+    height: 604px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+
+    
+}
+
+.container-card::-webkit-scrollbar {
+    display: none;
+}
+
+.card-container {
+    width: 314px;
+    height: 102px;
+    margin-bottom: 20px;
+    padding-right: 12px;
+    background: white;
+    box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.10);
+    border-radius: 4px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer; /* Hiển thị con trỏ khi di chuột qua các thẻ card */
+}
+
+.card-container:hover {
+    background: #e0e0e0;
+    /* Màu nền khi hover */
+}
+
+.line-card {
+    width: 4px;
+    height: 98px;
+    background-color: #6698CA;
+    border-radius: 4px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    margin-top: 0;
+    margin-left: 49%;
+    cursor: pointer;
+    z-index: 3;
+}
+
+  .image-container {
+            width: 104px;
+            height: 102px;
+            background: #CCCCCC;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 0;
+        }
+
+        .image-container img {
+            width: 104px;
+            height: 102px;
+            object-fit: cover;
+        }
+        .content-container {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 8px;
+            display: inline-flex;
+        }
+        .title-card {
+            width: 186px;
+            color: #666666;
+            font-size: 14px;
+            font-family: Roboto;
+            font-weight: 700;
+            word-wrap: break-word;
+        }
+        .info-container {
+            justify-content: flex-start;
+            align-items: center;
+            gap: 8px;
+            display: inline-flex;
+        }
+        .info-item {
+            color: #858585;
+            font-size: 12px;
+            font-family: Roboto;
+            font-weight: 400;
+            word-wrap: break-word;
+        }
+        .dot {
+            width: 3px;
+            height: 3px;
+            background: #858585;
+            border-radius: 9999px;
+        }
+
+
+
+        .content-section-2 {
+            width: 1520px;
+            height: 1108px;
+            position: relative;
+            margin-left: 200px;
+           margin-top: -19%;
+           margin-bottom: 16%;
+        }
+
+        .container-custom-6,
+        .container-custom-7,
+        .container-custom-8 {
+            background-color: rgba(255, 255, 255, 0.8); /* Nền màu trắng với độ mờ 80% */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng */
+            position: absolute; /* Để sử dụng left và top */
+             border-radius: 10px;
+        }
+
+        .container-custom-6 {
+            width: 1134px;
+            height: 80px;
+            top: 0;
+            margin-left: 386px;
+        }
+
+        .container-custom-7 {
+            width: 362px;
+            height: 1028px;
+           top: 0;
+    left: 0;
+        }
+
+        .container-custom-8 {
+            width: 1134px;
+            height: 1004px;
+            top: 100px;
+            left: 386px; /* 362px (container-custom-7 width) + 24px (gap) */
+        }

@@ -5,7 +5,7 @@
             <div class="nav-item-text"><a href="{{ route('home') }}">Trang chủ</a></div>
         </div>
         <div class="nav-item nav-item-home nav-item-default d-flex justify-content-center align-items-center">
-            <div class="nav-item-text"><a href="/posts">Bài viết</a></div>
+            <div class="nav-item-text"><a href="{{ route('bai-viet') }}">Bài viết</a></div>
         </div>
         <div class="nav-icon d-flex justify-content-center align-items-center">
             <div class="nav-icon-inner">

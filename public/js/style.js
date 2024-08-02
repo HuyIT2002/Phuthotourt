@@ -1,6 +1,7 @@
 "use strict";
 
 $(window).on("load", function () {
+
     $(document).ready(function() {
         const $container = $('.container-fixed');
         let isDown = false;
@@ -27,6 +28,9 @@ $(window).on("load", function () {
             $container.scrollLeft(scrollLeft - walk);
         });
     });
+
+
+    
  $(document).ready(function() {
     // Mặc định đặt lớp 'active' vào mục 'nav-home'
     $('#nav-home').addClass('active');
@@ -38,76 +42,7 @@ $(window).on("load", function () {
     });
 });
 
-// document.querySelectorAll('.image-item img').forEach((img, index) => {
-//     img.addEventListener('click', () => {
-//         console.log('Clicked image index:', index); // In chỉ số của ảnh đang được nhấp
-//         console.log('Clicked image src:', img.src); // In URL của ảnh đang được nhấp
-//         console.log('Clicked image alt:', img.alt); // In thuộc tính alt của ảnh đang được nhấp
-//         rotateImages(index);
-//     });
-// });
 
-// function rotateImages(clickedIndex) {
-//     const items = document.querySelectorAll('.image-item');
-//     const totalItems = items.length;
-//     const imgSources = Array.from(items).map(item => item.querySelector('img').src);
-//     const imgAlts = Array.from(items).map(item => item.querySelector('img').alt);
-//     const imgTexts = Array.from(items).map(item => item.querySelector('.text-overlay').innerText);
-
-//     // Chuyển vị trí các ảnh theo thứ tự vòng tròn
-//     const newSources = imgSources.map((_, i) => imgSources[(i - clickedIndex + totalItems) % totalItems]);
-//     const newAlts = imgAlts.map((_, i) => imgAlts[(i - clickedIndex + totalItems) % totalItems]);
-//     const newTexts = imgTexts.map((_, i) => imgTexts[(i - clickedIndex + totalItems) % totalItems]);
-
-//     items.forEach((item, i) => {
-//         const img = item.querySelector('img');
-//         const textOverlay = item.querySelector('.text-overlay');
-//         img.src = newSources[i];
-//         img.alt = newAlts[i];
-//         textOverlay.innerText = newTexts[i];
-//     });
-// }
-
-    
-
-
-
-
-
-//     document.querySelectorAll('.image-item img').forEach((img, index) => {
-//     console.log(`Binding click event to image index: ${index}, src: ${img.src}, alt: ${img.alt}`);
-//     img.addEventListener('click', () => {
-//         console.log('Clicked image index:', index); // In chỉ số của ảnh đang được nhấp
-//         console.log('Clicked image src:', img.src); // In URL của ảnh đang được nhấp
-//         console.log('Clicked image alt:', img.alt); // In thuộc tính alt của ảnh đang được nhấp
-//         rotateImages(index);
-//     });
-// });
-
-
-// function rotateImages(clickedIndex) {
-//     const items = Array.from(document.querySelectorAll('.image-item'));
-//     const totalItems = items.length;
-
-//     // Lưu trữ các thông tin về ảnh hiện tại
-//     const imgSources = items.map(item => item.querySelector('img').src);
-//     const imgAlts = items.map(item => item.querySelector('img').alt);
-//     const imgTexts = items.map(item => item.querySelector('.text-overlay').innerText);
-
-//     // Chuyển vị trí các ảnh theo chỉ số nhấp chuột
-//     const newSources = imgSources.map((_, i) => imgSources[(i - clickedIndex + totalItems) % totalItems]);
-//     const newAlts = imgAlts.map((_, i) => imgAlts[(i - clickedIndex + totalItems) % totalItems]);
-//     const newTexts = imgTexts.map((_, i) => imgTexts[(i - clickedIndex + totalItems) % totalItems]);
-
-//     // Cập nhật ảnh mới
-//     items.forEach((item, i) => {
-//         const img = item.querySelector('img');
-//         const textOverlay = item.querySelector('.text-overlay');
-//         img.src = newSources[i];
-//         img.alt = newAlts[i];
-//         textOverlay.innerText = newTexts[i];
-//     });
-// }
 const initialImgSources = [];
 const initialImgAlts = [];
 const initialImgTexts = [];
@@ -213,6 +148,174 @@ document.querySelectorAll('.image-item img').forEach((img, index) => {
 //         }
 //     });
 // });
+
+    
+// $(document).ready(function() {
+//     // Đếm số lượng carousel items thực sự chứa ảnh
+//     var itemCount = $('.carousel-item img').length;
+
+//     $('.indicator-container').empty();
+
+//     for (var i = 0; i < itemCount; i++) {
+//         var indicator = $('<div class="indicator"></div>');
+//         $('.indicator-container').append(indicator);
+//     }
+
+//     $('.indicator').on('click', function() {
+//         var index = $(this).index();
+
+//         $('.indicator').removeClass('active');
+//         $(this).addClass('active');
+//     });
+// });
+
+$(document).ready(function() {
+    // Đếm số lượng carousel items thực sự chứa ảnh
+    var itemCount = $('.carousel-item img').length;
+
+    // SVG nội dung cho chỉ báo hoạt động
+    var svgContent = '<svg width="28" height="28" viewBox="0 0 28 17" fill="none" xmlns="http://www.w3.org/2000/svg">\
+        <path d="M22.6105 8.30527C22.6105 12.8921 18.8921 16.6105 14.3053 16.6105C9.7184 16.6105 6 12.8921 6 8.30527C6 3.7184 9.7184 0 14.3053 0C18.8921 0 22.6105 3.7184 22.6105 8.30527Z" fill="#0054A6" />\
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.3053 16.2373C18.686 16.2373 22.2373 12.686 22.2373 8.30527C22.2373 3.92455 18.686 0.37327 14.3053 0.37327C9.92455 0.37327 6.37327 3.92455 6.37327 8.30527C6.37327 12.686 9.92455 16.2373 14.3053 16.2373ZM14.3053 16.6105C18.8921 16.6105 22.6105 12.8921 22.6105 8.30527C22.6105 3.7184 18.8921 0 14.3053 0C9.7184 0 6 3.7184 6 8.30527C6 12.8921 9.7184 16.6105 14.3053 16.6105Z" fill="white" />\
+        <path d="M10.3434 5.6062L1 10.5894L8.99382 8.09778L17.6105 11.1084L27.0578 6.12528L18.9601 8.72068L10.3434 5.6062Z" fill="white" stroke="#0054A6" stroke-width="0.186635" stroke-linejoin="round" />\
+    </svg>';
+
+    // Xóa các chỉ báo cũ nếu có
+    $('.indicator-container').empty();
+
+    // Tạo các chỉ báo dựa trên số lượng item
+    for (var i = 0; i < itemCount; i++) {
+        var indicator = $('<div class="indicator"></div>');
+        $('.indicator-container').append(indicator);
+    }
+
+    // Hiển thị slide đầu tiên và chỉ báo đầu tiên với SVG
+    $('.carousel-item').first().addClass('active');
+    $('.indicator').first().addClass('active').html(svgContent);
+
+    // Thay đổi trạng thái của chỉ báo khi người dùng tương tác
+    $('.indicator').on('click', function() {
+        var index = $(this).index();
+
+        // Thay đổi các chỉ báo
+        $('.indicator').removeClass('active').empty().css({ 'width': '16px', 'height': '16px', 'background': 'white', 'border': '1px #0054A6 solid' });
+        $(this).addClass('active').html(svgContent).css({ 'width': '28px', 'height': '17px', 'background': 'none', 'border': 'none' });
+
+        // Thay đổi các slide
+        $('.carousel-item').removeClass('active');
+        $('.carousel-item').eq(index).addClass('active');
+    });
+
+    // Hàm tự động chuyển slide sau 5 giây
+    function autoChangeSlide() {
+        var currentIndex = $('.indicator.active').index();
+        var nextIndex = (currentIndex + 1) % itemCount;
+
+        $('.indicator').eq(nextIndex).click();
+    }
+
+    // Chuyển slide sau mỗi 5 giây
+    setInterval(autoChangeSlide, 5000);
+    $('.control-left').on('click', function() {
+                var currentIndex = $('.indicator.active').index();
+                var prevIndex = (currentIndex - 1 + itemCount) % itemCount;
+
+                $('.indicator').eq(prevIndex).click();
+            });
+
+            // Chuyển slide khi bấm nút phải
+            $('.control-right').on('click', function() {
+                var currentIndex = $('.indicator.active').index();
+                var nextIndex = (currentIndex + 1) % itemCount;
+
+                $('.indicator').eq(nextIndex).click();
+            });
+});
+
+//  document.querySelectorAll('.card-container').forEach(card => {
+//             card.addEventListener('click', function() {
+//                 console.log('Card clicked!');
+//             });
+//         });
+
+// $(document).ready(function() {
+//         const $scrollContainer = $('#scrollContainer1');
+//         let isMouseDown = false;
+//         let startY;
+//         let scrollTop;
+
+//         // Thêm sự kiện mousedown cho tất cả các thẻ card-container
+//         $('.card-container').on('mousedown', function(e) {
+//             isMouseDown = true;
+//             startY = e.pageY;
+//             scrollTop = $scrollContainer.scrollTop();
+//             $scrollContainer.css('cursor', 'grabbing'); // Thay đổi con trỏ khi kéo
+//         });
+
+//         $scrollContainer.on('mousemove', function(e) {
+//             if (!isMouseDown) return;
+//             e.preventDefault();
+//             const y = e.pageY;
+//             const walk = (y - startY) * 2; // Thay đổi tốc độ cuộn bằng cách thay đổi hệ số
+//             $scrollContainer.scrollTop(scrollTop - walk);
+//         });
+
+//         $(document).on('mouseup mouseleave', function() {
+//             if (isMouseDown) {
+//                 isMouseDown = false;
+//                 $scrollContainer.css('cursor', 'auto'); // Khôi phục con trỏ khi nhả chuột hoặc rời khỏi
+//             }
+//         });
+//     });
+$(document).ready(function() {
+    const $scrollContainer = $('#scrollContainer1');
+    let isMouseDown = false;
+    let startY;
+    let scrollTop;
+
+    // Thêm sự kiện mousedown cho tất cả các thẻ card-container
+    $('.card-container').on('mousedown', function(e) {
+        isMouseDown = true;
+        startY = e.pageY;
+        scrollTop = $scrollContainer.scrollTop();
+        $scrollContainer.css('cursor', 'grabbing'); // Thay đổi con trỏ khi kéo
+    });
+
+    $scrollContainer.on('mousemove', function(e) {
+        if (!isMouseDown) return;
+        e.preventDefault();
+        const y = e.pageY;
+        const walk = (y - startY) * 2; // Thay đổi tốc độ cuộn bằng cách thay đổi hệ số
+        $scrollContainer.scrollTop(scrollTop - walk);
+    });
+
+    $(document).on('mouseup mouseleave', function() {
+        if (isMouseDown) {
+            isMouseDown = false;
+            $scrollContainer.css('cursor', 'auto'); // Khôi phục con trỏ khi nhả chuột hoặc rời khỏi
+        }
+    });
+
+    // Thêm sự kiện click cho các thẻ card-container
+    $('.card-container').on('click', function() {
+        // Xóa màu nền của tất cả các thẻ title-card khác
+        $('.title-card').css('color', '');
+        // Đặt màu nền cho thẻ title-card được nhấp
+        $(this).find('.title-card').css('color', '#0054A6');
+    });
+
+    // Thêm sự kiện hover cho các thẻ card-container
+    $('.card-container').hover(
+        function() {
+            // Khi di chuột vào
+            $(this).find('.title-card').css('color', '#0054A6');
+        },
+        function() {
+            // Khi không còn di chuột
+            $(this).find('.title-card').css('color', '');
+        }
+    );
+});
 
 
 });

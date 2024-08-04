@@ -18,7 +18,7 @@
                 </div>
             </div>
 
-            <div class=" image-container">
+            <div class="image-container">
                 <div class=" image-item">
                     <img class="img-fluid" src="{{ asset('/public/images/home/2.png') }}" alt="Placeholder Image 2" />
                     <div class="text-overlay">
@@ -54,15 +54,12 @@
             </div>
         </div>
     </div>
-    <div class="custom-container d-inline-flex flex-column justify-content-center align-items-center"
-        onclick="scrollToContentB()">
+    <div class="custom-container d-inline-flex flex-column justify-content-center align-items-center" onclick="scrollToContentB()">
         <div class="custom-box position-relative">
             <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="Group 6">
-                    <path id="Vector" d="M24.5 12L13 22L1.5 12" stroke="#F0F0F0" stroke-width="3" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path id="Vector_2" d="M24.5 2L13 12L1.5 2" stroke="#F0F0F0" stroke-width="3" stroke-linecap="round"
-                        stroke-linejoin="round" />
+                    <path id="Vector" d="M24.5 12L13 22L1.5 12" stroke="#F0F0F0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                    <path id="Vector_2" d="M24.5 2L13 12L1.5 2" stroke="#F0F0F0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
                 </g>
             </svg>
         </div>
@@ -112,10 +109,8 @@
                     <div class="col-12 col-md-6 mb-2 text-center custom-col">
                         <div class="box-2">
                             <div class="custom-image-wrapper">
-                                <img class="img-1" src="{{ asset('/public/images/home/6.png') }}"
-                                    alt="Placeholder Image 6" />
-                                <img class="img-2" src="{{ asset('/public/images/home/7.png') }}"
-                                    alt="Placeholder Image 7" />
+                                <img class="img-1" src="{{ asset('/public/images/home/6.png') }}" alt="Placeholder Image 6" />
+                                <img class="img-2" src="{{ asset('/public/images/home/7.png') }}" alt="Placeholder Image 7" />
                             </div>
                         </div>
 
@@ -128,35 +123,24 @@
                         <div class="box-main-container">
                             <div class="inner-box">
                                 <div class="background-blue">
-                                    <svg width="550" height="466" viewBox="0 0 550 466" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M609.559 160.542C609.559 328.861 473.109 465.31 304.79 465.31C136.471 465.31 0.0214844 328.861 0.0214844 160.542C0.0214844 -7.77727 136.471 -144.227 304.79 -144.227C473.109 -144.227 609.559 -7.77727 609.559 160.542Z"
-                                            fill="#0054A6" />
+                                    <svg width="550" height="466" viewBox="0 0 550 466" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M609.559 160.542C609.559 328.861 473.109 465.31 304.79 465.31C136.471 465.31 0.0214844 328.861 0.0214844 160.542C0.0214844 -7.77727 136.471 -144.227 304.79 -144.227C473.109 -144.227 609.559 -7.77727 609.559 160.542Z" fill="#0054A6" />
                                     </svg>
                                 </div>
                                 <div class="background-white">
-                                    <svg width="550" height="466" viewBox="0 0 550 466" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M304.79 451.613C465.544 451.613 595.861 321.296 595.861 160.542C595.861 -0.212357 465.544 -130.529 304.79 -130.529C144.036 -130.529 13.7189 -0.212357 13.7189 160.542C13.7189 321.296 144.036 451.613 304.79 451.613ZM304.79 465.31C473.109 465.31 609.559 328.861 609.559 160.542C609.559 -7.77727 473.109 -144.227 304.79 -144.227C136.471 -144.227 0.0214844 -7.77727 0.0214844 160.542C0.0214844 328.861 136.471 465.31 304.79 465.31Z"
-                                            fill="white" />
+                                    <svg width="550" height="466" viewBox="0 0 550 466" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M304.79 451.613C465.544 451.613 595.861 321.296 595.861 160.542C595.861 -0.212357 465.544 -130.529 304.79 -130.529C144.036 -130.529 13.7189 -0.212357 13.7189 160.542C13.7189 321.296 144.036 451.613 304.79 451.613ZM304.79 465.31C473.109 465.31 609.559 328.861 609.559 160.542C609.559 -7.77727 473.109 -144.227 304.79 -144.227C136.471 -144.227 0.0214844 -7.77727 0.0214844 160.542C0.0214844 328.861 136.471 465.31 304.79 465.31Z" fill="white" />
                                     </svg>
                                 </div>
                                 <div class="bordered-box">
-                                    <svg width="729" height="209" viewBox="0 0 729 209" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M346.638 3.4917L3.77344 186.353L297.113 94.9223L613.311 205.401L959.985 22.5397L662.835 117.78L346.638 3.4917Z"
-                                            fill="white" stroke="#0054A6" stroke-width="6.84873"
-                                            stroke-linejoin="round" />
+                                    <svg width="729" height="209" viewBox="0 0 729 209" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M346.638 3.4917L3.77344 186.353L297.113 94.9223L613.311 205.401L959.985 22.5397L662.835 117.78L346.638 3.4917Z" fill="white" stroke="#0054A6" stroke-width="6.84873" stroke-linejoin="round" />
                                     </svg>
                                 </div>
                             </div>
 
                         </div>
-                        <div
-                            class="info-share-container d-flex flex-column justify-content-start align-items-center gap-16">
+                        <div class="info-share-container d-flex flex-column justify-content-start align-items-center gap-16">
                             <div class="title-1">CHIA SẺ THÔNG TIN</div>
                             <div class="title-2">Bài viết mới</div>
                             <div class="separator"></div>
@@ -167,13 +151,11 @@
                             <div class="row justify-content-center negative-margin-top">
                                 <div class="col-md-4">
                                     <div class="card" style="width: 362px; height: 542px;">
-                                        <img src="{{ asset('/public/images/home/8.png') }}"
-                                            class="card-img-top card-img-custom" alt="...">
+                                        <img src="{{ asset('/public/images/home/8.png') }}" class="card-img-top card-img-custom" alt="...">
                                         <div class="card-body">
                                             <div class="d-flex align-items-center mb-3">
                                                 <span class="text-muted">Admin</span>
-                                                <div class="ms-2"
-                                                    style="width: 8px; height: 8px; background: #03A600; border-radius: 50%;">
+                                                <div class="ms-2" style="width: 8px; height: 8px; background: #03A600; border-radius: 50%;">
                                                 </div>
                                             </div>
                                             <h5 class="card-title text-custom-primary text-container">Thông báo kết quả
@@ -194,8 +176,7 @@
                                             </div>
                                             <div class="d-flex align-items-center">
                                                 <span class="text-muted">10N lượt xem</span>
-                                                <div class="mx-2"
-                                                    style="width: 3px; height: 3px; background: #858585; border-radius: 50%;">
+                                                <div class="mx-2" style="width: 3px; height: 3px; background: #858585; border-radius: 50%;">
                                                 </div>
                                                 <span class="text-muted">20/02/2022</span>
                                             </div>
@@ -204,13 +185,11 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="card" style="width: 362px; height: 542px;">
-                                        <img src="{{ asset('/public/images/home/9.png') }}"
-                                            class="card-img-top card-img-custom" alt="...">
+                                        <img src="{{ asset('/public/images/home/9.png') }}" class="card-img-top card-img-custom" alt="...">
                                         <div class="card-body">
                                             <div class="d-flex align-items-center mb-3">
                                                 <span class="text-muted">Admin</span>
-                                                <div class="ms-2"
-                                                    style="width: 8px; height: 8px; background: #03A600; border-radius: 50%;">
+                                                <div class="ms-2" style="width: 8px; height: 8px; background: #03A600; border-radius: 50%;">
                                                 </div>
                                             </div>
                                             <h5 class="card-title text-custom-primary text-container">Thông báo kết quả
@@ -231,8 +210,7 @@
                                             </div>
                                             <div class="d-flex align-items-center mb-3 move-up">
                                                 <span class="text-muted">10N lượt xem</span>
-                                                <div class="mx-2"
-                                                    style="width: 3px; height: 3px; background: #858585; border-radius: 50%;">
+                                                <div class="mx-2" style="width: 3px; height: 3px; background: #858585; border-radius: 50%;">
                                                 </div>
                                                 <span class="text-muted">20/02/2022</span>
                                             </div>
@@ -241,13 +219,11 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="card" style="width: 362px; height: 542px;">
-                                        <img src="{{ asset('/public/images/home/10.png') }}"
-                                            class="card-img-top card-img-custom" alt="...">
+                                        <img src="{{ asset('/public/images/home/10.png') }}" class="card-img-top card-img-custom" alt="...">
                                         <div class="card-body">
                                             <div class="d-flex align-items-center mb-3">
                                                 <span class="text-muted">Admin</span>
-                                                <div class="ms-2"
-                                                    style="width: 8px; height: 8px; background: #03A600; border-radius: 50%;">
+                                                <div class="ms-2" style="width: 8px; height: 8px; background: #03A600; border-radius: 50%;">
                                                 </div>
                                             </div>
                                             <h5 class="card-title text-custom-primary text-container">Thông báo kết quả
@@ -268,8 +244,7 @@
                                             </div>
                                             <div class="d-flex align-items-center">
                                                 <span class="text-muted">10N lượt xem</span>
-                                                <div class="mx-2"
-                                                    style="width: 3px; height: 3px; background: #858585; border-radius: 50%;">
+                                                <div class="mx-2" style="width: 3px; height: 3px; background: #858585; border-radius: 50%;">
                                                 </div>
                                                 <span class="text-muted">20/02/2022</span>
                                             </div>
@@ -306,8 +281,7 @@
                             <div class="row g-4 justify-content-center container-custom-margin">
                                 <div class="col-md-4">
                                     <div class="card card-custom">
-                                        <img src="{{ asset('/public/images/home/12.png') }}"
-                                            class="card-img-top card-img-top-custom" alt="Card image">
+                                        <img src="{{ asset('/public/images/home/12.png') }}" class="card-img-top card-img-top-custom" alt="Card image">
                                         <div class="card-body card-body-custom">
                                             <h5 class="card-title card-title-custom">Vui chơi giải trí</h5>
                                             <p class="card-text card-text-custom">Với 2 khu giải trí nổi tiếng
@@ -318,8 +292,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="card card-custom">
-                                        <img src="{{ asset('/public/images/home/13.png') }}"
-                                            class="card-img-top card-img-top-custom" alt="Card image">
+                                        <img src="{{ asset('/public/images/home/13.png') }}" class="card-img-top card-img-top-custom" alt="Card image">
                                         <div class="card-body card-body-custom">
                                             <h5 class="card-title card-title-custom">Nhà hàng – Khách sạn</h5>
                                             <p class="card-text card-text-custom">Với hệ thống khách sạn Phú Thọ và Ngọc
@@ -329,8 +302,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="card card-custom">
-                                        <img src="{{ asset('/public/images/home/14.png') }}"
-                                            class="card-img-top card-img-top-custom" alt="Card image">
+                                        <img src="{{ asset('/public/images/home/14.png') }}" class="card-img-top card-img-top-custom" alt="Card image">
                                         <div class="card-body card-body-custom">
                                             <h5 class="card-title card-title-custom">Dịch vụ Lữ hành</h5>
                                             <p class="card-text card-text-custom">VTổ chức các tour trong và ngoài nước
@@ -354,10 +326,10 @@
 
 @endsection
 <script>
-function scrollToContentB() {
-    const contentB = document.getElementById("contentB");
-    contentB.scrollIntoView({
-        behavior: 'smooth'
-    });
-}
+    function scrollToContentB() {
+        const contentB = document.getElementById("contentB");
+        contentB.scrollIntoView({
+            behavior: 'smooth'
+        });
+    }
 </script>

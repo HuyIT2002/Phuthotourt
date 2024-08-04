@@ -199,7 +199,7 @@ $(document).ready(function() {
 
         // Thay đổi các chỉ báo
         $('.indicator').removeClass('active').empty().css({ 'width': '16px', 'height': '16px', 'background': 'white', 'border': '1px #0054A6 solid' });
-        $(this).addClass('active').html(svgContent).css({ 'width': '28px', 'height': '17px', 'background': 'none', 'border': 'none' });
+        $(this).addClass('active').html(svgContent).css({ 'width': '28px', 'height': '28px', 'background': 'none', 'border': 'none' });
 
         // Thay đổi các slide
         $('.carousel-item').removeClass('active');
@@ -207,14 +207,18 @@ $(document).ready(function() {
     });
 
     // Hàm tự động chuyển slide sau 5 giây
-    function autoChangeSlide() {
+     function autoChangeSlide() {
         var currentIndex = $('.indicator.active').index();
         var nextIndex = (currentIndex + 1) % itemCount;
 
-        $('.indicator').eq(nextIndex).click();
+        // Cập nhật slide và chỉ báo mà không cần nhấp
+        $('.indicator').removeClass('active').empty().css({ 'width': '16px', 'height': '16px', 'background': 'white', 'border': '1px #0054A6 solid' });
+        $('.indicator').eq(nextIndex).addClass('active').html(svgContent).css({ 'width': '28px', 'height': '28px', 'background': 'none', 'border': 'none' });
+        
+        $('.carousel-item').removeClass('active');
+        $('.carousel-item').eq(nextIndex).addClass('active');
     }
 
-    // Chuyển slide sau mỗi 5 giây
     setInterval(autoChangeSlide, 5000);
     $('.control-left').on('click', function() {
                 var currentIndex = $('.indicator.active').index();
@@ -230,43 +234,10 @@ $(document).ready(function() {
 
                 $('.indicator').eq(nextIndex).click();
             });
+            
 });
 
-//  document.querySelectorAll('.card-container').forEach(card => {
-//             card.addEventListener('click', function() {
-//                 console.log('Card clicked!');
-//             });
-//         });
 
-// $(document).ready(function() {
-//         const $scrollContainer = $('#scrollContainer1');
-//         let isMouseDown = false;
-//         let startY;
-//         let scrollTop;
-
-//         // Thêm sự kiện mousedown cho tất cả các thẻ card-container
-//         $('.card-container').on('mousedown', function(e) {
-//             isMouseDown = true;
-//             startY = e.pageY;
-//             scrollTop = $scrollContainer.scrollTop();
-//             $scrollContainer.css('cursor', 'grabbing'); // Thay đổi con trỏ khi kéo
-//         });
-
-//         $scrollContainer.on('mousemove', function(e) {
-//             if (!isMouseDown) return;
-//             e.preventDefault();
-//             const y = e.pageY;
-//             const walk = (y - startY) * 2; // Thay đổi tốc độ cuộn bằng cách thay đổi hệ số
-//             $scrollContainer.scrollTop(scrollTop - walk);
-//         });
-
-//         $(document).on('mouseup mouseleave', function() {
-//             if (isMouseDown) {
-//                 isMouseDown = false;
-//                 $scrollContainer.css('cursor', 'auto'); // Khôi phục con trỏ khi nhả chuột hoặc rời khỏi
-//             }
-//         });
-//     });
 $(document).ready(function() {
     const $scrollContainer = $('#scrollContainer1');
     let isMouseDown = false;
@@ -315,6 +286,151 @@ $(document).ready(function() {
             $(this).find('.title-card').css('color', '');
         }
     );
+});
+    
+$(document).ready(function() {
+    var $searchText = $('.search-text');
+    var $recentSearchContainer = $('.recent-search-container');
+
+    // Hiển thị khi có văn bản nhập vào
+    $searchText.on('input', function() {
+        if ($(this).val().trim() !== '') {
+            $recentSearchContainer.show();
+        } else {
+            if (!$searchText.is(':focus')) {
+                $recentSearchContainer.hide();
+            }
+        }
+    });
+
+    // Hiển thị khi nhấp vào ô tìm kiếm
+    $searchText.on('focus', function() {
+        $recentSearchContainer.show();
+    });
+
+    // Ẩn khi nhấp ra ngoài ô tìm kiếm hoặc danh sách tìm kiếm gần đây
+    $(document).on('click', function(event) {
+        if (!$(event.target).closest('.search-text, .recent-search-container').length) {
+            $recentSearchContainer.hide();
+        }
+    });
+});
+
+$(document).ready(function() {
+    var $searchText = $('.search-text');
+    var $recentSearchList = $('.recent-search-list');
+
+    // Hiển thị danh sách khi có văn bản nhập vào
+    $searchText.on('input', function() {
+        if ($(this).val().trim() !== '') {
+            $recentSearchList.show();
+        } else {
+            if (!$searchText.is(':focus')) {
+                $recentSearchList.hide();
+            }
+        }
+    });
+
+    // Hiển thị danh sách khi nhấp vào ô tìm kiếm
+    $searchText.on('focus', function() {
+        if ($searchText.val().trim() !== '') {
+            $recentSearchList.show();
+        }
+    });
+
+    // Ẩn danh sách khi nhấp ra ngoài ô tìm kiếm hoặc danh sách tìm kiếm gần đây
+    $(document).on('click', function(event) {
+        if (!$(event.target).closest('.search-text, .recent-search-list').length) {
+            $recentSearchList.hide();
+        }
+    });
+
+    // Ngăn việc ẩn danh sách khi nhấp vào chính nó
+    $recentSearchList.on('click', function(event) {
+        event.stopPropagation();
+    });
+});
+
+$(document).ready(function() {
+    $('#dateInput').datepicker({
+        format: 'dd/mm/yyyy',
+        autoclose: true,
+        todayHighlight: true,
+        templates: {
+            leftArrow: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8899a4" stroke-width="2" stroke-linecap="round" stroke-linejoin="arcs"><path d="M15 18l-6-6 6-6"></path></svg>',
+            rightArrow: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8899a4" stroke-width="2" stroke-linecap="round" stroke-linejoin="arcs"><path d="M9 18l6-6-6-6"></path></svg>'
+        }
+    }).on('show', function(e) {
+        var today = new Date();
+        var monthNames = ["January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
+        var day = today.getDate(); // Ngày hiện tại
+        var month = monthNames[today.getMonth()]; // Tên tháng hiện tại
+        var year = today.getFullYear(); // Năm hiện tại
+
+        // Cập nhật tiêu đề của datepicker
+        var datePickerTitle = day + ' ' + month + ' ' + year;
+        $('.datepicker-switch').text(datePickerTitle); // Cập nhật tiêu đề
+    }).on('changeDate', function(e) {
+        var selectedDate = e.date; // Ngày được chọn từ datepicker
+        var formattedDate = formatDate(selectedDate); // Định dạng ngày theo dd/mm/yyyy
+
+        $('#dateInput').val(formattedDate); // Đặt giá trị cho ô input
+    });
+
+    $('#calendarIcon').on('click', function() {
+        $('#dateInput').focus();
+    });
+
+    // Hàm định dạng ngày theo dd/mm/yyyy
+    function formatDate(date) {
+        var day = ("0" + date.getDate()).slice(-2); // Định dạng ngày
+        var month = ("0" + (date.getMonth() + 1)).slice(-2); // Định dạng tháng (tháng bắt đầu từ 0)
+        var year = date.getFullYear(); // Định dạng năm
+        return day + '/' + month + '/' + year;
+    }
+});
+
+$(document).ready(function() {
+    $('#dateInput2').datepicker({
+        format: 'dd/mm/yyyy',
+        autoclose: true,
+        todayHighlight: true,
+        templates: {
+            leftArrow: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8899a4" stroke-width="2" stroke-linecap="round" stroke-linejoin="arcs"><path d="M15 18l-6-6 6-6"></path></svg>',
+            rightArrow: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8899a4" stroke-width="2" stroke-linecap="round" stroke-linejoin="arcs"><path d="M9 18l6-6-6-6"></path></svg>'
+        }
+    }).on('show', function(e) {
+        var today = new Date();
+        var monthNames = ["January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
+        var day = today.getDate(); // Ngày hiện tại
+        var month = monthNames[today.getMonth()]; // Tên tháng hiện tại
+        var year = today.getFullYear(); // Năm hiện tại
+
+        // Cập nhật tiêu đề của datepicker
+        var datePickerTitle = day + ' ' + month + ' ' + year;
+        $('.datepicker-switch').text(datePickerTitle); // Cập nhật tiêu đề
+    }).on('changeDate', function(e) {
+        var selectedDate = e.date; // Ngày được chọn từ datepicker
+        var formattedDate = formatDate(selectedDate); // Định dạng ngày theo dd/mm/yyyy
+
+        $('#dateInput').val(formattedDate); // Đặt giá trị cho ô input
+    });
+
+    $('#calendarIcon2').on('click', function() {
+        $('#dateInput2').focus();
+    });
+
+    // Hàm định dạng ngày theo dd/mm/yyyy
+    function formatDate(date) {
+        var day = ("0" + date.getDate()).slice(-2); // Định dạng ngày
+        var month = ("0" + (date.getMonth() + 1)).slice(-2); // Định dạng tháng (tháng bắt đầu từ 0)
+        var year = date.getFullYear(); // Định dạng năm
+        return day + '/' + month + '/' + year;
+    }
 });
 
 

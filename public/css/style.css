@@ -39,10 +39,9 @@ body {
 
 .container-fixed {
     position: relative;
-      z-index: 3;
+    z-index: 3;
     width: 100%;
     height: auto;
-  
     /* Đảm bảo nội dung nằm trên video */
     margin-top: 100px;
 }
@@ -57,11 +56,9 @@ body {
 }
 
 .container-2 {
-
     width: 100%;
     height: auto;
     box-sizing: border-box;
-
 }
 
 .content-a {
@@ -915,8 +912,8 @@ svg {
     /* Điều chỉnh khoảng cách phía dưới nếu cần */
     gap: 24px;
     /* Giảm khoảng cách giữa các phần tử con */
-        position: relative;
-      z-index: 1;
+    position: relative;
+    z-index: 1;
 }
 
 .container-custom-4,
@@ -939,7 +936,7 @@ svg {
     /* Đặt border về none nếu có */
     /* position: relative;
     z-index: 3; */
-    
+
 
 }
 
@@ -952,8 +949,8 @@ svg {
     border-radius: 12px;
     overflow: hidden;
     backdrop-filter: blur(15px);
-            position: relative;
-      z-index: 1;
+    position: relative;
+    z-index: 1;
 }
 
 .header-section-1 {
@@ -1038,8 +1035,8 @@ svg {
 }
 
 .indicator.active {
-    width: 16px;
-    height: 16px;
+    width: 28px;
+    height: 28px;
     background: none;
     border: none;
     color: white;
@@ -1109,8 +1106,8 @@ svg {
 }
 
 .container-custom-5 {
-   width: 362px;
-      height: 604px;
+    width: 362px;
+    height: 604px;
 }
 
 .container-card {
@@ -1123,7 +1120,7 @@ svg {
     cursor: pointer;
     position: relative;
 
-    
+
 }
 
 .container-card::-webkit-scrollbar {
@@ -1142,7 +1139,8 @@ svg {
     justify-content: flex-start;
     align-items: center;
     gap: 12px;
-    cursor: pointer; /* Hiển thị con trỏ khi di chuột qua các thẻ card */
+    cursor: pointer;
+    /* Hiển thị con trỏ khi di chuột qua các thẻ card */
 }
 
 .card-container:hover {
@@ -1165,96 +1163,549 @@ svg {
     z-index: 3;
 }
 
-  .image-container {
-            width: 104px;
-            height: 102px;
-            background: #CCCCCC;
-            border-top-left-radius: 4px;
-            border-bottom-left-radius: 4px;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 0;
-        }
+.image-container-1 {
+    width: 104px;
+    height: 102px;
+    background: #CCCCCC;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+}
 
-        .image-container img {
-            width: 104px;
-            height: 102px;
-            object-fit: cover;
-        }
-        .content-container {
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-            gap: 8px;
-            display: inline-flex;
-        }
-        .title-card {
-            width: 186px;
-            color: #666666;
-            font-size: 14px;
-            font-family: Roboto;
-            font-weight: 700;
-            word-wrap: break-word;
-        }
-        .info-container {
-            justify-content: flex-start;
-            align-items: center;
-            gap: 8px;
-            display: inline-flex;
-        }
-        .info-item {
-            color: #858585;
-            font-size: 12px;
-            font-family: Roboto;
-            font-weight: 400;
-            word-wrap: break-word;
-        }
-        .dot {
-            width: 3px;
-            height: 3px;
-            background: #858585;
-            border-radius: 9999px;
-        }
+.image-container-1 img {
+    width: 104px;
+    height: 102px;
+    object-fit: cover;
+}
+
+.content-container {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+    display: inline-flex;
+}
+
+.title-card {
+    width: 186px;
+    color: #666666;
+    font-size: 14px;
+    font-family: Roboto;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.info-container {
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    display: inline-flex;
+}
+
+.info-item {
+    color: #858585;
+    font-size: 12px;
+    font-family: Roboto;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.dot {
+    width: 3px;
+    height: 3px;
+    background: #858585;
+    border-radius: 9999px;
+}
 
 
 
-        .content-section-2 {
-            width: 1520px;
-            height: 1108px;
-            position: relative;
-            margin-left: 200px;
-           margin-top: -19%;
-           margin-bottom: 16%;
-        }
+.content-section-2 {
+    width: 1520px;
+    height: 1108px;
+    position: relative;
+    margin-left: 200px;
+    margin-top: -19%;
+    margin-bottom: 16%;
+}
 
-        .container-custom-6,
-        .container-custom-7,
-        .container-custom-8 {
-            background-color: rgba(255, 255, 255, 0.8); /* Nền màu trắng với độ mờ 80% */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng */
-            position: absolute; /* Để sử dụng left và top */
-             border-radius: 10px;
-        }
+.container-custom-6,
+.container-custom-7,
+.container-custom-8 {
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Nền màu trắng với độ mờ 80% */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Đổ bóng */
+    position: absolute;
+    /* Để sử dụng left và top */
+    border-radius: 10px;
+}
 
-        .container-custom-6 {
-            width: 1134px;
-            height: 80px;
-            top: 0;
-            margin-left: 386px;
-        }
+.container-custom-6 {
+    width: 1134px;
+    height: 80px;
+    top: 0;
+    margin-left: 386px;
+}
 
-        .container-custom-7 {
-            width: 362px;
-            height: 1028px;
-           top: 0;
+.container-custom-7 {
+    width: 362px;
+    height: 1028px;
+    top: 0;
     left: 0;
-        }
+}
 
-        .container-custom-8 {
-            width: 1134px;
-            height: 1004px;
-            top: 100px;
-            left: 386px; /* 362px (container-custom-7 width) + 24px (gap) */
-        }
+.container-custom-8 {
+    width: 1134px;
+    height: 1004px;
+    top: 100px;
+    left: 386px;
+    /* 362px (container-custom-7 width) + 24px (gap) */
+}
+
+.box-custom-1 {
+    width: 314px;
+    height: 40px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.box-custom-2 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.box-custom-3 {
+    width: 314px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.inner-container {
+    width: 314px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.search-box {
+    width: 314px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    border-radius: 6px;
+    padding: 10px 16px;
+}
+
+.search-icon {
+    display: flex;
+    gap: 10px;
+}
+
+.outer-box {
+    width: 24px;
+    height: 24px;
+    position: relative;
+}
+
+.small-box {
+    width: 4px;
+    height: 4px;
+    border: 1.5px #0054A6 solid;
+}
+
+.search-text {
+    color: #A3A3A3;
+    font-size: 16px;
+    font-family: Roboto;
+    font-weight: 400;
+    line-height: 21px;
+    word-wrap: break-word;
+    margin-top: 4%;
+}
+
+.hidden-icon {
+    width: 24px;
+    height: 24px;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+
+.small-inner-box {
+    width: 8px;
+    height: 8px;
+    border: 1.5px #666666 solid;
+}
+
+.recent-search-container {
+    align-self: stretch;
+    height: auto;
+    padding: 12px 7px;
+    background: white;
+    box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    position: relative;
+    z-index: 2;
+    display: none;
+}
+
+.recent-search-header {
+    padding: 0 9px;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.recent-search-title {
+    color: #4D4D4D;
+    font-size: 14px;
+    font-family: Roboto, sans-serif;
+    font-weight: 600;
+    word-wrap: break-word;
+}
+
+.recent-search-list {
+    align-self: stretch;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.recent-search-item {
+    align-self: stretch;
+    padding: 8px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-text {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    font-family: Roboto;
+    font-weight: 400;
+    color: #4D4D4D;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+.search-item-long {
+    padding-right: 82px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.search-item-icon {}
+
+.box-custom-3 {
+    width: 322px;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    margin-left: 60%;
+    margin-top: -3%;
+}
+
+.date-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    margin-top: -2%;
+}
+
+.date-box {
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    /* Center the input */
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: -2%;
+}
+
+
+.input-container {
+    position: relative;
+    width: 100%;
+}
+
+.small-box-1 {
+    margin-left: 3%;
+}
+
+#dateInput {
+    width: 150px;
+    /* Đảm bảo không gian cho biểu tượng */
+    padding-right: 40px;
+    /* Khoảng trống cho biểu tượng */
+    border: none;
+    /* Loại bỏ viền */
+    border-radius: 4px;
+    /* Bo tròn góc */
+
+    box-shadow: none;
+    /* Loại bỏ bóng đổ */
+    outline: none;
+    /* Loại bỏ viền khi focus */
+}
+#dateInput {
+    width: 150px;
+    /* Đảm bảo không gian cho biểu tượng */
+    padding-right: 40px;
+    /* Khoảng trống cho biểu tượng */
+    border: none;
+    /* Loại bỏ viền */
+    border-radius: 4px;
+    /* Bo tròn góc */
+
+    box-shadow: none;
+    /* Loại bỏ bóng đổ */
+    outline: none;
+    /* Loại bỏ viền khi focus */
+}
+#dateInput2 {
+    width: 150px;
+    /* Đảm bảo không gian cho biểu tượng */
+    padding-right: 40px;
+    /* Khoảng trống cho biểu tượng */
+    border: none;
+    /* Loại bỏ viền */
+    border-radius: 4px;
+    /* Bo tròn góc */
+
+    box-shadow: none;
+    /* Loại bỏ bóng đổ */
+    outline: none;
+    /* Loại bỏ viền khi focus */
+}
+#calendarIcon {
+    position: absolute;
+    left: 85%;
+    /* Đặt biểu tượng bên trong input */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #0054A6;
+    cursor: pointer;
+    /* Thay đổi con trỏ khi di chuột */
+}
+
+#calendarIcon2 {
+    position: absolute;
+    left: 85%;
+    /* Đặt biểu tượng bên trong input */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #0054A6;
+    cursor: pointer;
+    /* Thay đổi con trỏ khi di chuột */
+}
+
+/* CSS cho Bootstrap Datepicker */
+.datepicker-dropdown:before,
+.datepicker-dropdown.datepicker-orient-bottom:before,
+.datepicker-dropdown.datepicker-orient-left:before,
+.datepicker-dropdown:after {
+    display: none !important;
+}
+
+/* .datepicker {
+    position: absolute;
+    width: 322px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-left: 0.1%;
+      padding: 20px;
+       top: 100%;
+        
+    } */
+
+
+.datepicker {
+    width: 322px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    position: absolute;
+    /* Đảm bảo datepicker được đặt cố định */
+    top: 100%;
+    /* Đặt datepicker ngay bên dưới input */
+    left: 0;
+    z-index: 1;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.datepicker-days {
+    margin-top: -9%;
+    width: 100%;
+}
+
+.datepicker td {
+    text-align: center;
+    /* Căn giữa văn bản trong ô */
+}
+
+.datepicker table {
+    width: 100%;
+    /* Đảm bảo ngày trong bảng chiếm toàn bộ chiều rộng của datepicker */
+}
+
+.datepicker-days {
+    width: 100%;
+}
+
+.datepicker-months {
+    width: 100%;
+}
+
+.datepicker-years {
+    width: 100%;
+}
+
+.datepicker-days thead th:nth-child(1) {
+    /* Mo */
+    content: "Mo";
+}
+
+.datepicker-days thead th {
+    color: #0054A6;
+    /* Màu chữ */
+    font-family: Roboto;
+    font-weight: 700;
+
+}
+
+.datepicker-days thead th:nth-child(2) {
+    /* Tu */
+    content: "Tu";
+}
+
+.datepicker-days thead th:nth-child(3) {
+    /* We */
+    content: "We";
+}
+
+.datepicker-days thead th:nth-child(4) {
+    /* Th */
+    content: "Th";
+}
+
+.datepicker-days thead th:nth-child(5) {
+    /* Fr */
+    content: "Fr";
+}
+
+.datepicker-days thead th:nth-child(6) {
+    /* Sa */
+    content: "Sa";
+}
+
+.datepicker-days thead th:nth-child(7) {
+    /* Su */
+    content: "Su";
+}
+
+.datepicker .prev svg,
+.datepicker .next svg {
+    width: 24px;
+    height: 24px;
+    stroke: #8899a4;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: arcs;
+}
+
+.datepicker .prev svg path,
+.datepicker .next svg path {
+    fill: none;
+}
+
+.datepicker td.day {
+    color: #4D4D4D;
+    /* Màu chữ mặc định */
+}
+
+th.datepicker-switch {
+    padding: 20px;
+}
+
+.datepicker-days thead th.dow {
+
+    position: relative;
+    /* Để đường viền được căn chỉnh chính xác */
+    border-top: 2px solid #4D4D4D;
+    /* Đường viền trên với màu sắc mong muốn */
+    padding-top: 20px;
+}
+
+.datepicker-days thead th {
+    color: #0054A6;
+    /* Màu chữ */
+    font-family: Roboto;
+    font-weight: 700;
+}
+
+.datepicker table tr td.today {
+    background-color: #0054A6;
+    /* Màu nền cho ngày hiện tại */
+    color: white;
+    /* Màu chữ cho ngày hiện tại */
+    border-color: #0054A6;
+    /* Đường viền của ô ngày hiện tại */
+}
+
+.datepicker table tr td.today,
+.datepicker table tr td.today.disabled,
+.datepicker table tr td.today.disabled:hover,
+.datepicker table tr td.today:hover {
+    background-image: none;
+    /* Loại bỏ gradient */
+    filter: none;
+    /* Loại bỏ bộ lọc gradient cũ */
+    border-color: none;
+    /* Loại bỏ đường viền cũ */
+    color: none;
+    /* Đặt màu chữ mặc định nếu cần */
+}
+
+.datepicker td.day:hover {
+    background-color: #ccc;
+    /* Màu nền khi hover */
+    color: #0054A6;
+    /* Màu chữ khi hover */
+}

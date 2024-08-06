@@ -43,8 +43,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js">
     </script>
     <script src="{{ asset('public/js/style.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            $('.item-box').on('click', function() {
+                // Toggle 'item-box-active' class on the clicked item
+                $(this).toggleClass('item-box-active');
 
-
+                console.log('Item clicked and background color changed.');
+            });
+        });
+    </script>
 </body>
 
 </html>

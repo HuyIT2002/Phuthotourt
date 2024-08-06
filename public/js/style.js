@@ -31,16 +31,41 @@ $(window).on("load", function () {
 
 
     
- $(document).ready(function() {
-    // Mặc định đặt lớp 'active' vào mục 'nav-home'
-    $('#nav-home').addClass('active');
+$(document).ready(function() {
+    var currentUrl = window.location.href;
+
+    // Xử lý lớp 'active' dựa trên URL hiện tại
+    $('.nav-item').each(function() {
+        var link = $(this).find('a').attr('href');
+        
+        // Nếu URL hiện tại chứa liên kết của phần tử
+        if (currentUrl === link || currentUrl.includes(link)) {
+            $(this).addClass('active');
+        } else {
+            $(this).removeClass('active');
+        }
+    });
+
+    // Đặt lớp 'active' cho nav-home nếu URL chính là trang chủ
+    if (currentUrl === 'http://localhost/PHU_THO_TOURIST/') {
+        $('#nav-home').addClass('active');
+    }
 
     // Xử lý sự kiện click để thêm lớp 'active' vào mục được nhấp
     $('.nav-item').click(function() {
-        $('.nav-item').removeClass("active"); // Xóa lớp 'active' từ tất cả các mục
-        $(this).addClass("active"); // Thêm lớp 'active' vào mục được nhấp
+        // Xóa lớp 'active' từ tất cả các mục
+        $('.nav-item').removeClass('active');
+        
+        // Thêm lớp 'active' vào mục được nhấp
+        $(this).addClass('active');
     });
 });
+
+
+
+
+
+
 
 
 const initialImgSources = [];
@@ -288,68 +313,99 @@ $(document).ready(function() {
     );
 });
     
+// $(document).ready(function() {
+//     var $searchText = $('.search-text');
+//     var $recentSearchContainer = $('.recent-search-container');
+
+//     // Hiển thị khi có văn bản nhập vào
+//     $searchText.on('input', function() {
+//         if ($(this).val().trim() !== '') {
+//             $recentSearchContainer.show();
+//         } else {
+//             if (!$searchText.is(':focus')) {
+//                 $recentSearchContainer.hide();
+//             }
+//         }
+//     });
+
+//     // Hiển thị khi nhấp vào ô tìm kiếm
+//     $searchText.on('focus', function() {
+//         $recentSearchContainer.show();
+//     });
+
+//     // Ẩn khi nhấp ra ngoài ô tìm kiếm hoặc danh sách tìm kiếm gần đây
+//     $(document).on('click', function(event) {
+//         if (!$(event.target).closest('.search-text, .recent-search-container').length) {
+//             $recentSearchContainer.hide();
+//         }
+//     });
+// })
+    
 $(document).ready(function() {
     var $searchText = $('.search-text');
     var $recentSearchContainer = $('.recent-search-container');
+    var $recentSearchContainer2 = $('.recent-search-container-2');
 
     // Hiển thị khi có văn bản nhập vào
     $searchText.on('input', function() {
         if ($(this).val().trim() !== '') {
-            $recentSearchContainer.show();
+            $recentSearchContainer.hide(); // Ẩn recent-search-container
+            $recentSearchContainer2.show(); // Hiển thị recent-search-container-2
         } else {
             if (!$searchText.is(':focus')) {
                 $recentSearchContainer.hide();
+                $recentSearchContainer2.hide(); // Ẩn recent-search-container-2
             }
         }
     });
 
     // Hiển thị khi nhấp vào ô tìm kiếm
     $searchText.on('focus', function() {
-        $recentSearchContainer.show();
+        if ($(this).val().trim() === '') {
+            $recentSearchContainer.show(); // Hiển thị recent-search-container nếu không có văn bản
+            $recentSearchContainer2.hide(); // Ẩn recent-search-container-2 nếu không có văn bản
+        }
     });
 
     // Ẩn khi nhấp ra ngoài ô tìm kiếm hoặc danh sách tìm kiếm gần đây
     $(document).on('click', function(event) {
-        if (!$(event.target).closest('.search-text, .recent-search-container').length) {
+        if (!$(event.target).closest('.search-text, .recent-search-container, .recent-search-container-2').length) {
             $recentSearchContainer.hide();
+            $recentSearchContainer2.hide(); // Ẩn cả hai phần tử khi nhấp ra ngoài
         }
     });
 });
-
 $(document).ready(function() {
     var $searchText = $('.search-text');
-    var $recentSearchList = $('.recent-search-list');
+    var $hiddenIcon = $('.hidden-icon');
 
-    // Hiển thị danh sách khi có văn bản nhập vào
+    // Hiển thị khi có văn bản nhập vào
     $searchText.on('input', function() {
         if ($(this).val().trim() !== '') {
-            $recentSearchList.show();
+            $hiddenIcon.show(); // Hiển thị .hidden-icon khi có văn bản
         } else {
-            if (!$searchText.is(':focus')) {
-                $recentSearchList.hide();
-            }
+            $hiddenIcon.hide(); // Ẩn .hidden-icon khi không có văn bản
         }
     });
 
-    // Hiển thị danh sách khi nhấp vào ô tìm kiếm
-    $searchText.on('focus', function() {
-        if ($searchText.val().trim() !== '') {
-            $recentSearchList.show();
-        }
-    });
-
-    // Ẩn danh sách khi nhấp ra ngoài ô tìm kiếm hoặc danh sách tìm kiếm gần đây
+    // Ẩn khi nhấp ra ngoài ô tìm kiếm hoặc phần tử .hidden-icon
     $(document).on('click', function(event) {
-        if (!$(event.target).closest('.search-text, .recent-search-list').length) {
-            $recentSearchList.hide();
+        if (!$(event.target).closest('.search-text, .hidden-icon').length) {
+            $hiddenIcon.hide(); // Ẩn .hidden-icon khi nhấp ra ngoài
         }
-    });
-
-    // Ngăn việc ẩn danh sách khi nhấp vào chính nó
-    $recentSearchList.on('click', function(event) {
-        event.stopPropagation();
     });
 });
+$(document).ready(function() {
+    var $searchText = $('.search-text');
+    var $clearInputButton = $('.clear-input');
+
+    // Xóa nội dung ô input khi click vào biểu tượng
+    $clearInputButton.on('click', function() {
+        $searchText.val(''); // Xóa nội dung ô input
+        $searchText.focus(); // Tùy chọn: Di chuyển con trỏ đến ô input
+    });
+});
+
 
 $(document).ready(function() {
     $('#dateInput').datepicker({
@@ -432,6 +488,27 @@ $(document).ready(function() {
         return day + '/' + month + '/' + year;
     }
 });
+
+    $(document).ready(function() {
+        let labels = ["A đến Z", "Mới nhất", "Cũ nhất"];
+        let currentIndex = 0;
+
+        $('#dropdownToggle').on('click', function(event) {
+            event.stopPropagation(); // Ngăn chặn sự kiện click tiếp tục tới các phần tử khác
+            currentIndex = (currentIndex + 1) % labels.length;
+            $('.icon-label-box-2').text(labels[currentIndex]);
+            console.log('Current label:', labels[currentIndex]); // Debugging statement
+            $('#dropdownMenu').toggleClass('show');
+        });
+
+        $(document).on('click', function(event) {
+            if (!$('#dropdownToggle').is(event.target) && $('#dropdownToggle').has(event.target)
+                .length === 0) {
+                $('#dropdownMenu').removeClass('show');
+                console.log('Dropdown hidden'); // Debugging statement
+            }
+        });
+    });
 
 
 });

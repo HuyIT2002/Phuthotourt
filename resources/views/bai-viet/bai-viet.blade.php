@@ -423,8 +423,8 @@
         </div>
         <div class="container-custom-8">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="row" id="content-container">
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 custom-margin">
                         <div class="custom-container-8">
                             <div class="image-wrapper-8">
                                 <img src="{{ asset('/public/images/bai-viet/bai-viet-1.png') }}" />
@@ -459,9 +459,465 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Repeat the above col-lg-3 div for other items -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 custom-margin">
+                        <div class="custom-container-8">
+                            <div class="image-wrapper-8">
+                                <img src="{{ asset('/public/images/bai-viet/bai-viet-1.png') }}" />
+                                <div class="overlay">Click để xem</div>
+                            </div>
+                            <div class="info-wrapper-8">
+                                <div class="admin-info-wrapper">
+                                    <div class="admin-text">Admin</div>
+                                    <div class="admin-dot"></div>
+                                </div>
+                                <div class="title-text-8">Thông báo: đấu giá giữ xe tại CVHH Đầm Sen</div>
+                                <div class="tags-wrapper">
+                                    <div class="tag-item">
+                                        <div class="tag-text">Sự kiện</div>
+                                    </div>
+                                    <div class="tag-item">
+                                        <div class="tag-text">Thông báo</div>
+                                    </div>
+                                    <div class="tag-item">
+                                        <div class="tag-text">Tin tức</div>
+                                    </div>
+                                </div>
+                                <div class="stats-wrapper">
+                                    <div class="stats-item">
+                                        <div class="stats-text">10N lượt xem</div>
+                                    </div>
+                                    <div class="stats-dot"></div>
+                                    <div class="stats-item">
+                                        <div class="stats-text">20/02/2022</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 custom-margin">
+                        <div class="custom-container-8">
+                            <div class="image-wrapper-8">
+                                <img src="{{ asset('/public/images/bai-viet/bai-viet-1.png') }}" />
+                                <div class="overlay">Click để xem</div>
+                            </div>
+                            <div class="info-wrapper-8">
+                                <div class="admin-info-wrapper">
+                                    <div class="admin-text">Admin</div>
+                                    <div class="admin-dot"></div>
+                                </div>
+                                <div class="title-text-8">Thông báo: đấu giá giữ xe tại CVHH Đầm Sen</div>
+                                <div class="tags-wrapper">
+                                    <div class="tag-item">
+                                        <div class="tag-text">Sự kiện</div>
+                                    </div>
+                                    <div class="tag-item">
+                                        <div class="tag-text">Thông báo</div>
+                                    </div>
+                                    <div class="tag-item">
+                                        <div class="tag-text">Tin tức</div>
+                                    </div>
+                                </div>
+                                <div class="stats-wrapper">
+                                    <div class="stats-item">
+                                        <div class="stats-text">10N lượt xem</div>
+                                    </div>
+                                    <div class="stats-dot"></div>
+                                    <div class="stats-item">
+                                        <div class="stats-text">20/02/2022</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 custom-margin">
+                        <div class="custom-container-8">
+                            <div class="image-wrapper-8">
+                                <img src="{{ asset('/public/images/bai-viet/bai-viet-1.png') }}" />
+                                <div class="overlay">Click để xem</div>
+                            </div>
+                            <div class="info-wrapper-8">
+                                <div class="admin-info-wrapper">
+                                    <div class="admin-text">Admin</div>
+                                    <div class="admin-dot"></div>
+                                </div>
+                                <div class="title-text-8">Thông báo: đấu giá giữ xe tại CVHH Đầm Sen</div>
+                                <div class="tags-wrapper">
+                                    <div class="tag-item">
+                                        <div class="tag-text">Sự kiện</div>
+                                    </div>
+                                    <div class="tag-item">
+                                        <div class="tag-text">Thông báo</div>
+                                    </div>
+                                    <div class="tag-item">
+                                        <div class="tag-text">Tin tức</div>
+                                    </div>
+                                </div>
+                                <div class="stats-wrapper">
+                                    <div class="stats-item">
+                                        <div class="stats-text">10N lượt xem</div>
+                                    </div>
+                                    <div class="stats-dot"></div>
+                                    <div class="stats-item">
+                                        <div class="stats-text">20/02/2022</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 custom-margin">
+                        <div class="custom-container-8">
+                            <div class="image-wrapper-8">
+                                <img src="{{ asset('/public/images/bai-viet/bai-viet-1.png') }}" />
+                                <div class="overlay">Click để xem</div>
+                            </div>
+                            <div class="info-wrapper-8">
+                                <div class="admin-info-wrapper">
+                                    <div class="admin-text">Admin</div>
+                                    <div class="admin-dot"></div>
+                                </div>
+                                <div class="title-text-8">Thông báo: đấu giá giữ xe tại CVHH Đầm Sen</div>
+                                <div class="tags-wrapper">
+                                    <div class="tag-item">
+                                        <div class="tag-text">Sự kiện</div>
+                                    </div>
+                                    <div class="tag-item">
+                                        <div class="tag-text">Thông báo</div>
+                                    </div>
+                                    <div class="tag-item">
+                                        <div class="tag-text">Tin tức</div>
+                                    </div>
+                                </div>
+                                <div class="stats-wrapper">
+                                    <div class="stats-item">
+                                        <div class="stats-text">10N lượt xem</div>
+                                    </div>
+                                    <div class="stats-dot"></div>
+                                    <div class="stats-item">
+                                        <div class="stats-text">20/02/2022</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 custom-margin">
+                        <div class="custom-container-8">
+                            <div class="image-wrapper-8">
+                                <img src="{{ asset('/public/images/bai-viet/bai-viet-1.png') }}" />
+                                <div class="overlay">Click để xem</div>
+                            </div>
+                            <div class="info-wrapper-8">
+                                <div class="admin-info-wrapper">
+                                    <div class="admin-text">Admin</div>
+                                    <div class="admin-dot"></div>
+                                </div>
+                                <div class="title-text-8">Thông báo: đấu giá giữ xe tại CVHH Đầm Sen</div>
+                                <div class="tags-wrapper">
+                                    <div class="tag-item">
+                                        <div class="tag-text">Sự kiện</div>
+                                    </div>
+                                    <div class="tag-item">
+                                        <div class="tag-text">Thông báo</div>
+                                    </div>
+                                    <div class="tag-item">
+                                        <div class="tag-text">Tin tức</div>
+                                    </div>
+                                </div>
+                                <div class="stats-wrapper">
+                                    <div class="stats-item">
+                                        <div class="stats-text">10N lượt xem</div>
+                                    </div>
+                                    <div class="stats-dot"></div>
+                                    <div class="stats-item">
+                                        <div class="stats-text">20/02/2022</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 custom-margin">
+                        <div class="custom-container-8">
+                            <div class="image-wrapper-8">
+                                <img src="{{ asset('/public/images/bai-viet/bai-viet-1.png') }}" />
+                                <div class="overlay">Click để xem</div>
+                            </div>
+                            <div class="info-wrapper-8">
+                                <div class="admin-info-wrapper">
+                                    <div class="admin-text">Admin</div>
+                                    <div class="admin-dot"></div>
+                                </div>
+                                <div class="title-text-8">Thông báo: đấu giá giữ xe tại CVHH Đầm Sen</div>
+                                <div class="tags-wrapper">
+                                    <div class="tag-item">
+                                        <div class="tag-text">Sự kiện</div>
+                                    </div>
+                                    <div class="tag-item">
+                                        <div class="tag-text">Thông báo</div>
+                                    </div>
+                                    <div class="tag-item">
+                                        <div class="tag-text">Tin tức</div>
+                                    </div>
+                                </div>
+                                <div class="stats-wrapper">
+                                    <div class="stats-item">
+                                        <div class="stats-text">10N lượt xem</div>
+                                    </div>
+                                    <div class="stats-dot"></div>
+                                    <div class="stats-item">
+                                        <div class="stats-text">20/02/2022</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 custom-margin">
+                        <div class="custom-container-8">
+                            <div class="image-wrapper-8">
+                                <img src="{{ asset('/public/images/bai-viet/bai-viet-1.png') }}" />
+                                <div class="overlay">Click để xem</div>
+                            </div>
+                            <div class="info-wrapper-8">
+                                <div class="admin-info-wrapper">
+                                    <div class="admin-text">Admin</div>
+                                    <div class="admin-dot"></div>
+                                </div>
+                                <div class="title-text-8">Thông báo: đấu giá giữ xe tại CVHH Đầm Sen</div>
+                                <div class="tags-wrapper">
+                                    <div class="tag-item">
+                                        <div class="tag-text">Sự kiện</div>
+                                    </div>
+                                    <div class="tag-item">
+                                        <div class="tag-text">Thông báo</div>
+                                    </div>
+                                    <div class="tag-item">
+                                        <div class="tag-text">Tin tức</div>
+                                    </div>
+                                </div>
+                                <div class="stats-wrapper">
+                                    <div class="stats-item">
+                                        <div class="stats-text">10N lượt xem</div>
+                                    </div>
+                                    <div class="stats-dot"></div>
+                                    <div class="stats-item">
+                                        <div class="stats-text">20/02/2022</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 custom-margin">
+                        <div class="custom-container-8">
+                            <div class="image-wrapper-8">
+                                <img src="{{ asset('/public/images/bai-viet/bai-viet-1.png') }}" />
+                                <div class="overlay">Click để xem</div>
+                            </div>
+                            <div class="info-wrapper-8">
+                                <div class="admin-info-wrapper">
+                                    <div class="admin-text">Admin</div>
+                                    <div class="admin-dot"></div>
+                                </div>
+                                <div class="title-text-8">Thông báo: đấu giá giữ xe tại CVHH Đầm Sen</div>
+                                <div class="tags-wrapper">
+                                    <div class="tag-item">
+                                        <div class="tag-text">Sự kiện</div>
+                                    </div>
+                                    <div class="tag-item">
+                                        <div class="tag-text">Thông báo</div>
+                                    </div>
+                                    <div class="tag-item">
+                                        <div class="tag-text">Tin tức</div>
+                                    </div>
+                                </div>
+                                <div class="stats-wrapper">
+                                    <div class="stats-item">
+                                        <div class="stats-text">10N lượt xem</div>
+                                    </div>
+                                    <div class="stats-dot"></div>
+                                    <div class="stats-item">
+                                        <div class="stats-text">20/02/2022</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 custom-margin">
+                        <div class="custom-container-8">
+                            <div class="image-wrapper-8">
+                                <img src="{{ asset('/public/images/bai-viet/bai-viet-1.png') }}" />
+                                <div class="overlay">Click để xem</div>
+                            </div>
+                            <div class="info-wrapper-8">
+                                <div class="admin-info-wrapper">
+                                    <div class="admin-text">Admin</div>
+                                    <div class="admin-dot"></div>
+                                </div>
+                                <div class="title-text-8">Thông báo: đấu giá giữ xe tại CVHH Đầm Sen</div>
+                                <div class="tags-wrapper">
+                                    <div class="tag-item">
+                                        <div class="tag-text">Sự kiện</div>
+                                    </div>
+                                    <div class="tag-item">
+                                        <div class="tag-text">Thông báo</div>
+                                    </div>
+                                    <div class="tag-item">
+                                        <div class="tag-text">Tin tức</div>
+                                    </div>
+                                </div>
+                                <div class="stats-wrapper">
+                                    <div class="stats-item">
+                                        <div class="stats-text">10N lượt xem</div>
+                                    </div>
+                                    <div class="stats-dot"></div>
+                                    <div class="stats-item">
+                                        <div class="stats-text">20/02/2022</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 custom-margin">
+                        <div class="custom-container-8">
+                            <div class="image-wrapper-8">
+                                <img src="{{ asset('/public/images/bai-viet/bai-viet-1.png') }}" />
+                                <div class="overlay">Click để xem</div>
+                            </div>
+                            <div class="info-wrapper-8">
+                                <div class="admin-info-wrapper">
+                                    <div class="admin-text">Admin</div>
+                                    <div class="admin-dot"></div>
+                                </div>
+                                <div class="title-text-8">Thông báo: đấu giá giữ xe tại CVHH Đầm Sen</div>
+                                <div class="tags-wrapper">
+                                    <div class="tag-item">
+                                        <div class="tag-text">Sự kiện</div>
+                                    </div>
+                                    <div class="tag-item">
+                                        <div class="tag-text">Thông báo</div>
+                                    </div>
+                                    <div class="tag-item">
+                                        <div class="tag-text">Tin tức</div>
+                                    </div>
+                                </div>
+                                <div class="stats-wrapper">
+                                    <div class="stats-item">
+                                        <div class="stats-text">10N lượt xem</div>
+                                    </div>
+                                    <div class="stats-dot"></div>
+                                    <div class="stats-item">
+                                        <div class="stats-text">20/02/2022</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 custom-margin">
+                        <div class="custom-container-8">
+                            <div class="image-wrapper-8">
+                                <img src="{{ asset('/public/images/bai-viet/bai-viet-1.png') }}" />
+                                <div class="overlay">Click để xem</div>
+                            </div>
+                            <div class="info-wrapper-8">
+                                <div class="admin-info-wrapper">
+                                    <div class="admin-text">Admin</div>
+                                    <div class="admin-dot"></div>
+                                </div>
+                                <div class="title-text-8">Thông báo: đấu giá giữ xe tại CVHH Đầm Sen</div>
+                                <div class="tags-wrapper">
+                                    <div class="tag-item">
+                                        <div class="tag-text">Sự kiện</div>
+                                    </div>
+                                    <div class="tag-item">
+                                        <div class="tag-text">Thông báo</div>
+                                    </div>
+                                    <div class="tag-item">
+                                        <div class="tag-text">Tin tức</div>
+                                    </div>
+                                </div>
+                                <div class="stats-wrapper">
+                                    <div class="stats-item">
+                                        <div class="stats-text">10N lượt xem</div>
+                                    </div>
+                                    <div class="stats-dot"></div>
+                                    <div class="stats-item">
+                                        <div class="stats-text">20/02/2022</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 custom-margin">
+                        <div class="custom-container-8">
+                            <div class="image-wrapper-8">
+                                <img src="{{ asset('/public/images/bai-viet/bai-viet-1.png') }}" />
+                                <div class="overlay">Click để xem</div>
+                            </div>
+                            <div class="info-wrapper-8">
+                                <div class="admin-info-wrapper">
+                                    <div class="admin-text">Admin</div>
+                                    <div class="admin-dot"></div>
+                                </div>
+                                <div class="title-text-8">Thông báo: đấu giá giữ xe tại CVHH Đầm Sen</div>
+                                <div class="tags-wrapper">
+                                    <div class="tag-item">
+                                        <div class="tag-text">Sự kiện</div>
+                                    </div>
+                                    <div class="tag-item">
+                                        <div class="tag-text">Thông báo</div>
+                                    </div>
+                                    <div class="tag-item">
+                                        <div class="tag-text">Tin tức</div>
+                                    </div>
+                                </div>
+                                <div class="stats-wrapper">
+                                    <div class="stats-item">
+                                        <div class="stats-text">10N lượt xem</div>
+                                    </div>
+                                    <div class="stats-dot"></div>
+                                    <div class="stats-item">
+                                        <div class="stats-text">20/02/2022</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <div class="parent-container" id="pagination-container">
+                <div class="pagination-container">
+                    <div class="arrow left-arrow"><svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_272_64607)">
+                                <path d="M19.5 21L13.5 16L19.5 11" fill="#A3A3A3" />
+                                <path d="M19.5 21L13.5 16L19.5 11L19.5 21Z" stroke="#A3A3A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_272_64607">
+                                    <rect width="20" height="20" fill="white" transform="translate(6.5 6)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+
+                    </div>
+                    <div class="pagination-items">
+                        <div class="page-number active">
+                            <div class="page-text">1</div>
+                        </div>
+                    </div>
+                    <div class="arrow right-arrow">
+                        <svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_272_64614)">
+                                <path d="M13.5 21L19.5 16L13.5 11" fill="#4D4D4D" />
+                                <path d="M13.5 21L19.5 16L13.5 11L13.5 21Z" stroke="#4D4D4D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_272_64614">
+                                    <rect width="20" height="20" fill="white" transform="translate(6.5 6)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
     @include('footer')

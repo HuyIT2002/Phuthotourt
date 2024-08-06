@@ -52,6 +52,55 @@
                 console.log('Item clicked and background color changed.');
             });
         });
+
+        // document.addEventListener('DOMContentLoaded', function() {
+        //     const itemsPerPage = 12;
+        //     const contentContainer = document.getElementById('content-container');
+        //     const paginationContainer = document.querySelector('.pagination-items');
+
+        //     const items = Array.from(contentContainer.children);
+        //     const totalPages = Math.ceil(items.length / itemsPerPage);
+
+        //     function showPage(pageNumber) {
+        //         // Ẩn tất cả các phần tử
+        //         items.forEach((item, index) => {
+        //             item.style.display = (index >= (pageNumber - 1) * itemsPerPage && index < pageNumber *
+        //                 itemsPerPage) ? 'block' : 'none';
+        //         });
+
+        //         // Cập nhật trang hiện tại
+        //         const pageNumbers = paginationContainer.children;
+        //         Array.from(pageNumbers).forEach((pageNumDiv) => {
+        //             pageNumDiv.classList.toggle('active', parseInt(pageNumDiv.textContent) === pageNumber);
+        //         });
+        //     }
+
+        //     function createPagination() {
+        //         paginationContainer.innerHTML = '';
+        //         for (let i = 1; i <= totalPages; i++) {
+        //             const pageNumDiv = document.createElement('div');
+        //             pageNumDiv.className = 'page-number';
+        //             pageNumDiv.textContent = i;
+        //             pageNumDiv.addEventListener('click', () => showPage(i));
+        //             paginationContainer.appendChild(pageNumDiv);
+        //         }
+        //     }
+
+        //     document.querySelector('.arrow.left-arrow').addEventListener('click', function() {
+        //         const activePage = Array.from(paginationContainer.children).findIndex(el => el.classList
+        //             .contains('active')) + 1;
+        //         if (activePage > 1) showPage(activePage - 1);
+        //     });
+
+        //     document.querySelector('.arrow.right-arrow').addEventListener('click', function() {
+        //         const activePage = Array.from(paginationContainer.children).findIndex(el => el.classList
+        //             .contains('active')) + 1;
+        //         if (activePage < totalPages) showPage(activePage + 1);
+        //     });
+
+        //     createPagination();
+        //     showPage(1); // Hiển thị trang đầu tiên khi tải trang
+        // });
     </script>
 </body>
 

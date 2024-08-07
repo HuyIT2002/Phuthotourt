@@ -562,5 +562,63 @@ $(document).ready(function() {
     showPage(1); // Hiển thị trang đầu tiên khi tải trang
 });
 
+  $(document).ready(function() {
+            const itemsPerPage = 10; // Số hàng mỗi trang
+            const $tableBody = $('#table-body');
+            const $paginationContainer = $('.pagination-items-1');
 
+            const $rows = $tableBody.find('tr');
+            const totalPages = Math.ceil($rows.length / itemsPerPage);
+
+            function showPage(pageNumber) {
+                // Ẩn tất cả các hàng
+                $rows.each(function(index) {
+                    $(this).toggle(index >= (pageNumber - 1) * itemsPerPage && index < pageNumber *
+                        itemsPerPage);
+                });
+
+                // Cập nhật trang hiện tại
+                $paginationContainer.children().each(function() {
+                    $(this).toggleClass('active', parseInt($(this).text()) === pageNumber);
+                });
+            }
+
+            function createPagination() {
+                $paginationContainer.empty();
+                for (let i = 1; i <= totalPages; i++) {
+                    // Tạo phần tử page-number
+                    const $pageNumDiv = $('<div></div>').addClass('page-number-1');
+
+                    // Tạo phần tử page-text và thêm vào page-number
+                    const $pageTextDiv = $('<div></div>').addClass('page-text-1').text(i);
+                    $pageNumDiv.append($pageTextDiv);
+
+                    // Thêm sự kiện click cho page-number
+                    $pageNumDiv.on('click', () => showPage(i));
+
+                    // Thêm page-number vào pagination-container
+                    $paginationContainer.append($pageNumDiv);
+                }
+            }
+
+            $('.arrow.left-arrow').on('click', function() {
+                const activePage = $paginationContainer.children().filter('.active').text();
+                const pageNumber = parseInt(activePage);
+                if (pageNumber > 1) {
+                    showPage(pageNumber - 1);
+                }
+            });
+
+            $('.arrow.right-arrow').on('click', function() {
+                const activePage = $paginationContainer.children().filter('.active').text();
+                const pageNumber = parseInt(activePage);
+                if (pageNumber < totalPages) {
+                    showPage(pageNumber + 1);
+                }
+            });
+
+            // Khởi tạo phân trang và hiển thị trang đầu tiên
+            createPagination();
+            showPage(1); // Hiển thị trang đầu tiên khi tải trang
+        });
 });

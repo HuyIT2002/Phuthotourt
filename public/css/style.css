@@ -60,7 +60,12 @@ body {
     height: auto;
     box-sizing: border-box;
 }
-
+.container-3 {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    margin-top: -18%;
+}
 .content-a {
     width: 100%;
     height: 690px;
@@ -346,11 +351,28 @@ body {
     box-sizing: border-box;
     /* Bao gồm padding và border trong chiều rộng và chiều cao */
 }
+.custom-container-docs {
+    margin-top: -33%;
+    /* Khoảng cách từ phần tử phía trên */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* Đảm bảo chiếm toàn bộ chiều rộng */
+    box-sizing: border-box;
+    /* Bao gồm padding và border trong chiều rộng và chiều cao */
+}
 
 .custom-box {
     cursor: pointer;
     /* Thay đổi con trỏ khi di chuyển chuột qua */
 }
+.custom-box-2 {
+    cursor: pointer;
+    margin-right: 255%;
+    /* Thay đổi con trỏ khi di chuyển chuột qua */
+}
+
 
 svg {
     pointer-events: auto;
@@ -2140,4 +2162,382 @@ th.datepicker-switch {
 .page-number.active .page-text {
     color: white;
     font-weight: 700;
+}
+
+
+/*tài liệu*/
+.content-section-3 {
+    display: flex;
+    /* Sử dụng Flexbox để sắp xếp các phần tử con theo hàng */
+    width: 1920px;
+    height: 1975px;
+    /* Đảm bảo phần tử chiếm toàn bộ chiều ngang của phần tử chứa */
+    margin-top: -25%;
+    /* Điều chỉnh khoảng cách phía trên nếu cần */
+    gap: 24px;
+    /* Giảm khoảng cách giữa các phần tử con */
+    position: relative;
+    z-index: 1;
+}
+.header-section-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3%;
+  margin-left: 570px;
+
+}
+.container-custom-9 {
+    width: auto;
+    height: auto;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+
+.custom-row {
+    width: 774px;
+    display: flex;
+    flex-wrap: wrap;
+     justify-content: space-between;
+    gap: 20px; /* Khoảng cách giữa các phần tử trong hàng */
+}
+
+.custom-item {
+        width: 177px;
+    height: 261px;
+     box-sizing: border-box;
+      cursor: pointer;
+         position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out;
+
+}
+
+.item-content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: inline-flex;
+     transition: transform 0.3s ease-in-out;
+}
+
+.item-header {
+    width: 177.55px;
+    height: 261px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%);
+}
+
+
+
+.item-img {
+    width: 100%;
+    height: 100%;
+      object-fit: cover;
+background: linear-gradient(0deg, rgba(0, 0, 0, 0.20)0%, rgba(0, 0, 0, 0.20)100%);
+ transition: transform 0.3s ease-in-out;
+}
+.item-content:hover {
+    transform: scale(1.1);
+}
+
+.image-text-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5); /* Tạo nền tối để nổi bật chữ */
+    border-radius: 12px; /* Bo tròn 4 góc */
+}
+
+.text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    font-family: Roboto;
+    font-weight: 700;
+    margin-top: 30%;
+}
+.text-tai-lieu {
+    word-wrap: break-word;
+}
+.svg-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  margin-top: -25%;
+}
+
+.hover-text {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 14px;
+    font-family: Roboto;
+    font-weight: 700;
+    opacity: 0;
+      white-space: nowrap;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.custom-item:hover .hover-text {
+    opacity: 1;
+}
+.header-section-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.container-custom-10{
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Nền màu trắng với độ mờ 80% */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Đổ bóng */
+    position: absolute;
+    /* Để sử dụng left và top */
+    border-radius: 10px;
+}
+
+.container-custom-10 {
+    width: 1234px;
+    height: 807px;
+    top: 40%;
+    margin-right: 100%;
+}
+
+.custom-docs {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 48px;
+    margin-left: 54px;
+}
+.custom-docs-1 {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: -6%;
+    margin-left: 70%;
+}
+.box-docs {
+    width: 314px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+margin-left: -1%;
+}
+.box-docs-1 {
+    width: 314px;
+    height: 40px;
+
+}
+.custom-title-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.custom-title {
+    color: #0054A6;
+    font-size: 18px;
+    font-family: Roboto;
+    font-weight: 600;
+    word-wrap: break-word;
+}
+
+
+.container-table {
+    width: 1126px;
+    height: 564px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 54px;
+    margin-top: 14px;
+}
+
+.table-header {
+    font-size: 18px; /* Kích thước chữ */
+    font-family: Roboto; 
+    font-weight: 700; /* Đậm chữ */
+    word-wrap: break-word; /* Ngắt từ để không vượt quá */
+}
+
+.table-header th {
+    color: white; /* Màu chữ */
+     background-color: #0054A6; /* Màu nền */
+}
+      .stt-header {
+        
+            border-top-left-radius: 8px; /* Bo tròn góc trên bên trái */
+            border-bottom-left-radius: 8px; /* Bo tròn góc dưới bên trái */
+        }
+
+        .download-header {
+            border-top-right-radius: 8px; /* Bo tròn góc trên bên phải */
+            border-bottom-right-radius: 8px; /* Bo tròn góc dưới bên phải */
+        }
+        th.table-item.stt-header.background-light {
+   background: #E6EEF7
+}
+        td.table-item.background-light {
+    background: #E6EEF7
+}
+  table {
+            border-spacing: 0 4px;
+            width: 100%;
+            border-collapse: separate;
+        }
+
+        .parent-container-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   margin-top: 3%;
+    margin-left: 81%;
+    cursor: pointer;
+}
+.pagination-container-1 {
+    width: auto;
+    height: auto;
+    padding: 8px 4px;
+    border-radius: 99px;
+    backdrop-filter: blur(15px);
+    justify-content: flex-start;
+    align-items: center;
+    gap: 32px;
+    display: inline-flex;
+}
+.pagination-items-1 {
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    display: flex;
+}
+
+.page-number-1 {
+    width: 32px;
+    height: 32px;
+    border-radius: 2px;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    cursor: pointer;
+}
+
+.page-number-1.active {
+    background: #0054A6;
+    border-radius: 4px;
+        color: white;
+}
+
+.page-text-1 {
+    text-align: center;
+    font-size: 16px;
+    font-family: Roboto;
+    font-weight: 500;
+    color: #4D4D4D;
+    word-wrap: break-word;
+}
+
+
+.page-number-1.active .page-text-1 {
+    color: white;
+    font-weight: 700;
+}
+.display-container {
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    display: inline-flex;
+    margin-top: -35.1%;
+    margin-left: 5%;
+}
+
+.display-text {
+    text-align: center;
+    color: #4D4D4D;
+    font-size: 16px;
+    font-family: Roboto;
+    font-weight: 400;
+    line-height: 21px;
+    word-wrap: break-word;
+}
+
+.number-table-box {
+    width: 36px;
+    height: 32px;
+    padding-left: 13px;
+    padding-right: 13px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px #0054A6 solid;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    display: flex;
+}
+
+.number-table-text {
+    text-align: center;
+    color: #0054A6;
+    font-size: 16px;
+    font-family: Open Sans;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.pagination-table {
+    text-align: center;
+    color: #4D4D4D;
+    font-size: 16px;
+    font-family: Roboto;
+    font-weight: 400;
+    line-height: 21px;
+    word-wrap: break-word;
 }

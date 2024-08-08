@@ -23,6 +23,10 @@ Route::get('/home', function () {
 Route::get('/bai-viet', function () {
     return view('bai-viet.bai-viet');
 })->name('bai-viet');
+Route::get('/chi-tiet-bai-viet', function () {
+    return view('bai-viet.chi-tiet-bai-viet');
+})->name('chi-tiet-bai-viet');
+
 Route::get('/tai-lieu', function () {
     return view('tai-lieu.tai-lieu');
 })->name('tai-lieu');

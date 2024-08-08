@@ -60,12 +60,14 @@ body {
     height: auto;
     box-sizing: border-box;
 }
+
 .container-3 {
     width: 100%;
     height: auto;
     box-sizing: border-box;
     margin-top: -18%;
 }
+
 .content-a {
     width: 100%;
     height: 690px;
@@ -351,6 +353,7 @@ body {
     box-sizing: border-box;
     /* Bao gồm padding và border trong chiều rộng và chiều cao */
 }
+
 .custom-container-docs {
     margin-top: -33%;
     /* Khoảng cách từ phần tử phía trên */
@@ -367,6 +370,7 @@ body {
     cursor: pointer;
     /* Thay đổi con trỏ khi di chuyển chuột qua */
 }
+
 .custom-box-2 {
     cursor: pointer;
     margin-right: 255%;
@@ -704,7 +708,7 @@ svg {
 
 /*box card*/
 .negative-margin-top {
-     margin-top: -47%;
+    margin-top: -47%;
 }
 
 .button-container {
@@ -1255,7 +1259,7 @@ svg {
 }
 
 .container-custom-6,
-.container-custom-7{
+.container-custom-7 {
     background-color: rgba(255, 255, 255, 0.8);
     /* Nền màu trắng với độ mờ 80% */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -1280,7 +1284,7 @@ svg {
 }
 
 .container-custom-8 {
-        position: absolute;
+    position: absolute;
     /* Để sử dụng left và top */
     border-radius: 10px;
     width: 1134px;
@@ -1301,9 +1305,9 @@ svg {
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
-     width: auto;
-            height: auto;
-                margin-top: -3%;
+    width: auto;
+    height: auto;
+    margin-top: -3%;
     margin-left: 87%;
 }
 
@@ -1363,9 +1367,9 @@ svg {
     display: flex;
     justify-content: center;
     align-items: center;
-     display: none;
-     cursor: pointer;
-     margin-top: -6%;
+    display: none;
+    cursor: pointer;
+    margin-top: -6%;
 }
 
 .small-inner-box {
@@ -1388,8 +1392,9 @@ svg {
     position: relative;
     z-index: 2;
     display: none;
-       cursor: pointer;
+    cursor: pointer;
 }
+
 .recent-search-container-2 {
     align-self: stretch;
     height: auto;
@@ -1405,8 +1410,9 @@ svg {
     position: relative;
     z-index: 2;
     display: none;
-       cursor: pointer;
+    cursor: pointer;
 }
+
 .recent-search-header {
     padding: 0 9px;
     display: inline-flex;
@@ -1432,9 +1438,11 @@ svg {
     align-items: flex-start;
     gap: 8px;
 }
+
 .search-item-text {
     margin-right: 42%;
 }
+
 .recent-search-item {
     align-self: stretch;
     padding: 8px;
@@ -1442,6 +1450,7 @@ svg {
     justify-content: space-between;
     align-items: center;
 }
+
 .recent-search-item-2 {
     align-self: stretch;
     padding: 8px;
@@ -1449,6 +1458,7 @@ svg {
     justify-content: space-between;
     align-items: center;
 }
+
 .search-text {
     border: none;
     outline: none;
@@ -1473,14 +1483,14 @@ svg {
 .search-item-icon {}
 
 .box-custom-3 {
-      width: 314px;
+    width: 314px;
     height: 40px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
-        margin-left: 55%;
-        margin-top: -2.4%;
+    margin-left: 55%;
+    margin-top: -2.4%;
 }
 
 .date-container {
@@ -1528,6 +1538,7 @@ svg {
     outline: none;
     /* Loại bỏ viền khi focus */
 }
+
 #dateInput {
     width: 150px;
     /* Đảm bảo không gian cho biểu tượng */
@@ -1543,6 +1554,7 @@ svg {
     outline: none;
     /* Loại bỏ viền khi focus */
 }
+
 #dateInput2 {
     width: 150px;
     /* Đảm bảo không gian cho biểu tượng */
@@ -1558,6 +1570,7 @@ svg {
     outline: none;
     /* Loại bỏ viền khi focus */
 }
+
 #calendarIcon {
     position: absolute;
     left: 85%;
@@ -1757,30 +1770,33 @@ th.datepicker-switch {
     /* Màu chữ khi hover */
 }
 
- .icon-text-box-2 {
-            display: flex;
-            align-items: center;
-             gap: 8px;
-              cursor: pointer;
-        }
-        .icon-container-box-2 {
-            width: 24px;
-            height: 24px;
-            position: relative;
-        }
-        .icon-box-2 {
-            position: absolute;
-            width: 24px;
-            height: 24px;
-        }
-        .icon-label-box-2 {
-            text-align: center;
-            color: #666666;
-            font-size: 18px;
-            font-family: Roboto, sans-serif;
-            font-weight: 600;
-            word-wrap: break-word;
-        }
+.icon-text-box-2 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.icon-container-box-2 {
+    width: 24px;
+    height: 24px;
+    position: relative;
+}
+
+.icon-box-2 {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+}
+
+.icon-label-box-2 {
+    text-align: center;
+    color: #666666;
+    font-size: 18px;
+    font-family: Roboto, sans-serif;
+    font-weight: 600;
+    word-wrap: break-word;
+}
 
 
 
@@ -1788,7 +1804,7 @@ th.datepicker-switch {
 
 
 
-        .box-container-2 {
+.box-container-2 {
     width: 100%;
     height: 100%;
     position: relative;
@@ -1838,18 +1854,23 @@ th.datepicker-switch {
 .item-box-blue {
     background: #0054A6;
 }
+
 .item-box.item-box-active {
-    background: #0054A6; 
+    background: #0054A6;
 }
+
 .item-box.item-box-active .icon path {
-    stroke: white; /* Màu stroke của SVG khi nhấn */
+    stroke: white;
+    /* Màu stroke của SVG khi nhấn */
     fill: white;
 }
 
 
 .item-box.item-box-active .label-light-blue {
-    color: white; /* Màu chữ khi nhấn */
+    color: white;
+    /* Màu chữ khi nhấn */
 }
+
 .icon-box-2 {
     width: 24px;
     height: 24px;
@@ -1903,174 +1924,203 @@ th.datepicker-switch {
     width: 441.68px;
     height: 93.26px;
     position: absolute;
-        right: 50px;
+    right: 50px;
     top: 80px;
 
 }
+
 .item-box-white:hover .label-light-blue {
-    color: #0054A6; /* Màu chữ khi hover */
+    color: #0054A6;
+    /* Màu chữ khi hover */
 }
+
 .item-box.item-box-active:hover .label-light-blue {
-    color: white; /* Đảm bảo màu chữ không thay đổi khi hover nếu phần tử đã được kích hoạt */
+    color: white;
+    /* Đảm bảo màu chữ không thay đổi khi hover nếu phần tử đã được kích hoạt */
 }
 
 /* Loại bỏ hiệu ứng hover cho SVG khi phần tử đã được kích hoạt */
 .item-box.item-box-active:hover .icon path {
-    fill: white; /* Màu fill của SVG khi phần tử đã được kích hoạt */
+    fill: white;
+    /* Màu fill của SVG khi phần tử đã được kích hoạt */
 }
 
 
- .custom-container-8 {
-            width: 265px; 
-            height: 292px; 
-            padding-bottom: 10px; 
-            background: white; 
-            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15); 
-            border-radius: 8px; 
-            overflow: hidden; 
-            display: flex;
-            flex-direction: column; 
-            justify-content: flex-start; 
-            align-items: center; 
-            gap: 12px;
-                    margin-left: -6%;
+.custom-container-8 {
+    width: 265px;
+    height: 292px;
+    padding-bottom: 10px;
+    background: white;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+    margin-left: -6%;
     margin-top: -23%;
-     cursor: pointer;
-        }
-        .image-wrapper-8 {
-            width: 265px; 
-            height: 146px; 
-            justify-content: center; 
-            align-items: center; 
-            display: flex;
-             position: relative; /* Relative positioning for overlay */
-            overflow: hidden; /* Ensure child elements don't overflow */
-        }
+    cursor: pointer;
+}
 
-        .image-wrapper-8 img {
-            width: 265px; 
-            height: 146px;
-            transition: transform 0.3s ease; /* Smooth transition for scaling */
-        }
+.image-wrapper-8 {
+    width: 265px;
+    height: 146px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: relative;
+    /* Relative positioning for overlay */
+    overflow: hidden;
+    /* Ensure child elements don't overflow */
+}
 
-     .custom-container-8:hover .image-wrapper-8 img {
-            transform: scale(1.1); /* Zoom in on hover */
-        }
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-            color: white;
-            font-size: 16px;
-            font-family: Roboto;
-            font-weight: 700;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s ease; /* Smooth transition for visibility */
-        }
+.image-wrapper-8 img {
+    width: 265px;
+    height: 146px;
+    transition: transform 0.3s ease;
+    /* Smooth transition for scaling */
+}
 
-        .image-wrapper-8:hover .overlay {
-            opacity: 1; /* Show overlay on hover */
-        }
- .custom-container-8:hover .overlay {
-            opacity: 1; /* Show overlay on hover */
-        }
-        .info-wrapper-8 {
-            flex-direction: column; 
-            justify-content: flex-start; 
-            align-items: flex-start; 
-            gap: 8px; 
-            display: flex;
-        }
-        
-        .admin-info-wrapper {
-            justify-content: flex-start; 
-            align-items: center; 
-            gap: 4px; 
-            display: flex;
-            margin-top: -2%;
-        }
-        .admin-text {
-            color: #858585; 
-            font-size: 14px; 
-            font-family: Roboto; 
-            font-weight: 400; 
-            word-wrap: break-word;
-        }
-        .admin-dot {
-            width: 6px; 
-            height: 6px; 
-            background: #03A600; 
-            border-radius: 9999px;
-        }
-        .title-text-8 {
-            width: 241px; 
-            height: 38px; 
-            color: #0054A6; 
-            font-size: 16px; 
-            font-family: Roboto; 
-            font-weight: 700; 
-            word-wrap: break-word;
-            margin-top: -3%;
-        }
-        .tags-wrapper {
-            justify-content: flex-start; 
-            align-items: flex-start; 
-            gap: 4px; 
-            display: flex;
-            margin-top: 2%;
-        }
-        .tag-item {
-            padding: 8px 12px; 
-            background: #E6EEF7; 
-            border-radius: 46px; 
-            overflow: hidden; 
-            justify-content: center; 
-            align-items: center; 
-            display: flex;
-        }
-        .tag-text {
-            color: #0054A6; 
-            font-size: 12px; 
-            font-family: Roboto; 
-            font-weight: 600; 
-            word-wrap: break-word;
-        }
-        .stats-wrapper {
-            justify-content: flex-start; 
-            align-items: center; 
-            gap: 8px; 
-            display: flex;
-        }
-        .stats-item {
-            justify-content: flex-start; 
-            align-items: center; 
-            gap: 4px; 
-            display: flex;
-        }
-        .stats-text {
-            color: #858585; 
-            font-size: 14px; 
-            font-family: Roboto; 
-            font-weight: 400; 
-            word-wrap: break-word;
-        }
-        .stats-dot {
-            width: 3px; 
-            height: 3px; 
-            background: #858585; 
-            border-radius: 9999px;
-        }
+.custom-container-8:hover .image-wrapper-8 img {
+    transform: scale(1.1);
+    /* Zoom in on hover */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background */
+    color: white;
+    font-size: 16px;
+    font-family: Roboto;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    /* Smooth transition for visibility */
+}
+
+.image-wrapper-8:hover .overlay {
+    opacity: 1;
+    /* Show overlay on hover */
+}
+
+.custom-container-8:hover .overlay {
+    opacity: 1;
+    /* Show overlay on hover */
+}
+
+.info-wrapper-8 {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+    display: flex;
+}
+
+.admin-info-wrapper {
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4px;
+    display: flex;
+    margin-top: -2%;
+}
+
+.admin-text {
+    color: #858585;
+    font-size: 14px;
+    font-family: Roboto;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.admin-dot {
+    width: 6px;
+    height: 6px;
+    background: #03A600;
+    border-radius: 9999px;
+}
+
+.title-text-8 {
+    width: 241px;
+    height: 38px;
+    color: #0054A6;
+    font-size: 16px;
+    font-family: Roboto;
+    font-weight: 700;
+    word-wrap: break-word;
+    margin-top: -3%;
+}
+
+.tags-wrapper {
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 4px;
+    display: flex;
+    margin-top: 2%;
+}
+
+.tag-item {
+    padding: 8px 12px;
+    background: #E6EEF7;
+    border-radius: 46px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.tag-text {
+    color: #0054A6;
+    font-size: 12px;
+    font-family: Roboto;
+    font-weight: 600;
+    word-wrap: break-word;
+}
+
+.stats-wrapper {
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    display: flex;
+}
+
+.stats-item {
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4px;
+    display: flex;
+}
+
+.stats-text {
+    color: #858585;
+    font-size: 14px;
+    font-family: Roboto;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.stats-dot {
+    width: 3px;
+    height: 3px;
+    background: #858585;
+    border-radius: 9999px;
+}
+
 .custom-margin {
     margin-top: -6.3%;
     padding: 60px;
     padding-left: 26px;
 }
+
 .parent-container {
     display: flex;
     justify-content: center;
@@ -2079,6 +2129,7 @@ th.datepicker-switch {
     margin-right: 5%;
     cursor: pointer;
 }
+
 .pagination-container {
     width: auto;
     height: auto;
@@ -2101,7 +2152,7 @@ th.datepicker-switch {
     cursor: pointer;
 }
 
-.left-arrow .arrow-line, 
+.left-arrow .arrow-line,
 .right-arrow .arrow-line {
     width: 10px;
     height: 6px;
@@ -2146,7 +2197,7 @@ th.datepicker-switch {
 .page-number.active {
     background: #0054A6;
     border-radius: 4px;
-        color: white;
+    color: white;
 }
 
 .page-text {
@@ -2179,14 +2230,16 @@ th.datepicker-switch {
     position: relative;
     z-index: 1;
 }
+
 .header-section-3 {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 3%;
-  margin-left: 570px;
+    margin-left: 570px;
 
 }
+
 .container-custom-9 {
     width: auto;
     height: auto;
@@ -2205,16 +2258,17 @@ th.datepicker-switch {
     width: 774px;
     display: flex;
     flex-wrap: wrap;
-     justify-content: space-between;
-    gap: 20px; /* Khoảng cách giữa các phần tử trong hàng */
+    justify-content: space-between;
+    gap: 20px;
+    /* Khoảng cách giữa các phần tử trong hàng */
 }
 
 .custom-item {
-        width: 177px;
+    width: 177px;
     height: 261px;
-     box-sizing: border-box;
-      cursor: pointer;
-         position: relative;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative;
     overflow: hidden;
     border-radius: 12px;
     transition: transform 0.3s ease-in-out;
@@ -2231,7 +2285,7 @@ th.datepicker-switch {
     justify-content: flex-start;
     align-items: flex-start;
     display: inline-flex;
-     transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
 }
 
 .item-header {
@@ -2245,10 +2299,11 @@ th.datepicker-switch {
 .item-img {
     width: 100%;
     height: 100%;
-      object-fit: cover;
-background: linear-gradient(0deg, rgba(0, 0, 0, 0.20)0%, rgba(0, 0, 0, 0.20)100%);
- transition: transform 0.3s ease-in-out;
+    object-fit: cover;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20)0%, rgba(0, 0, 0, 0.20)100%);
+    transition: transform 0.3s ease-in-out;
 }
+
 .item-content:hover {
     transform: scale(1.1);
 }
@@ -2262,8 +2317,10 @@ background: linear-gradient(0deg, rgba(0, 0, 0, 0.20)0%, rgba(0, 0, 0, 0.20)100%
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0.5); /* Tạo nền tối để nổi bật chữ */
-    border-radius: 12px; /* Bo tròn 4 góc */
+    background: rgba(0, 0, 0, 0.5);
+    /* Tạo nền tối để nổi bật chữ */
+    border-radius: 12px;
+    /* Bo tròn 4 góc */
 }
 
 .text-container {
@@ -2277,9 +2334,11 @@ background: linear-gradient(0deg, rgba(0, 0, 0, 0.20)0%, rgba(0, 0, 0, 0.20)100%
     font-weight: 700;
     margin-top: 30%;
 }
+
 .text-tai-lieu {
     word-wrap: break-word;
 }
+
 .svg-container {
     position: absolute;
     top: 0;
@@ -2289,7 +2348,7 @@ background: linear-gradient(0deg, rgba(0, 0, 0, 0.20)0%, rgba(0, 0, 0, 0.20)100%
     display: flex;
     justify-content: center;
     align-items: center;
-  margin-top: -25%;
+    margin-top: -25%;
 }
 
 .hover-text {
@@ -2302,20 +2361,22 @@ background: linear-gradient(0deg, rgba(0, 0, 0, 0.20)0%, rgba(0, 0, 0, 0.20)100%
     font-family: Roboto;
     font-weight: 700;
     opacity: 0;
-      white-space: nowrap;
+    white-space: nowrap;
     transition: opacity 0.3s ease-in-out;
 }
 
 .custom-item:hover .hover-text {
     opacity: 1;
 }
+
 .header-section-4 {
     display: flex;
     flex-direction: column;
     align-items: center;
 
 }
-.container-custom-10{
+
+.container-custom-10 {
     background-color: rgba(255, 255, 255, 0.8);
     /* Nền màu trắng với độ mờ 80% */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -2343,6 +2404,7 @@ background: linear-gradient(0deg, rgba(0, 0, 0, 0.20)0%, rgba(0, 0, 0, 0.20)100%
     margin-top: 48px;
     margin-left: 54px;
 }
+
 .custom-docs-1 {
     width: auto;
     height: auto;
@@ -2354,6 +2416,7 @@ background: linear-gradient(0deg, rgba(0, 0, 0, 0.20)0%, rgba(0, 0, 0, 0.20)100%
     margin-top: -6%;
     margin-left: 70%;
 }
+
 .box-docs {
     width: 314px;
     height: 40px;
@@ -2361,13 +2424,15 @@ background: linear-gradient(0deg, rgba(0, 0, 0, 0.20)0%, rgba(0, 0, 0, 0.20)100%
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
-margin-left: -1%;
+    margin-left: -1%;
 }
+
 .box-docs-1 {
     width: 314px;
     height: 40px;
 
 }
+
 .custom-title-wrapper {
     display: flex;
     justify-content: flex-start;
@@ -2396,46 +2461,60 @@ margin-left: -1%;
 }
 
 .table-header {
-    font-size: 18px; /* Kích thước chữ */
-    font-family: Roboto; 
-    font-weight: 700; /* Đậm chữ */
-    word-wrap: break-word; /* Ngắt từ để không vượt quá */
+    font-size: 18px;
+    /* Kích thước chữ */
+    font-family: Roboto;
+    font-weight: 700;
+    /* Đậm chữ */
+    word-wrap: break-word;
+    /* Ngắt từ để không vượt quá */
 }
 
 .table-header th {
-    color: white; /* Màu chữ */
-     background-color: #0054A6; /* Màu nền */
+    color: white;
+    /* Màu chữ */
+    background-color: #0054A6;
+    /* Màu nền */
 }
-      .stt-header {
-        
-            border-top-left-radius: 8px; /* Bo tròn góc trên bên trái */
-            border-bottom-left-radius: 8px; /* Bo tròn góc dưới bên trái */
-        }
 
-        .download-header {
-            border-top-right-radius: 8px; /* Bo tròn góc trên bên phải */
-            border-bottom-right-radius: 8px; /* Bo tròn góc dưới bên phải */
-        }
-        th.table-item.stt-header.background-light {
-   background: #E6EEF7
+.stt-header {
+
+    border-top-left-radius: 8px;
+    /* Bo tròn góc trên bên trái */
+    border-bottom-left-radius: 8px;
+    /* Bo tròn góc dưới bên trái */
 }
-        td.table-item.background-light {
+
+.download-header {
+    border-top-right-radius: 8px;
+    /* Bo tròn góc trên bên phải */
+    border-bottom-right-radius: 8px;
+    /* Bo tròn góc dưới bên phải */
+}
+
+th.table-item.stt-header.background-light {
     background: #E6EEF7
 }
-  table {
-            border-spacing: 0 4px;
-            width: 100%;
-            border-collapse: separate;
-        }
 
-        .parent-container-1 {
+td.table-item.background-light {
+    background: #E6EEF7
+}
+
+table {
+    border-spacing: 0 4px;
+    width: 100%;
+    border-collapse: separate;
+}
+
+.parent-container-1 {
     display: flex;
     justify-content: center;
     align-items: center;
-   margin-top: 3%;
+    margin-top: 3%;
     margin-left: 81%;
     cursor: pointer;
 }
+
 .pagination-container-1 {
     width: auto;
     height: auto;
@@ -2447,6 +2526,7 @@ margin-left: -1%;
     gap: 32px;
     display: inline-flex;
 }
+
 .pagination-items-1 {
     justify-content: flex-start;
     align-items: center;
@@ -2469,7 +2549,7 @@ margin-left: -1%;
 .page-number-1.active {
     background: #0054A6;
     border-radius: 4px;
-        color: white;
+    color: white;
 }
 
 .page-text-1 {
@@ -2486,6 +2566,7 @@ margin-left: -1%;
     color: white;
     font-weight: 700;
 }
+
 .display-container {
     width: 100%;
     height: 100%;
@@ -2540,4 +2621,290 @@ margin-left: -1%;
     font-weight: 400;
     line-height: 21px;
     word-wrap: break-word;
+}
+
+
+/* tài liệu tham thảo*/
+.content-section-4 {
+    display: flex;
+    height: 100%;
+    /* Đảm bảo phần tử chiếm toàn bộ chiều ngang của phần tử chứa */
+    margin-top: 25%;
+    /* Điều chỉnh khoảng cách phía trên nếu cần */
+    gap: 24px;
+    /* Giảm khoảng cách giữa các phần tử con */
+}
+
+.header-section-5 {
+    display: flex;
+    justify-content: center;
+    /* Căn giữa theo chiều ngang */
+    align-items: center;
+    /* Căn giữa theo chiều dọc */
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
+    /* Loại bỏ căn lề trái */
+}
+
+.container-custom-11 {
+    display: flex;
+    flex-direction: column;
+    /* Đặt hướng của các phần tử con theo chiều dọc */
+    gap: 16px;
+    /* Khoảng cách giữa các phần tử con, có thể thay đổi tùy thuộc vào yêu cầu */
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Nền màu trắng với độ mờ */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Đổ bóng */
+    border-radius: 10px;
+    /* Bo tròn các góc của phần tử */
+    padding: 20px;
+    /* Padding bên trong container */
+    position: relative;
+}
+
+
+.container-custom-11 {
+    width: auto;
+    height: auto;
+    margin-bottom: 300px;
+}
+
+/* Kích thước container */
+.result-container {
+    width: 1252px;
+    height: 101px;
+    margin-left: 48px;
+    display: flex;
+    flex-direction: column;
+    /* Đặt hướng của các phần tử con theo chiều dọc */
+    gap: 8px;
+    /* Khoảng cách giữa tiêu đề và thông tin */
+}
+
+.result-title {
+    color: #0054A6;
+    font-size: 48px;
+    font-family: Roboto;
+    font-weight: 700;
+    line-height: 80px;
+    word-wrap: break-word;
+}
+
+.result-info {
+    display: flex;
+    justify-content: flex-start;
+    /* Căn chỉnh nội dung theo chiều ngang */
+    align-items: center;
+    /* Căn chỉnh nội dung theo chiều dọc */
+}
+
+.result-details {
+    color: #666666;
+    font-size: 16px;
+    font-family: Roboto;
+    font-weight: 400;
+    line-height: 21px;
+    word-wrap: break-word;
+}
+
+.image-result {
+    display: flex;
+    justify-content: center;
+    /* Căn giữa hình ảnh trong phần tử này */
+    width: 100%;
+    /* Đảm bảo phần tử chiếm toàn bộ chiều rộng của phần tử chứa */
+}
+
+.image-wrapper-result {
+    width: calc(1252px + 96px);
+    /* Tổng chiều rộng bao gồm lề trái và phải */
+    height: 668px;
+    display: flex;
+    justify-content: center;
+    /* Căn giữa hình ảnh trong phần tử này */
+    margin-top: 48px;
+}
+
+.responsive-image {
+    width: 1252px;
+    /* Đảm bảo ảnh có kích thước cụ thể */
+    height: 668px;
+    /* Đảm bảo ảnh có kích thước cụ thể */
+}
+
+.content-result {
+    width: 100%;
+    max-width: 1252px;
+    /* Đặt giới hạn tối đa cho chiều rộng */
+    height: 100%;
+    overflow-y: hidden;
+    /* Tự động cuộn nếu nội dung vượt quá chiều cao */
+    margin-top: 32px;
+    margin-left: 48px;
+}
+
+.text-paragraph {
+    color: #333333;
+    font-size: 18px;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    line-height: 27px;
+    word-wrap: break-word;
+    display: block;
+    /* Mỗi phần tử span sẽ hiển thị dưới dạng khối */
+    margin-bottom: 32px;
+    /* Khoảng cách dưới mỗi đoạn văn */
+}
+
+.custom-list {
+    margin-top: 10px;
+    padding-left: 60px;
+    list-style-type: disc;
+    margin-bottom: 16px;
+}
+
+.custom-list li {
+    color: #333333;
+    font-size: 18px;
+    font-family: Roboto;
+    font-weight: 400;
+    line-height: 27px;
+    margin-bottom: 8px;
+    /* Khoảng cách giữa các dòng */
+}
+
+.image-result-1 {
+    width: 831px;
+    /* Kích thước phần tử chứa */
+    height: 747px;
+    /* Kích thước phần tử chứa */
+    display: flex;
+    /* Sử dụng flexbox để căn giữa nội dung */
+    justify-content: center;
+    /* Căn giữa theo chiều ngang */
+    align-items: center;
+    /* Căn giữa theo chiều dọc */
+    overflow: hidden;
+    /* Ẩn các phần của hình ảnh bị tràn ra ngoài phần tử chứa */
+    background-color: #f0f0f0;
+    /* Tùy chọn: Đặt màu nền để làm nổi bật phần tử chứa */
+    margin-left: 19%;
+}
+
+.image-result-1 img {
+    max-width: 100%;
+    /* Đảm bảo hình ảnh không vượt quá chiều rộng của phần tử chứa */
+    max-height: 100%;
+    /* Đảm bảo hình ảnh không vượt quá chiều cao của phần tử chứa */
+    object-fit: contain;
+    /* Đảm bảo hình ảnh giữ tỷ lệ khung hình và lấp đầy không gian mà không bị cắt */
+}
+
+.result-main-container {
+    margin-left: 48px;
+    margin-top: 48px;
+}
+
+.result-title-2 {
+    color: #0054A6;
+    font-size: 32px;
+    font-family: Roboto;
+    font-weight: 600;
+    line-height: 36px;
+    word-wrap: break-word
+}
+
+.custom-row-result {
+    width: 1252px;
+    height: 292px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* Khoảng cách giữa các thẻ card */
+    margin-bottom: 20px;
+}
+
+.custom-margin-2 {
+    padding: 60px;
+    padding-left: 20px;
+    flex: 1;
+    min-width: 0;
+    max-width: calc(25% - 20px);
+    /* 25% với khoảng cách 20px giữa các thẻ card */
+    box-sizing: border-box;
+    /* Đảm bảo padding và border không làm vượt quá kích thước */
+}
+
+.custom-result-8 {
+    width: 301px;
+    height: 292px;
+    padding-bottom: 10px;
+    background: white;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+    margin-left: -6%;
+    margin-top: -23%;
+    cursor: pointer;
+}
+
+.image-result-8 {
+    width: 301px;
+    height: 146px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: relative;
+    /* Relative positioning for overlay */
+    overflow: hidden;
+    /* Ensure child elements don't overflow */
+}
+
+.image-result-8 img {
+    width: 301px;
+    height: 146px;
+    transition: transform 0.3s ease;
+    /* Smooth transition for scaling */
+}
+
+.custom-result-8:hover .image-result-8 img {
+    transform: scale(1.1);
+    /* Zoom in on hover */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background */
+    color: white;
+    font-size: 16px;
+    font-family: Roboto;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    /* Smooth transition for visibility */
+}
+
+.image-result-8:hover .overlay {
+    opacity: 1;
+    /* Show overlay on hover */
+}
+
+.custom-result-8:hover .overlay {
+    opacity: 1;
+    /* Show overlay on hover */
 }

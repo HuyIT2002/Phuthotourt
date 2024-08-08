@@ -2908,3 +2908,393 @@ table {
     opacity: 1;
     /* Show overlay on hover */
 }
+
+/*tuyển dụng*/
+.container-custom-12 {
+    position: absolute;
+    /* Để sử dụng left và top */
+    border-radius: 10px;
+    width: 1134px;
+    height: 1004px;
+    left: 386px;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; /* Khoảng cách giữa các box */
+}
+
+.container-recruitment {
+   width: 361px;
+    height: 300px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.icon-recruitment img {
+    border-radius: 4px; /* Optional: border-radius cho ảnh */
+   margin-top: -14px;
+    margin-left: -13px;
+}
+
+.info-recruitment {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: -70px;
+    margin-left: 48px;
+}
+
+.role-recruitment{
+  color: #003F7D; 
+  font-size: 20px; 
+  font-family: Roboto; 
+  font-weight: 700; 
+  line-height: 20px; 
+  word-wrap: break-word
+}
+.position-recruitment {
+    color: #3376B8;
+    font-size: 14px; 
+    font-family: Roboto; 
+    font-weight: 400; 
+    line-height: 20px; 
+    word-wrap: break-word
+}
+
+.details-recruitment {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-left: 40px;
+    margin-top: -10px;
+}
+
+.location-recruitment, .time-recruitment {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+       color: #666666; 
+   font-size: 14px; 
+   font-family: Roboto; 
+   font-weight: 400; 
+   word-wrap: break-word
+}
+
+.status-recruitment {
+width: 95px;
+    height: 32px;
+    background: #E6F7E6;
+    color: #03A600;
+    padding: 8px 8px 12px;
+    border-radius: 12px;
+    text-align: center;
+    display: inline-block;
+    white-space: nowrap;
+    box-sizing: border-box;
+    line-height: 16px;
+        margin-left: 70%;
+    margin-top: -11%;
+}
+.status-text {
+    color: #03A600;
+    font-size: 14px;
+    font-family: Roboto;
+    font-weight: 600;
+    word-wrap: break-word;
+    text-align: center;
+}
+.status-recruitment-red {
+width: 95px;
+    height: 32px;
+    background: #F7E6E6;
+    color: #FF3939;
+    padding: 8px 8px 12px;
+    border-radius: 12px;
+    text-align: center;
+    display: inline-block;
+    white-space: nowrap;
+    box-sizing: border-box;
+    line-height: 16px;
+        margin-left: 70%;
+    margin-top: -11%;
+}
+.status-text-red {
+    color: #FF3939;
+    font-size: 14px;
+    font-family: Roboto;
+    font-weight: 600;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+.more-recruitment {
+    width: 321px;
+    height: 44px;
+  background: #0054A6;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 8px 12px; /* Thêm padding để làm nút rõ ràng hơn */
+ transition: background-color 0.3s ease; /* Tạo hiệu ứng mượt mà khi thay đổi màu nền */
+}
+
+.more-recruitment:hover {
+    background: #0073CC; /* Màu nền nhạt hơn khi hover */
+}
+
+.description-recruitment {
+    width: auto;
+    height: 92px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px; /* Khoảng cách giữa tiêu đề và nội dung */
+    margin-top: -15px;
+}
+
+.title-recruitment {
+    color: #0054A6;
+    font-size: 16px;
+    font-family: Roboto;
+    font-weight: 600;
+    word-wrap: break-word;
+}
+
+.text-recruitment {
+    width: 320px; /* Chiều rộng cố định */
+    height: 46px; /* Chiều cao cố định */
+    color: #666666;
+    font-size: 13px;
+     font-family: Roboto;
+    font-weight: 400;
+    line-height: 17px;
+    word-wrap: break-word;
+}
+.parent-container-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3%;
+    cursor: pointer;
+}
+
+.pagination-container-2 {
+    width: auto;
+    height: auto;
+    padding: 8px 4px;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.70) 0%, rgba(255, 255, 255, 0.70) 100%);
+    border-radius: 99px;
+    backdrop-filter: blur(15px);
+    justify-content: flex-start;
+    align-items: center;
+    gap: 32px;
+    display: inline-flex;
+
+}
+
+.pagination-items-2 {
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    display: flex;
+}
+
+.page-number-2 {
+    width: 32px;
+    height: 32px;
+    border-radius: 2px;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    cursor: pointer;
+}
+
+.page-number-2.active {
+    background: #0054A6;
+    border-radius: 4px;
+    color: white;
+}
+
+.page-text-2 {
+    text-align: center;
+    font-size: 16px;
+    font-family: Roboto;
+    font-weight: 500;
+    color: #4D4D4D;
+    word-wrap: break-word;
+}
+
+
+.page-number-2.active .page-text-2 {
+    color: white;
+    font-weight: 700;
+}
+
+.container-custom-13 {
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Nền màu trắng với độ mờ 80% */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Đổ bóng */
+    position: absolute;
+    /* Để sử dụng left và top */
+    border-radius: 10px;
+}
+
+.container-custom-13 {
+  width: 362px;
+    height: 936px;
+    top: 0;
+    left: 0;
+}
+
+.box-container-3 {
+  width: 362px;
+    height: 936px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.70);
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.10);
+    border-radius: 12px;
+    overflow: hidden;
+    backdrop-filter: blur(15px);
+}
+.background-overlay-1 {
+    width: 440.70px;
+    height: 280.80px;
+    position: absolute;
+    left: 21px;
+    top: 680px;
+    opacity: 0.15;
+}
+.separator-2 {
+    width: 322px;
+    height: 0px;
+    border: 1px white solid;
+    margin-top: 24px;
+    border-radius: 100px;
+    margin-left: 20px;
+}
+.search-box-1 {
+    width: 322px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    border-radius: 6px;
+    padding: 10px 16px;
+}
+.field-section {
+    align-self: stretch;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 16px;
+        margin-left: 20px;
+    margin-top: 20px;
+}
+
+.field-title {
+    width: 314px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.title-icon {
+    width: 24px;
+    height: 24px;
+    padding: 2px 2px 1.54px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -2px;
+}
+
+.title-text {
+    color: #0054A6;
+    font-size: 20px;
+    font-family: Roboto;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.title-separator {
+    flex: 1 1 0;
+    height: 0px;
+    border: 1px rgba(255, 255, 255, 0) solid;
+}
+
+.field-options {
+    padding-right: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.option-container {
+    align-self: stretch;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+
+.option-outline {
+    width: auto;
+    height: 40px;
+    padding: 12px;
+    background: white;
+    border-radius: 99px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+.option-text {
+     white-space: nowrap;
+    color: #4D4D4D;
+    font-size: 14px;
+    font-family: Roboto;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+.option-outline:hover , .option-text:hover{
+    color: #0054A6;
+    border-color: #0054A6;
+}
+
+.option-outline.active {
+    background-color: #0054A6;
+    color: white; /* Màu chữ khi phần tử được chọn */
+    border-color: #0054A6;
+}
+
+.option-outline.active:hover {
+    color: white; /* Đảm bảo chữ không thay đổi màu khi hover */
+    border-color: #0054A6; /* Đảm bảo viền không thay đổi màu khi hover */
+}
+
+/* Để đảm bảo các phần tử bên trong không bị thay đổi màu khi phần tử cha có lớp active */
+.option-outline.active .option-text {
+    color: white; /* Màu chữ khi phần tử được chọn */
+}
+

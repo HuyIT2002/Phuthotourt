@@ -621,4 +621,66 @@ $(document).ready(function() {
             createPagination();
             showPage(1); // Hiển thị trang đầu tiên khi tải trang
         });
+
+
+$(document).ready(function() {
+    const itemsPerPage = 9;
+    const $contentContainer = $('#flex-container');
+    const $paginationContainer = $('.pagination-items-2');
+
+    const $items = $contentContainer.children();
+    const totalPages = Math.ceil($items.length / itemsPerPage);
+
+    function showPage(pageNumber) {
+        // Ẩn tất cả các phần tử
+        $items.each(function(index) {
+            $(this).toggle(index >= (pageNumber - 1) * itemsPerPage && index < pageNumber * itemsPerPage);
+        });
+
+        // Cập nhật trang hiện tại
+        $paginationContainer.children().each(function() {
+            $(this).toggleClass('active', parseInt($(this).text()) === pageNumber);
+        });
+    }
+
+ function createPagination() {
+    $paginationContainer.empty();
+    for (let i = 1; i <= totalPages; i++) {
+        // Tạo phần tử page-number
+        const $pageNumDiv = $('<div></div>').addClass('page-number-2');
+        
+        // Tạo phần tử page-text và thêm vào page-number
+        const $pageTextDiv = $('<div></div>').addClass('page-text-2').text(i);
+        $pageNumDiv.append($pageTextDiv);
+        
+        // Thêm sự kiện click cho page-number
+        $pageNumDiv.on('click', () => showPage(i));
+        
+        // Thêm page-number vào pagination-container
+        $paginationContainer.append($pageNumDiv);
+    }
+}
+
+
+    $('.arrow.left-arrow').on('click', function() {
+        const activePage = $paginationContainer.children().filter('.active').index() + 1;
+        if (activePage > 1) showPage(activePage - 1);
+    });
+
+    $('.arrow.right-arrow').on('click', function() {
+        const activePage = $paginationContainer.children().filter('.active').index() + 1;
+        if (activePage < totalPages) showPage(activePage + 1);
+    });
+
+    createPagination();
+    showPage(1); // Hiển thị trang đầu tiên khi tải trang
+});
+$(document).ready(function() {
+    $('.option-outline').click(function() {
+        // Toggle lớp 'active' cho phần tử được click
+        $(this).toggleClass('active');
+    });
+});
+
+
 });

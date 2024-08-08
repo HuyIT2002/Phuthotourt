@@ -21,7 +21,7 @@
             <div class="nav-item-text"><a href="{{ route('tai-lieu') }}">Tài liệu</a></div>
         </div>
         <div id="nav-articles" class="nav-item nav-item-home nav-item-default d-flex justify-content-center align-items-center">
-            <div class="nav-item-text"><a href="/careers">Tuyển dụng</a></div>
+            <div class="nav-item-text"><a href="{{ route('tuyen-dung') }}">Tuyển dụng</a></div>
         </div>
     </div>
 </div>

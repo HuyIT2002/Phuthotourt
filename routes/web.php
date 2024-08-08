@@ -30,3 +30,6 @@ Route::get('/chi-tiet-bai-viet', function () {
 Route::get('/tai-lieu', function () {
     return view('tai-lieu.tai-lieu');
 })->name('tai-lieu');
+Route::get('/tuyen-dung', function () {
+    return view('tuyen-dung.tuyen-dung');
+})->name('tuyen-dung');

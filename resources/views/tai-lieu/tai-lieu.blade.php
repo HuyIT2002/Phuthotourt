@@ -43,7 +43,7 @@
                         <div class="item-content">
                             <img class="item-img" src="{{ asset('/public/images/tai-lieu/tai-lieu-1.jpg') }}" />
                             <div class="image-text-wrapper">
-                                <div class="text-container">
+                                <div class="text-container-1">
                                     <div class="svg-container">
                                         <svg width="104" height="103" viewBox="0 0 104 103" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <g clip-path="url(#clip0_4740_169)">
@@ -69,7 +69,7 @@
                         <div class="item-content">
                             <img class="item-img" src="{{ asset('/public/images/tai-lieu/tai-lieu-2.jpg') }}" />
                             <div class="image-text-wrapper">
-                                <div class="text-container">
+                                <div class="text-container-1">
                                     <div class="svg-container">
                                         <svg width="104" height="103" viewBox="0 0 104 103" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <g clip-path="url(#clip0_4740_169)">
@@ -93,7 +93,7 @@
                         <div class="item-content">
                             <img class="item-img" src="{{ asset('/public/images/tai-lieu/tai-lieu-3.jpg') }}" />
                             <div class="image-text-wrapper">
-                                <div class="text-container">
+                                <div class="text-container-1">
                                     <div class="svg-container">
                                         <svg width="104" height="103" viewBox="0 0 104 103" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <g clip-path="url(#clip0_4740_169)">
@@ -117,7 +117,7 @@
                         <div class="item-content">
                             <img class="item-img" src="{{ asset('/public/images/tai-lieu/tai-lieu-4.jpg') }}" />
                             <div class="image-text-wrapper">
-                                <div class="text-container">
+                                <div class="text-container-1">
                                     <div class="svg-container">
                                         <svg width="104" height="103" viewBox="0 0 104 103" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <g clip-path="url(#clip0_4740_169)">
@@ -141,7 +141,7 @@
                         <div class="item-content">
                             <img class="item-img" src="{{ asset('/public/images/tai-lieu/tai-lieu-5.jpg') }}" />
                             <div class="image-text-wrapper">
-                                <div class="text-container">
+                                <div class="text-container-1">
                                     <div class="svg-container">
                                         <svg width="104" height="103" viewBox="0 0 104 103" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <g clip-path="url(#clip0_4740_169)">
@@ -165,7 +165,7 @@
                         <div class="item-content">
                             <img class="item-img" src="{{ asset('/public/images/tai-lieu/tai-lieu-6.jpg') }}" />
                             <div class="image-text-wrapper">
-                                <div class="text-container">
+                                <div class="text-container-1">
                                     <div class="svg-container">
                                         <svg width="104" height="103" viewBox="0 0 104 103" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <g clip-path="url(#clip0_4740_169)">
@@ -189,7 +189,7 @@
                         <div class="item-content">
                             <img class="item-img" src="{{ asset('/public/images/tai-lieu/tai-lieu-7.jpg') }}" />
                             <div class="image-text-wrapper">
-                                <div class="text-container">
+                                <div class="text-container-1">
                                     <div class="svg-container">
                                         <svg width="104" height="103" viewBox="0 0 104 103" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <g clip-path="url(#clip0_4740_169)">
@@ -213,7 +213,7 @@
                         <div class="item-content">
                             <img class="item-img" src="{{ asset('/public/images/tai-lieu/tai-lieu-8.jpg') }}" />
                             <div class="image-text-wrapper">
-                                <div class="text-container">
+                                <div class="text-container-1">
                                     <div class="svg-container">
                                         <svg width="104" height="103" viewBox="0 0 104 103" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <g clip-path="url(#clip0_4740_169)">

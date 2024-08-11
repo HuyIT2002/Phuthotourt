@@ -53,10 +53,121 @@
             });
         });
 
-        document.getElementById('cv').addEventListener('change', function() {
-            const fileInput = document.getElementById('cv');
-            const fileName = fileInput.files[0] ? fileInput.files[0].name : 'Không có tập tin nào được chọn';
-            document.querySelector('.cv-text').textContent = fileName;
+        $(document).ready(function() {
+            var selectedCategoryId = null;
+
+            $('.option-container').click(function() {
+                var categoryId = $(this).data('id');
+
+                // Kiểm tra nếu danh mục đã được chọn, bỏ chọn nó
+                if (selectedCategoryId === categoryId) {
+                    selectedCategoryId = null; // Bỏ chọn
+                } else {
+                    selectedCategoryId = categoryId; // Chọn danh mục mới
+                }
+
+                $.ajax({
+                    url: '{{ route("tuyen-dung") }}',
+                    method: 'GET',
+                    data: {
+                        category_id: selectedCategoryId // Gửi `category_id` hoặc null nếu không có danh mục nào được chọn
+                    },
+                    success: function(response) {
+                        // Thay thế nội dung trong #flex-container
+                        $('#flex-container').html($(response).find('#flex-container').html());
+                    }
+                });
+            });
+        });
+        $(document).ready(function() {
+            var selectedCategoryId = null;
+            var totalPages = 1; // Khởi tạo biến totalPages với giá trị mặc định
+
+            $('.option-container').click(function() {
+                var categoryId = $(this).data('id');
+
+                if (selectedCategoryId === categoryId) {
+                    selectedCategoryId = null; // Bỏ chọn
+                } else {
+                    selectedCategoryId = categoryId; // Chọn danh mục mới
+                }
+
+                $.ajax({
+                    url: '{{ route("tuyen-dung") }}',
+                    method: 'GET',
+                    data: {
+                        category_id: selectedCategoryId
+                    },
+                    success: function(response) {
+                        $('#flex-container').html($(response).find('#flex-container').html());
+
+                        // Cập nhật biến totalPages và gọi lại hàm phân trang
+                        updatePagination();
+                        showPage(1); // Hiển thị trang đầu tiên khi tải nội dung mới
+                    }
+                });
+            });
+
+            $('.option-outline').click(function() {
+                $(this).toggleClass('active');
+            });
+
+            const itemsPerPage = 9;
+            const $contentContainer = $('#flex-container');
+            const $paginationContainer = $('.pagination-items-2');
+
+            function updatePagination() {
+                const $items = $contentContainer.children();
+                totalPages = Math.ceil($items.length / itemsPerPage); // Cập nhật totalPages
+
+                createPagination(); // Tạo phân trang mới
+            }
+
+            function createPagination() {
+                $paginationContainer.empty();
+                for (let i = 1; i <= totalPages; i++) {
+                    const $pageNumDiv = $('<div></div>').addClass('page-number-2');
+                    const $pageTextDiv = $('<div></div>').addClass('page-text-2').text(i);
+                    $pageNumDiv.append($pageTextDiv);
+                    $pageNumDiv.on('click', () => showPage(i));
+                    $paginationContainer.append($pageNumDiv);
+                }
+            }
+
+            function showPage(pageNumber) {
+                const $items = $contentContainer.children();
+
+                $items.each(function(index) {
+                    $(this).toggle(index >= (pageNumber - 1) * itemsPerPage && index < pageNumber *
+                        itemsPerPage);
+                });
+
+                $paginationContainer.children().each(function() {
+                    $(this).toggleClass('active', parseInt($(this).text()) === pageNumber);
+                });
+
+                // Cập nhật trạng thái disabled của các mũi tên
+                $('.arrow.left-arrow').toggleClass('disabled', pageNumber === 1);
+                $('.arrow.right-arrow').toggleClass('disabled', pageNumber === totalPages);
+            }
+
+            $('.arrow.left-arrow').on('click', function() {
+                if (!$(this).hasClass('disabled')) {
+                    const activePage = $paginationContainer.children().filter('.active').index() + 1;
+                    if (activePage > 1) showPage(activePage - 1);
+                }
+            });
+
+            $('.arrow.right-arrow').on('click', function() {
+                if (!$(this).hasClass('disabled')) {
+                    const activePage = $paginationContainer.children().filter('.active').index() + 1;
+                    if (activePage < totalPages) showPage(activePage + 1);
+                }
+            });
+
+            // Tạo phân trang và hiển thị trang đầu tiên khi tải trang
+            updatePagination();
+            showPage(1);
         });
     </script>
 

@@ -2323,7 +2323,7 @@ th.datepicker-switch {
     /* Bo tròn 4 góc */
 }
 
-.text-container {
+.text-container-1 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -3003,6 +3003,9 @@ width: 95px;
         margin-left: 70%;
     margin-top: -11%;
 }
+.icon-recruitment {
+    margin-top: -6px;
+}
 .status-text {
     color: #03A600;
     font-size: 14px;
@@ -3239,36 +3242,33 @@ width: 95px;
 }
 
 .field-options {
-    padding-right: 32px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    flex-wrap: wrap; /* Cho phép các phần tử xuống dòng khi cần */
     gap: 8px;
+    justify-content: flex-start; /* Căn chỉnh các phần tử về phía trái */
+    align-items: flex-start;
 }
 
 .option-container {
-    align-self: stretch;
-    display: inline-flex;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     gap: 8px;
 }
 
-
 .option-outline {
-    width: auto;
+   width: auto; /* Đảm bảo mỗi phần tử chiếm toàn bộ chiều rộng của .option-container */
     height: 40px;
     padding: 12px;
     background: white;
     border-radius: 99px;
-    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     border: 1px solid transparent;
+    box-sizing: border-box; /* Đảm bảo padding không ảnh hưởng đến chiều rộng */
 }
+
 .option-text {
      white-space: nowrap;
     color: #4D4D4D;
@@ -3284,7 +3284,7 @@ width: 95px;
 
 .option-outline.active {
     background-color: #0054A6;
-    color: white; /* Màu chữ khi phần tử được chọn */
+    color: white; 
     border-color: #0054A6;
 }
 

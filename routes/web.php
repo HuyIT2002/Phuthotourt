@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,9 +30,9 @@ Route::get('/chi-tiet-bai-viet', function () {
 Route::get('/tai-lieu', function () {
     return view('tai-lieu.tai-lieu');
 })->name('tai-lieu');
-Route::get('/tuyen-dung', function () {
-    return view('tuyen-dung.tuyen-dung');
-})->name('tuyen-dung');
+
+Route::get('/tuyen-dung', [CategoryController::class, 'index'])->name('tuyen-dung');
+
 Route::get('/chi-tiet-tuyen-dung', function () {
     return view('tuyen-dung.chi-tiet-tuyen-dung');
 })->name('chi-tiet-tuyen-dung');

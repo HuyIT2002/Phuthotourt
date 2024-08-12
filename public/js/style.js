@@ -341,6 +341,7 @@ $(document).ready(function() {
 //     });
 // })
     
+    
 $(document).ready(function() {
     var $searchText = $('.search-text');
     var $recentSearchContainer = $('.recent-search-container');
@@ -376,35 +377,42 @@ $(document).ready(function() {
     });
 });
 $(document).ready(function() {
-    var $searchText = $('.search-text');
-    var $hiddenIcon = $('.hidden-icon');
-
-    // Hiển thị khi có văn bản nhập vào
-    $searchText.on('input', function() {
-        if ($(this).val().trim() !== '') {
-            $hiddenIcon.show(); // Hiển thị .hidden-icon khi có văn bản
-        } else {
-            $hiddenIcon.hide(); // Ẩn .hidden-icon khi không có văn bản
-        }
-    });
-
-    // Ẩn khi nhấp ra ngoài ô tìm kiếm hoặc phần tử .hidden-icon
-    $(document).on('click', function(event) {
-        if (!$(event.target).closest('.search-text, .hidden-icon').length) {
-            $hiddenIcon.hide(); // Ẩn .hidden-icon khi nhấp ra ngoài
-        }
+    $('.recent-search-item .search-item-icon svg').on('click', function() {
+        $(this).closest('.recent-search-item').remove();
     });
 });
-$(document).ready(function() {
-    var $searchText = $('.search-text');
-    var $clearInputButton = $('.clear-input');
 
-    // Xóa nội dung ô input khi click vào biểu tượng
-    $clearInputButton.on('click', function() {
-        $searchText.val(''); // Xóa nội dung ô input
-        $searchText.focus(); // Tùy chọn: Di chuyển con trỏ đến ô input
-    });
-});
+    
+// $(document).ready(function() {
+//     var $searchText = $('.search-text');
+//     var $hiddenIcon = $('.hidden-icon');
+
+//     // Hiển thị khi có văn bản nhập vào
+//     $searchText.on('input', function() {
+//         if ($(this).val().trim() !== '') {
+//             $hiddenIcon.show(); // Hiển thị .hidden-icon khi có văn bản
+//         } else {
+//             $hiddenIcon.hide(); // Ẩn .hidden-icon khi không có văn bản
+//         }
+//     });
+
+//     // Ẩn khi nhấp ra ngoài ô tìm kiếm hoặc phần tử .hidden-icon
+//     $(document).on('click', function(event) {
+//         if (!$(event.target).closest('.search-text, .hidden-icon').length) {
+//             $hiddenIcon.hide(); // Ẩn .hidden-icon khi nhấp ra ngoài
+//         }
+//     });
+// });
+// $(document).ready(function() {
+//     var $searchText = $('.search-text');
+//     var $clearInputButton = $('.clear-input');
+
+//     // Xóa nội dung ô input khi click vào biểu tượng
+//     $clearInputButton.on('click', function() {
+//         $searchText.val(''); // Xóa nội dung ô input
+//         $searchText.focus(); // Tùy chọn: Di chuyển con trỏ đến ô input
+//     });
+// });
 
 
 $(document).ready(function() {

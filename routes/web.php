@@ -32,6 +32,9 @@ Route::get('/tai-lieu', function () {
 })->name('tai-lieu');
 
 Route::get('/tuyen-dung', [CategoryController::class, 'index'])->name('tuyen-dung');
+Route::get('/search-categories', [CategoryController::class, 'searchCategories']);
+
+
 
 Route::get('/chi-tiet-tuyen-dung', function () {
     return view('tuyen-dung.chi-tiet-tuyen-dung');

@@ -6,11 +6,30 @@ use App\Models\Categories;
 use App\Models\ParentModel;
 use App\Models\JobModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class CategoryController extends Controller
 {
     public function index(Request $request)
     {
+        if ($request->ajax() && $request->has('query')) {
+            $query = $request->input('query');
+
+            if (!empty($query)) {
+                $searchResults = JobModel::join('categories', 'jobs.role_category_id', '=', 'categories.category_id')
+                    ->where('categories.category_name', 'LIKE', "%$query%")
+                    ->select('jobs.*')
+                    ->distinct()
+                    ->with('roleCategory')
+                    ->get();
+
+                // Render view cho dữ liệu tìm kiếm
+                $view = view('partials.recent-search-list', ['jobs' => $searchResults])->render();
+                return $view;
+            } else {
+                return '<p>Không có kết quả tìm kiếm</p>';
+            }
+        }
         // Chỉ lấy các parent có parent_id là 6, 7, và 8
         $parents = ParentModel::whereIn('parent_id', [6, 7, 8])->get();
 
@@ -21,7 +40,9 @@ class CategoryController extends Controller
             $parentCategories[$parent->parent_id] = Categories::where('parent_id', $parent->parent_id)->get();
         }
         $jobs = JobModel::with([
-            'roleCategory', 'positionCategory', 'locationCategory'
+            'roleCategory',
+            'positionCategory',
+            'locationCategory'
         ])
             ->get();
 
@@ -45,7 +66,30 @@ class CategoryController extends Controller
         if ($request->ajax()) {
             return view('tuyen-dung.tuyen-dung', compact('parents', 'parentCategories', 'jobs'))->render();
         }
-        // Truyền dữ liệu sang view
+
+        $jobs = JobModel::with(['roleCategory', 'positionCategory', 'locationCategory'])->get();
+
+
         return view('tuyen-dung.tuyen-dung', compact('parents', 'parentCategories', 'jobs'));
     }
+    // public function searchCategories(Request $request)
+    // {
+    //     if ($request->ajax() && $request->has('query')) {
+    //         $query = $request->input('query');
+
+    //         if (!empty($query)) {
+    //             $searchResults = JobModel::join('categories', 'jobs.role_category_id', '=', 'categories.category_id')
+    //                 ->where('categories.category_name', 'LIKE', "%$query%")
+    //                 ->select('jobs.*')
+    //                 ->distinct()
+    //                 ->with('roleCategory')
+    //                 ->get();
+
+    //             $view = view('partials.recent-search-list', ['jobs' => $searchResults])->render();
+    //             return $view;
+    //         } else {
+    //             return '<p>Không có kết quả tìm kiếm</p>';
+    //         }
+    //     }
+    // }
 }

@@ -72,24 +72,4 @@ class CategoryController extends Controller
 
         return view('tuyen-dung.tuyen-dung', compact('parents', 'parentCategories', 'jobs'));
     }
-    // public function searchCategories(Request $request)
-    // {
-    //     if ($request->ajax() && $request->has('query')) {
-    //         $query = $request->input('query');
-
-    //         if (!empty($query)) {
-    //             $searchResults = JobModel::join('categories', 'jobs.role_category_id', '=', 'categories.category_id')
-    //                 ->where('categories.category_name', 'LIKE', "%$query%")
-    //                 ->select('jobs.*')
-    //                 ->distinct()
-    //                 ->with('roleCategory')
-    //                 ->get();
-
-    //             $view = view('partials.recent-search-list', ['jobs' => $searchResults])->render();
-    //             return $view;
-    //         } else {
-    //             return '<p>Không có kết quả tìm kiếm</p>';
-    //         }
-    //     }
-    // }
 }

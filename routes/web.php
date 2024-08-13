@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+
+use App\Http\Controllers\JobController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,9 +35,5 @@ Route::get('/tai-lieu', function () {
 
 Route::get('/tuyen-dung', [CategoryController::class, 'index'])->name('tuyen-dung');
 Route::get('/search-categories', [CategoryController::class, 'searchCategories']);
-
-
-
-Route::get('/chi-tiet-tuyen-dung', function () {
-    return view('tuyen-dung.chi-tiet-tuyen-dung');
-})->name('chi-tiet-tuyen-dung');
+Route::get('/chi-tiet-tuyen-dung/{id}', [JobController::class, 'show'])->name('chi-tiet-tuyen-dung');
+Route::post('/upload', [JobController::class, 'upload'])->name('upload');

@@ -16,6 +16,7 @@ class JobModel extends Model
     protected $fillable = [
         'description',
         'status',
+        'url_job_details',
         'role_category_id',
         'position_category_id',
         'location_category_id',

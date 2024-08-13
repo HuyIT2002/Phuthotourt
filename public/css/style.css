@@ -3047,11 +3047,14 @@ width: 95px;
     text-align: center;
     cursor: pointer;
     margin-top: 10px;
+     text-decoration: none; 
     padding: 8px 12px; /* Thêm padding để làm nút rõ ràng hơn */
  transition: background-color 0.3s ease; /* Tạo hiệu ứng mượt mà khi thay đổi màu nền */
 }
 
 .more-recruitment:hover {
+    color: white;
+     text-decoration: none; 
     background: #0073CC; /* Màu nền nhạt hơn khi hover */
 }
 
@@ -3380,6 +3383,31 @@ font-family: Roboto;
 font-weight: 600;
 word-wrap: break-word
 }
+.status-recruitment-red-details {
+width:140px; 
+height: 53px; 
+padding-left: 24px; 
+padding-right: 24px;
+ padding-top: 16px; 
+ padding-bottom: 16px; 
+    background: #F7E6E6;
+    color: #FF3939;
+ border-radius: 88.61px; 
+overflow: hidden; 
+justify-content: center; 
+align-items: center; 
+display: inline-flex;
+margin-left: 88%;
+    margin-top: -11%;
+}
+
+.status-text-red-details {
+    color: #FF3939;
+font-size: 18px;
+font-family: Roboto;
+font-weight: 600;
+word-wrap: break-word
+}
 .image-wrapper-details {
     width: 1166px;
     height: 668px;
@@ -3574,14 +3602,11 @@ word-wrap: break-word
       box-sizing: border-box;
     background-color: white;
 }
-.cv-text {
-        /* margin-left: -185%; */
-    color: #A3A3A3;
-    font-size: 16px;
-}
 
-span.cv-icon {
-    margin-left: 149px;
+
+.cv-icon {
+    margin-left: 120px;
+    /* padding: 60px; */
     cursor: pointer;
 }
 .options {
@@ -3879,4 +3904,51 @@ input[type="radio"]:checked::before {
     margin: 0;
     width: 100%;
     box-sizing: border-box;
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert {
+    margin: 0 auto 20px;
+    position: relative;
+    width: 300px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    top: -400px;
+        text-align: center;
+}
+
+label.custom-file-upload {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    box-sizing: border-box;
+}
+.cv-text {
+    /* margin-left: -185%; */
+    color: #A3A3A3;
+    font-size: 16px;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.submit-button .submit-text {
+    background-color: transparent; /* Loại bỏ nền của nút bấm */
+    border: none; /* Loại bỏ viền của nút bấm */
+    color: white; /* Màu chữ, thay đổi nếu cần */
+    padding: 10px 20px; /* Padding để đảm bảo kích thước của nút bấm hợp lý */
+    font-size: 16px; /* Kích thước chữ, thay đổi nếu cần */
+    cursor: pointer; /* Thay đổi con trỏ khi di chuột lên nút bấm */
+    border-radius: 4px; /* Bo góc nút bấm, thay đổi nếu cần */
+    /* Thêm các thuộc tính khác nếu cần thiết */
 }

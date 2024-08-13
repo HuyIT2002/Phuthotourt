@@ -17,6 +17,7 @@ return new class extends Migration
             $table->increments('job_id'); // Tạo cột id tự tăng
             $table->text('description');
             $table->boolean('status');
+            $table->string('url_job_details');
 
             // Khóa ngoại liên kết với bảng categories
             $table->unsignedInteger('role_category_id')->nullable();

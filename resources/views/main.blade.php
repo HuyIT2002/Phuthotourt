@@ -45,6 +45,38 @@
     </script>
     <script src="{{ asset('public/js/style.js') }}"></script>
     <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Lấy tham chiếu đến form
+        var form = document.getElementById('uploadForm');
+
+        // Lắng nghe sự kiện submit của form
+        form.addEventListener('submit', function(event) {
+            // Ngăn chặn form gửi đi ngay lập tức
+            event.preventDefault();
+
+            // Lấy giá trị của trường 'name'
+            var nameInput = document.getElementById('name');
+            var nameValue = nameInput.value;
+
+            // Hiển thị giá trị trong console
+            console.log('Họ tên:', nameValue);
+
+            // Gửi form sau khi kiểm tra
+            form.submit();
+        });
+    });
+    </script>
+
+    <script>
+    $(document).ready(function() {
+        $('#cv').on('change', function() {
+            var fileName = $(this).val().split('\\').pop(); // Lấy tên file
+            $('#cv-text').text(fileName ? fileName : 'Không có tập tin nào được chọn');
+        });
+    });
+    </script>
+
+    <script>
     $(document).ready(function() {
         $('.item-box').on('click', function() {
             // Toggle 'item-box-active' class on the clicked item
@@ -173,28 +205,6 @@
         showPage(1);
     });
 
-    // JavaScript/jQuery
-    // $(document).ready(function() {
-    //     $('#search-input').on('input', function() {
-    //         var query = $(this).val();
-
-    //         $.ajax({
-    //             url: '/PHU_THO_TOURIST/tuyen-dung', // Cập nhật URL chính xác
-    //             method: 'GET',
-    //             data: {
-    //                 query: query
-    //             },
-    //             success: function(response) {
-    //                 $('#search-results').html(response)
-    //                     .show(); // Hiển thị search-results sau khi nhận được kết quả
-    //             },
-    //             error: function(xhr) {
-    //                 $('#search-results').html('<p>Đã xảy ra lỗi!</p>')
-    //                     .show(); // Hiển thị thông báo lỗi
-    //             }
-    //         });
-    //     });
-    // });
 
     $(document).ready(function() {
         var debounceTime = 1000; // 10 giây

@@ -14,8 +14,9 @@ $uniqueJobs = $jobs->unique('role_category_id');
                 stroke="white" stroke-width="2" />
         </svg>
     </div>
-    <div class="search-item-text">{{ $job->roleCategory->category_name ?? 'Không có tên' }}
-    </div>
+    <a href="{{ route('chi-tiet-tuyen-dung', ['id' => $job->job_id]) }}"
+        class="search-item-text">{{ $job->roleCategory->category_name ?? 'Không có tên' }}
+    </a>
 </div>
 @endforeach
 @else

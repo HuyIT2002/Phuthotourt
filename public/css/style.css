@@ -1441,7 +1441,14 @@ svg {
 /* .search-item-text {
     margin-right: 42%;
 } */
-
+.search-item-text {
+    color: inherit; /* Sử dụng màu hiện tại của phần tử cha */
+    text-decoration: none; /* Loại bỏ gạch chân */
+}
+.search-item-text:hover {
+    color: inherit; /* Đảm bảo rằng khi hover, màu không thay đổi */
+    text-decoration: none; /* Đảm bảo rằng khi hover, không có gạch chân */
+}
 .recent-search-item {
    
     padding: 8px;

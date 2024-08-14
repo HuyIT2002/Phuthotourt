@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
-
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JobController;
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +19,8 @@ Route::get('/', function () {
     return view('home.home');
 });
 
-Route::get('/home', function () {
-    return view('home.home');
-})->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
 Route::get('/bai-viet', function () {
     return view('bai-viet.bai-viet');
 })->name('bai-viet');

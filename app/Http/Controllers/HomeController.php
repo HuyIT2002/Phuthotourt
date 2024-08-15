@@ -13,7 +13,7 @@ class HomeController extends Controller
     {
         // Lấy 5 ảnh mới nhất dựa trên cột `created_at`
         $latestImages = Image::orderBy('created_at', 'desc')->limit(5)->get();
-        $latestPosts = Post::latest()->take(3)->get();
+        $latestPosts = Post::orderBy('created_at', 'asc')->take(3)->get();
         $contents = Content::orderBy('created_at', 'desc')->take(3)->get();
         // Trả về view với danh sách ảnh
         return view('home.home', compact('latestImages', 'latestPosts', 'contents'));

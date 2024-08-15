@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\PostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,9 +22,9 @@ Route::get('/', function () {
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::get('/bai-viet', function () {
-    return view('bai-viet.bai-viet');
-})->name('bai-viet');
+
+Route::get('/bai-viet', [PostController::class, 'index'])->name('bai-viet');
+
 Route::get('/chi-tiet-bai-viet', function () {
     return view('bai-viet.chi-tiet-bai-viet');
 })->name('chi-tiet-bai-viet');

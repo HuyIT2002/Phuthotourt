@@ -2065,6 +2065,7 @@ th.datepicker-switch {
     font-weight: 700;
     word-wrap: break-word;
     margin-top: -3%;
+    text-overflow: ellipsis;
 }
 
 .tags-wrapper {
@@ -3958,4 +3959,7 @@ label.custom-file-upload {
     cursor: pointer; /* Thay đổi con trỏ khi di chuột lên nút bấm */
     border-radius: 4px; /* Bo góc nút bấm, thay đổi nếu cần */
     /* Thêm các thuộc tính khác nếu cần thiết */
+}
+.item-box.item-box-active .svg-image {
+    filter: invert(5) sepia(6) saturate(0) hue-rotate(0deg);
 }

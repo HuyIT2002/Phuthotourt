@@ -86,32 +86,32 @@
         });
     });
 
-    $(document).ready(function() {
-        var selectedCategoryId = null;
+    // $(document).ready(function() {
+    //     var selectedCategoryId = null;
 
-        $('.option-container').click(function() {
-            var categoryId = $(this).data('id');
+    //     $('.option-container').click(function() {
+    //         var categoryId = $(this).data('id');
 
-            // Kiểm tra nếu danh mục đã được chọn, bỏ chọn nó
-            if (selectedCategoryId === categoryId) {
-                selectedCategoryId = null; // Bỏ chọn
-            } else {
-                selectedCategoryId = categoryId; // Chọn danh mục mới
-            }
+    //         // Kiểm tra nếu danh mục đã được chọn, bỏ chọn nó
+    //         if (selectedCategoryId === categoryId) {
+    //             selectedCategoryId = null; // Bỏ chọn
+    //         } else {
+    //             selectedCategoryId = categoryId; // Chọn danh mục mới
+    //         }
 
-            $.ajax({
-                url: '{{ route("tuyen-dung") }}',
-                method: 'GET',
-                data: {
-                    category_id: selectedCategoryId // Gửi `category_id` hoặc null nếu không có danh mục nào được chọn
-                },
-                success: function(response) {
-                    // Thay thế nội dung trong #flex-container
-                    $('#flex-container').html($(response).find('#flex-container').html());
-                }
-            });
-        });
-    });
+    //         $.ajax({
+    //             url: '{{ route("tuyen-dung") }}',
+    //             method: 'GET',
+    //             data: {
+    //                 category_id: selectedCategoryId // Gửi `category_id` hoặc null nếu không có danh mục nào được chọn
+    //             },
+    //             success: function(response) {
+    //                 // Thay thế nội dung trong #flex-container
+    //                 $('#flex-container').html($(response).find('#flex-container').html());
+    //             }
+    //         });
+    //     });
+    // });
 
 
     $(document).ready(function() {
@@ -342,6 +342,236 @@
                 $('#search-results').hide(); // Ẩn kết quả tìm kiếm
                 $('.hidden-icon-recruitment').hide(); // Ẩn icon
                 $('#search-results-1').hide();
+            }
+        });
+
+        // Cập nhật danh sách tìm kiếm gần đây khi trang tải
+        updateRecentSearchList();
+    });
+    </script>
+    <script>
+    $(document).ready(function() {
+        var selectedCategoryId = null;
+        var totalPages = 1; // Khởi tạo biến totalPages với giá trị mặc định
+
+        $('.item-box').click(function() {
+            var parentId = $(this).data('id');
+
+            if (selectedCategoryId === parentId) {
+                selectedCategoryId = null; // Bỏ chọn
+            } else {
+                selectedCategoryId = parentId; // Chọn danh mục mới
+            }
+
+            $.ajax({
+                url: '{{ route("bai-viet") }}',
+                method: 'GET',
+                data: {
+                    parent_id: selectedCategoryId
+                },
+                success: function(response) {
+                    $('#content-container').html($(response).find('#content-container')
+                        .html());
+
+                    // Cập nhật biến totalPages và gọi lại hàm phân trang
+                    updatePagination();
+                    showPage(1); // Hiển thị trang đầu tiên khi tải nội dung mới
+                }
+            });
+        });
+
+        // Phần còn lại của mã không thay đổi...
+
+        const itemsPerPage = 12;
+        const $contentContainer = $('#content-container');
+        const $paginationContainer = $('.pagination-items');
+
+        function updatePagination() {
+            const $items = $contentContainer.children();
+            totalPages = Math.ceil($items.length / itemsPerPage); // Cập nhật totalPages
+
+            createPagination(); // Tạo phân trang mới
+        }
+
+        function createPagination() {
+            $paginationContainer.empty();
+            for (let i = 1; i <= totalPages; i++) {
+                const $pageNumDiv = $('<div></div>').addClass('page-number');
+                const $pageTextDiv = $('<div></div>').addClass('page-text').text(i);
+                $pageNumDiv.append($pageTextDiv);
+                $pageNumDiv.on('click', () => showPage(i));
+                $paginationContainer.append($pageNumDiv);
+            }
+        }
+
+        function showPage(pageNumber) {
+            const $items = $contentContainer.children();
+
+            $items.each(function(index) {
+                $(this).toggle(index >= (pageNumber - 1) * itemsPerPage && index < pageNumber *
+                    itemsPerPage);
+            });
+
+            $paginationContainer.children().each(function() {
+                $(this).toggleClass('active', parseInt($(this).text()) === pageNumber);
+            });
+
+            // Cập nhật trạng thái disabled của các mũi tên
+            $('.arrow.left-arrow').toggleClass('disabled', pageNumber === 1);
+            $('.arrow.right-arrow').toggleClass('disabled', pageNumber === totalPages);
+        }
+
+        $('.arrow.left-arrow').on('click', function() {
+            if (!$(this).hasClass('disabled')) {
+                const activePage = $paginationContainer.children().filter('.active').index() + 1;
+                if (activePage > 1) showPage(activePage - 1);
+            }
+        });
+
+        $('.arrow.right-arrow').on('click', function() {
+            if (!$(this).hasClass('disabled')) {
+                const activePage = $paginationContainer.children().filter('.active').index() + 1;
+                if (activePage < totalPages) showPage(activePage + 1);
+            }
+        });
+
+        // Tạo phân trang và hiển thị trang đầu tiên khi tải trang
+        updatePagination();
+        showPage(1);
+    });
+
+
+    $(document).ready(function() {
+        var debounceTime = 1000; // 10 giây
+        var debounceTimeout;
+
+        // Cập nhật danh sách tìm kiếm gần đây từ localStorage
+        function updateRecentSearchList() {
+            var recentSearches = JSON.parse(localStorage.getItem('recentSearches')) || [];
+            var $list = $('#search-results-2 .recent-search-list');
+            $list.empty(); // Xóa danh sách hiện tại
+
+            recentSearches.forEach(function(item, index) {
+                var $item = $('<div>', {
+                    class: 'recent-search-item'
+                });
+                var $text = $('<div>', {
+                    class: 'search-item-text',
+                    text: item
+                });
+                var $icon = $('<div>', {
+                        class: 'search-item-icon'
+                    })
+                    .append(
+                        '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+                        '<path d="M8 16L16 8M16 16L8 8" stroke="#666666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />' +
+                        '</svg>');
+
+                // Thêm sự kiện xóa cho icon
+                $icon.on('click', function() {
+                    removeRecentSearch(index); // Xóa mục khi nhấp vào icon
+                });
+
+                $item.append($text).append($icon);
+                $list.append($item);
+            });
+        }
+
+        // Lưu tìm kiếm gần đây vào localStorage
+        function saveRecentSearch(query) {
+            var recentSearches = JSON.parse(localStorage.getItem('recentSearches')) || [];
+
+            // Nếu tìm kiếm đã có trong danh sách, loại bỏ nó
+            recentSearches = recentSearches.filter(function(search) {
+                return search.toLowerCase() !== query.toLowerCase();
+            });
+
+            // Thêm tìm kiếm mới vào đầu danh sách
+            recentSearches.unshift(query);
+
+            // Lưu danh sách vào localStorage
+            localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
+        }
+
+        // Xóa tìm kiếm khỏi localStorage
+        function removeRecentSearch(index) {
+            var recentSearches = JSON.parse(localStorage.getItem('recentSearches')) || [];
+
+            // Xóa mục tại vị trí chỉ định
+            recentSearches.splice(index, 1);
+
+            // Cập nhật lại localStorage và danh sách hiển thị
+            localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
+            updateRecentSearchList(); // Cập nhật danh sách hiển thị
+        }
+
+        // Xử lý khi người dùng nhập vào ô tìm kiếm
+        $('#search-input-1').on('input', function() {
+            var query = $(this).val();
+
+            // Xóa timeout cũ nếu có
+            clearTimeout(debounceTimeout);
+
+            // Hiển thị icon nếu có dữ liệu nhập
+            if (query.trim() !== '') {
+                $('.hidden-icon').show();
+                $('#search-results-2').hide(); // Ẩn danh sách tìm kiếm gần đây
+
+                // Đặt timeout mới để lưu tìm kiếm sau khoảng thời gian debounce
+                debounceTimeout = setTimeout(function() {
+                    if (query.trim() !== '') {
+                        saveRecentSearch(query);
+                        updateRecentSearchList(); // Cập nhật danh sách hiển thị sau khi lưu
+                    }
+                }, debounceTime);
+            } else {
+                $('.hidden-icon').hide();
+                $('#search-results-2')
+                    .show(); // Hiển thị danh sách tìm kiếm gần đây nếu ô tìm kiếm trống
+            }
+
+            // Gửi yêu cầu AJAX để tìm kiếm kết quả
+            $.ajax({
+                url: '/PHU_THO_TOURIST/bai-viet', // Cập nhật URL chính xác
+                method: 'GET',
+                data: {
+                    query: query
+                },
+                success: function(response) {
+                    $('#search-results-3').html(response)
+                        .show(); // Hiển thị search-results sau khi nhận được kết quả
+                    if (response.trim() === '<p>Không có kết quả tìm kiếm</p>') {
+                        $('#search-results-2')
+                            .hide(); // Ẩn danh sách tìm kiếm gần đây nếu không có kết quả tìm kiếm
+                    }
+                },
+
+            });
+        });
+
+        // Hiển thị danh sách tìm kiếm gần đây khi nhấp vào ô tìm kiếm
+        $('#search-input-1').on('focus', function() {
+            $('#search-results-2').show(); // Hiển thị danh sách tìm kiếm gần đây
+            updateRecentSearchList(); // Cập nhật danh sách tìm kiếm gần đây
+        });
+
+        // Xóa nội dung ô tìm kiếm khi nhấp vào icon
+        $('.hidden-icon').on('click', function() {
+            $('#search-input-1').val(''); // Xóa nội dung ô tìm kiếm
+            $('#search-results-3').empty().hide(); // Xóa kết quả tìm kiếm và ẩn
+            $('#search-results-2').show(); // Hiển thị danh sách tìm kiếm gần đây
+            $('.hidden-icon').hide(); // Ẩn icon
+        });
+
+        // Ẩn kết quả tìm kiếm và icon khi nhấp ra ngoài ô tìm kiếm và icon
+        $(document).on('click', function(event) {
+            var $target = $(event.target);
+
+            if (!$target.closest('#search-input-1').length && !$target.closest('.hidden-icon')
+                .length) {
+                $('#search-results-3').hide(); // Ẩn kết quả tìm kiếm
+                $('.hidden-icon').hide(); // Ẩn icon
+                $('#search-results-2').hide();
             }
         });
 

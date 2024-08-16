@@ -51,14 +51,12 @@
                     <div class="background-container">
                         <div class="overlay"></div>
                         <div class="carousel-container">
-
-                            @foreach($posts as $post)
-                            <div class="carousel-item" id="slide-{{ $loop->index + 1 }}">
-                                <img src="{{ asset('/public/images/bai-viet/' . $post->image_url) }}"
-                                    alt="Slide {{ $loop->index + 1 }}" />
+                            @foreach($posts_cu as $post_4)
+                            <div class="carousel-item">
+                                <img src="{{ asset('/public/images/bai-viet/' . $post_4->image_url) }}" />
                                 <div class="text-container-custom-3">
-                                    <h1 class="title-container-custom-3">{{ $post->content }}</h1>
-                                    <p class="description-container-custom-3">{{ $post->description }}</p>
+                                    <h1 class="title-container-custom-3">{{ $post_4->content }}</h1>
+                                    <p class="description-container-custom-3">{{ $post_4->description }}</p>
                                 </div>
                             </div>
                             @endforeach
@@ -154,7 +152,7 @@
                                 </svg>
 
                             </div>
-                            <input type="text" class="search-text" placeholder="Tìm kiếm" />
+                            <input type="text" class="search-text" id="search-input-1" placeholder="Tìm kiếm" />
                         </div>
 
                         <div class="hidden-icon">
@@ -168,28 +166,17 @@
                         </div>
 
                     </div>
-                    <div class="recent-search-container">
+                    <div class="recent-search-container" id="search-results-2">
                         <div class="recent-search-header">
                             <div class="recent-search-title">Tìm kiếm gần đây:</div>
                         </div>
                         <div class="recent-search-list">
                             <div class="recent-search-item">
-                                <div class="search-item-text-2">Công Viên Văn Hóa Đầm Sen</div>
-                                <div class="search-item-icon">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M8 16L16 8M16 16L8 8" stroke="#666666" stroke-width="1.5"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
 
-                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="recent-search-container-2">
-                        <div class="recent-search-list">
-                            <div class="recent-search-item">
-                                <div class="search-item-icon">
+                    <!-- <div class="search-item-icon">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <rect width="24" height="24" rx="12" fill="#C2C2C2" />
@@ -200,8 +187,11 @@
                                             stroke="white" stroke-width="2" />
                                     </svg>
                                 </div>
-                                <div class="search-item-text">Nhân viên phục vụ</div>
-                            </div>
+                                <div class="search-item-text">Nhân viên phục vụ</div> -->
+                    <div class="recent-search-container-2" id="search-results-3">
+                        <div class="recent-search-list">
+                            @include('partials.recent-search-list-1')
+
                         </div>
                     </div>
                 </div>
@@ -256,9 +246,11 @@
         <div class="container-custom-7">
             <div class="box-container-2">
                 <div class="title-box-2">Chủ đề bài viết</div>
+
+
                 <div class="content-box">
                     @foreach($parents as $parent)
-                    <div class="item-box item-box-white">
+                    <div class="item-box item-box-white" data-id="{{ $parent->parent_id }}">
                         <div class="icon-box-2">
                             <div class="icon icon-news">
                                 <img src="{{ asset('/public/images/bai-viet/'.$parent->parent_url_text) }}"
@@ -269,6 +261,9 @@
                     </div>
                     @endforeach
                 </div>
+
+
+
                 <div class="background-overlay">
                     <svg class="circle-blue" width="253" height="256" viewBox="0 0 253 256" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -294,49 +289,58 @@
         <div class="container-custom-8">
             <div class="container">
                 <div class="row" id="content-container">
-                    @foreach($posts_all as $post)
-                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 custom-margin">
+                    @foreach($posts_all as $posts_alls)
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 custom-margin" data-post="{{ $posts_alls->post_id }}">
 
                         <div class="custom-container-8">
                             <div class="image-wrapper-8">
-                                <img src="{{ asset('/public/images/bai-viet/' . $post->image_url) }}">
+                                <img src="{{ asset('/public/images/bai-viet/' . $posts_alls->image_url) }}">
                                 <div class="overlay">Click để xem
                                 </div>
                             </div>
                             <div class="info-wrapper-8">
                                 <div class="admin-info-wrapper">
                                     <div class="admin-text">
-                                        {{ $post->role == 1 ? 'Admin' : '' }}
+                                        {{ $posts_alls->role == 1 ? 'Admin' : '' }}
                                     </div>
                                     <div class="admin-dot"></div>
                                 </div>
-                                <div class="title-text-8">{{ $post->content }}</div>
+                                <div class="title-text-8">{{ $posts_alls->content }}</div>
                                 <div class="tags-wrapper">
                                     <div class="tag-item">
-                                        <div class="tag-text">{{ $post->roleCategory->parent_name ?? 'N/A' }}</div>
+                                        <div class="tag-text"
+                                            data-type="{{ $post->roleCategory ? $posts_alls->roleCategory->parent_id : 'N/A' }}">
+                                            {{ $posts_alls->roleCategory->parent_name ?? 'N/A' }}
+                                        </div>
                                     </div>
                                     <div class="tag-item">
-                                        <div class="tag-text">{{ $post->positionCategory->parent_name ?? 'N/A' }}</div>
+                                        <div class="tag-text"
+                                            data-type="{{ $post->positionCategory ? $posts_alls->positionCategory->parent_id : 'N/A' }}">
+                                            {{ $posts_alls->positionCategory->parent_name ?? 'N/A' }}
+                                        </div>
                                     </div>
                                     <div class="tag-item">
-                                        <div class="tag-text">{{ $post->locationCategory->parent_name ?? 'N/A' }}</div>
+                                        <div class="tag-text"
+                                            data-type="{{ $post->locationCategory ? $posts_alls->locationCategory->parent_id : 'N/A' }}">
+                                            {{ $posts_alls->locationCategory->parent_name ?? 'N/A' }}
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="stats-wrapper">
                                     <div class="stats-item">
                                         <div class="stats-text">
-                                            @if($post->view >= 1000000)
-                                            {{ round($post->view / 1000000, 1) }}T lượt xem
-                                            @elseif($post->view >= 1000)
-                                            {{ round($post->view / 1000, 1) }}N lượt xem
+                                            @if($posts_alls->view >= 1000000)
+                                            {{ round($posts_alls->view / 1000000, 1) }}T lượt xem
+                                            @elseif($posts_alls->view >= 1000)
+                                            {{ round($posts_alls->view / 1000, 1) }}N lượt xem
                                             @else
-                                            {{ $post->view }} lượt xem
+                                            {{ $posts_alls->view }} lượt xem
                                             @endif
                                         </div>
                                     </div>
                                     <div class="stats-dot"></div>
                                     <div class="stats-item">
-                                        <div class="stats-text">{{ $post->created_at->format('d/m/Y') }}</div>
+                                        <div class="stats-text">{{ $posts_alls->created_at->format('d/m/Y') }}</div>
                                     </div>
                                 </div>
                             </div>

@@ -1,5 +1,5 @@
 @php
-$uniquePosts = $posts->unique('post_id');
+$uniquePosts = $posts_reseach->unique('post_id');
 @endphp
 
 @if($uniquePosts->isNotEmpty())

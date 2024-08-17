@@ -481,7 +481,7 @@ $(document).ready(function() {
         var selectedDate = e.date; // Ngày được chọn từ datepicker
         var formattedDate = formatDate(selectedDate); // Định dạng ngày theo dd/mm/yyyy
 
-        $('#dateInput').val(formattedDate); // Đặt giá trị cho ô input
+        $('#dateInput2').val(formattedDate); // Đặt giá trị cho ô input
     });
 
     $('#calendarIcon2').on('click', function() {

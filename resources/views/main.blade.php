@@ -84,34 +84,7 @@
 
             console.log('Item clicked and background color changed.');
         });
-    });
-
-    // $(document).ready(function() {
-    //     var selectedCategoryId = null;
-
-    //     $('.option-container').click(function() {
-    //         var categoryId = $(this).data('id');
-
-    //         // Kiểm tra nếu danh mục đã được chọn, bỏ chọn nó
-    //         if (selectedCategoryId === categoryId) {
-    //             selectedCategoryId = null; // Bỏ chọn
-    //         } else {
-    //             selectedCategoryId = categoryId; // Chọn danh mục mới
-    //         }
-
-    //         $.ajax({
-    //             url: '{{ route("tuyen-dung") }}',
-    //             method: 'GET',
-    //             data: {
-    //                 category_id: selectedCategoryId // Gửi `category_id` hoặc null nếu không có danh mục nào được chọn
-    //             },
-    //             success: function(response) {
-    //                 // Thay thế nội dung trong #flex-container
-    //                 $('#flex-container').html($(response).find('#flex-container').html());
-    //             }
-    //         });
-    //     });
-    // });
+    })
 
 
     $(document).ready(function() {
@@ -349,98 +322,9 @@
         updateRecentSearchList();
     });
     </script>
+
+
     <script>
-    $(document).ready(function() {
-        var selectedCategoryId = null;
-        var totalPages = 1; // Khởi tạo biến totalPages với giá trị mặc định
-
-        $('.item-box').click(function() {
-            var parentId = $(this).data('id');
-
-            if (selectedCategoryId === parentId) {
-                selectedCategoryId = null; // Bỏ chọn
-            } else {
-                selectedCategoryId = parentId; // Chọn danh mục mới
-            }
-
-            $.ajax({
-                url: '{{ route("bai-viet") }}',
-                method: 'GET',
-                data: {
-                    parent_id: selectedCategoryId
-                },
-                success: function(response) {
-                    $('#content-container').html($(response).find('#content-container')
-                        .html());
-
-                    // Cập nhật biến totalPages và gọi lại hàm phân trang
-                    updatePagination();
-                    showPage(1); // Hiển thị trang đầu tiên khi tải nội dung mới
-                }
-            });
-        });
-
-        // Phần còn lại của mã không thay đổi...
-
-        const itemsPerPage = 12;
-        const $contentContainer = $('#content-container');
-        const $paginationContainer = $('.pagination-items');
-
-        function updatePagination() {
-            const $items = $contentContainer.children();
-            totalPages = Math.ceil($items.length / itemsPerPage); // Cập nhật totalPages
-
-            createPagination(); // Tạo phân trang mới
-        }
-
-        function createPagination() {
-            $paginationContainer.empty();
-            for (let i = 1; i <= totalPages; i++) {
-                const $pageNumDiv = $('<div></div>').addClass('page-number');
-                const $pageTextDiv = $('<div></div>').addClass('page-text').text(i);
-                $pageNumDiv.append($pageTextDiv);
-                $pageNumDiv.on('click', () => showPage(i));
-                $paginationContainer.append($pageNumDiv);
-            }
-        }
-
-        function showPage(pageNumber) {
-            const $items = $contentContainer.children();
-
-            $items.each(function(index) {
-                $(this).toggle(index >= (pageNumber - 1) * itemsPerPage && index < pageNumber *
-                    itemsPerPage);
-            });
-
-            $paginationContainer.children().each(function() {
-                $(this).toggleClass('active', parseInt($(this).text()) === pageNumber);
-            });
-
-            // Cập nhật trạng thái disabled của các mũi tên
-            $('.arrow.left-arrow').toggleClass('disabled', pageNumber === 1);
-            $('.arrow.right-arrow').toggleClass('disabled', pageNumber === totalPages);
-        }
-
-        $('.arrow.left-arrow').on('click', function() {
-            if (!$(this).hasClass('disabled')) {
-                const activePage = $paginationContainer.children().filter('.active').index() + 1;
-                if (activePage > 1) showPage(activePage - 1);
-            }
-        });
-
-        $('.arrow.right-arrow').on('click', function() {
-            if (!$(this).hasClass('disabled')) {
-                const activePage = $paginationContainer.children().filter('.active').index() + 1;
-                if (activePage < totalPages) showPage(activePage + 1);
-            }
-        });
-
-        // Tạo phân trang và hiển thị trang đầu tiên khi tải trang
-        updatePagination();
-        showPage(1);
-    });
-
-
     $(document).ready(function() {
         var debounceTime = 1000; // 10 giây
         var debounceTimeout;
@@ -578,7 +462,222 @@
         // Cập nhật danh sách tìm kiếm gần đây khi trang tải
         updateRecentSearchList();
     });
+
+
+
+
+    $(document).ready(function() {
+        var selectedCategoryId = null;
+        var totalPages = 1; // Khởi tạo biến totalPages với giá trị mặc định
+
+        $('.item-box').click(function() {
+            var parentId = $(this).data('id');
+
+            if (selectedCategoryId === parentId) {
+                selectedCategoryId = null; // Bỏ chọn
+            } else {
+                selectedCategoryId = parentId; // Chọn danh mục mới
+            }
+
+            $.ajax({
+                url: '/PHU_THO_TOURIST/bai-viet',
+                method: 'GET',
+                data: {
+                    parent_id: selectedCategoryId
+                },
+                success: function(response) {
+                    $('#content-container').html($(response).find('#content-container')
+                        .html());
+
+                    // Cập nhật biến totalPages và gọi lại hàm phân trang
+                    updatePagination();
+                    showPage(1); // Hiển thị trang đầu tiên khi tải nội dung mới
+                }
+            });
+        });
+
+        // Phần còn lại của mã không thay đổi...
+
+        const itemsPerPage = 12;
+        const $contentContainer = $('#content-container');
+        const $paginationContainer = $('.pagination-items');
+
+        function updatePagination() {
+            const $items = $contentContainer.children();
+            totalPages = Math.ceil($items.length / itemsPerPage); // Cập nhật totalPages
+
+            createPagination(); // Tạo phân trang mới
+        }
+
+        function createPagination() {
+            $paginationContainer.empty();
+            for (let i = 1; i <= totalPages; i++) {
+                const $pageNumDiv = $('<div></div>').addClass('page-number');
+                const $pageTextDiv = $('<div></div>').addClass('page-text').text(i);
+                $pageNumDiv.append($pageTextDiv);
+                $pageNumDiv.on('click', () => showPage(i));
+                $paginationContainer.append($pageNumDiv);
+            }
+        }
+
+        function showPage(pageNumber) {
+            const $items = $contentContainer.children();
+
+            $items.each(function(index) {
+                $(this).toggle(index >= (pageNumber - 1) * itemsPerPage && index < pageNumber *
+                    itemsPerPage);
+            });
+
+            $paginationContainer.children().each(function() {
+                $(this).toggleClass('active', parseInt($(this).text()) === pageNumber);
+            });
+
+            // Cập nhật trạng thái disabled của các mũi tên
+            $('.arrow.left-arrow').toggleClass('disabled', pageNumber === 1);
+            $('.arrow.right-arrow').toggleClass('disabled', pageNumber === totalPages);
+        }
+
+        $('.arrow.left-arrow').on('click', function() {
+            if (!$(this).hasClass('disabled')) {
+                const activePage = $paginationContainer.children().filter('.active').index() + 1;
+                if (activePage > 1) showPage(activePage - 1);
+            }
+        });
+
+        $('.arrow.right-arrow').on('click', function() {
+            if (!$(this).hasClass('disabled')) {
+                const activePage = $paginationContainer.children().filter('.active').index() + 1;
+                if (activePage < totalPages) showPage(activePage + 1);
+            }
+        });
+
+        // Tạo phân trang và hiển thị trang đầu tiên khi tải trang
+        updatePagination();
+        showPage(1);
+    });
     </script>
+
+    <script>
+    function convertDateFormat(dateString) {
+        var parts = dateString.split('/');
+        if (parts.length === 3) {
+            return parts[2] + '-' + parts[1] + '-' + parts[0];
+        } else {
+            console.log('Ngày không đúng định dạng.');
+            return null;
+        }
+    }
+
+    $(document).ready(function() {
+        console.log('Document is ready');
+        var totalPages = 1; // Khởi tạo biến totalPages với giá trị mặc định
+
+        $('#dateInput, #dateInput2').on('change', function() {
+            console.log('Date input changed');
+
+            var startDate = $('#dateInput').val();
+            var endDate = $('#dateInput2').val();
+
+            console.log('Ngày bắt đầu:', startDate);
+            console.log('Ngày kết thúc:', endDate);
+
+            var formattedStartDate = convertDateFormat(startDate);
+            var formattedEndDate = convertDateFormat(endDate);
+
+            console.log('Ngày bắt đầu (sau chuyển đổi):', formattedStartDate);
+            console.log('Ngày kết thúc (sau chuyển đổi):', formattedEndDate);
+
+            if (formattedStartDate && formattedEndDate) {
+                $.ajax({
+                    url: '/PHU_THO_TOURIST/bai-viet',
+                    type: 'GET',
+                    data: {
+                        start_date: formattedStartDate,
+                        end_date: formattedEndDate
+                    },
+                    success: function(response) {
+                        if (response.view) {
+                            $('#content-container').html(response.view); // Đảm bảo ID đúng
+                            updatePagination();
+                            showPage(1); // Hiển thị trang đầu tiên khi tải nội dung mới
+                        } else if (response.error) {
+                            $('#content-container').html('<p>' + response.error + '</p>');
+                        }
+
+                    },
+                    error: function(xhr) {
+                        console.log(xhr.responseText);
+                        $('#content-container').html(
+                            '<p>Đã xảy ra lỗi khi gửi yêu cầu.</p>');
+                    }
+                });
+            } else {
+                console.log('Vui lòng chọn cả hai ngày.');
+                $('#content-container').html('<p>Vui lòng chọn cả hai ngày.</p>');
+            }
+        });
+
+        const itemsPerPage = 12;
+        const $contentContainer = $('#content-container');
+        const $paginationContainer = $('.pagination-items');
+
+        function updatePagination() {
+            const $items = $contentContainer.children();
+            totalPages = Math.ceil($items.length / itemsPerPage); // Cập nhật totalPages
+
+            createPagination(); // Tạo phân trang mới
+        }
+
+        function createPagination() {
+            $paginationContainer.empty();
+            for (let i = 1; i <= totalPages; i++) {
+                const $pageNumDiv = $('<div></div>').addClass('page-number');
+                const $pageTextDiv = $('<div></div>').addClass('page-text').text(i);
+                $pageNumDiv.append($pageTextDiv);
+                $pageNumDiv.on('click', () => showPage(i));
+                $paginationContainer.append($pageNumDiv);
+            }
+        }
+
+        function showPage(pageNumber) {
+            const $items = $contentContainer.children();
+
+            $items.each(function(index) {
+                $(this).toggle(index >= (pageNumber - 1) * itemsPerPage && index < pageNumber *
+                    itemsPerPage);
+            });
+
+            $paginationContainer.children().each(function() {
+                $(this).toggleClass('active', parseInt($(this).text()) === pageNumber);
+            });
+
+            // Cập nhật trạng thái disabled của các mũi tên
+            $('.arrow.left-arrow').toggleClass('disabled', pageNumber === 1);
+            $('.arrow.right-arrow').toggleClass('disabled', pageNumber === totalPages);
+        }
+
+        $('.arrow.left-arrow').on('click', function() {
+            if (!$(this).hasClass('disabled')) {
+                const activePage = $paginationContainer.children().filter('.active').index() + 1;
+                if (activePage > 1) showPage(activePage - 1);
+            }
+        });
+
+        $('.arrow.right-arrow').on('click', function() {
+            if (!$(this).hasClass('disabled')) {
+                const activePage = $paginationContainer.children().filter('.active').index() + 1;
+                if (activePage < totalPages) showPage(activePage + 1);
+            }
+        });
+
+        // Tạo phân trang và hiển thị trang đầu tiên khi tải trang
+        updatePagination();
+        showPage(1);
+    });
+    </script>
+
+
+
 </body>
 
 </html>

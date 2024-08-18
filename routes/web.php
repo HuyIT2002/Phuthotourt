@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\DocumentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,9 +30,7 @@ Route::get('/chi-tiet-bai-viet', function () {
     return view('bai-viet.chi-tiet-bai-viet');
 })->name('chi-tiet-bai-viet');
 
-Route::get('/tai-lieu', function () {
-    return view('tai-lieu.tai-lieu');
-})->name('tai-lieu');
+Route::get('/tai-lieu', [DocumentController::class, 'index'])->name('tai-lieu');
 
 Route::get('/tuyen-dung', [CategoryController::class, 'index'])->name('tuyen-dung');
 Route::get('/search-categories', [CategoryController::class, 'searchCategories']);

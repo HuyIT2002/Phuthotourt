@@ -677,6 +677,282 @@
     </script>
 
 
+    <script>
+    function convertDateFormat(dateString) {
+        var parts = dateString.split('/');
+        if (parts.length === 3) {
+            return parts[2] + '-' + parts[1] + '-' + parts[0];
+        } else {
+            console.log('Ngày không đúng định dạng.');
+            return null;
+        }
+    }
+
+    $(document).ready(function() {
+        console.log('Document is ready');
+        var totalPages = 1; // Khởi tạo biến totalPages với giá trị mặc định
+
+        $('#dateInput, #dateInput2').on('change', function() {
+            console.log('Date input changed');
+
+            var startDate = $('#dateInput').val();
+            var endDate = $('#dateInput2').val();
+
+            console.log('Ngày bắt đầu:', startDate);
+            console.log('Ngày kết thúc:', endDate);
+
+            var formattedStartDate = convertDateFormat(startDate);
+            var formattedEndDate = convertDateFormat(endDate);
+
+            console.log('Ngày bắt đầu (sau chuyển đổi):', formattedStartDate);
+            console.log('Ngày kết thúc (sau chuyển đổi):', formattedEndDate);
+
+            if (formattedStartDate && formattedEndDate) {
+                $.ajax({
+                    url: '/PHU_THO_TOURIST/tai-lieu',
+                    type: 'GET',
+                    data: {
+                        start_date: formattedStartDate,
+                        end_date: formattedEndDate
+                    },
+                    success: function(response) {
+                        if (response.view) {
+                            $('#table-body').html(response.view); // Đảm bảo ID đúng
+                            updatePagination();
+                            showPage(1); // Hiển thị trang đầu tiên khi tải nội dung mới
+                        } else if (response.error) {
+                            $('#table-body').html('<p>' + response.error + '</p>');
+                        }
+
+                    },
+                    error: function(xhr) {
+                        console.log(xhr.responseText);
+                        $('#table-bodyr').html(
+                            '<p>Đã xảy ra lỗi khi gửi yêu cầu.</p>');
+                    }
+                });
+            } else {
+                console.log('Vui lòng chọn cả hai ngày.');
+                $('#table-body').html('<p>Vui lòng chọn cả hai ngày.</p>');
+            }
+        });
+
+        const itemsPerPage = 12;
+        const $contentContainer = $('#table-body');
+        const $paginationContainer = $('.pagination-items-1');
+
+        function updatePagination() {
+            const $items = $contentContainer.children();
+            totalPages = Math.ceil($items.length / itemsPerPage); // Cập nhật totalPages
+
+            createPagination(); // Tạo phân trang mới
+        }
+
+        function createPagination() {
+            $paginationContainer.empty();
+            for (let i = 1; i <= totalPages; i++) {
+                const $pageNumDiv = $('<div></div>').addClass('page-number-1');
+                const $pageTextDiv = $('<div></div>').addClass('page-text-1').text(i);
+                $pageNumDiv.append($pageTextDiv);
+                $pageNumDiv.on('click', () => showPage(i));
+                $paginationContainer.append($pageNumDiv);
+            }
+        }
+
+        function showPage(pageNumber) {
+            const $items = $contentContainer.children();
+
+            $items.each(function(index) {
+                $(this).toggle(index >= (pageNumber - 1) * itemsPerPage && index < pageNumber *
+                    itemsPerPage);
+            });
+
+            $paginationContainer.children().each(function() {
+                $(this).toggleClass('active', parseInt($(this).text()) === pageNumber);
+            });
+
+            // Cập nhật trạng thái disabled của các mũi tên
+            $('.arrow.left-arrow').toggleClass('disabled', pageNumber === 1);
+            $('.arrow.right-arrow').toggleClass('disabled', pageNumber === totalPages);
+        }
+
+        $('.arrow.left-arrow').on('click', function() {
+            if (!$(this).hasClass('disabled')) {
+                const activePage = $paginationContainer.children().filter('.active').index() + 1;
+                if (activePage > 1) showPage(activePage - 1);
+            }
+        });
+
+        $('.arrow.right-arrow').on('click', function() {
+            if (!$(this).hasClass('disabled')) {
+                const activePage = $paginationContainer.children().filter('.active').index() + 1;
+                if (activePage < totalPages) showPage(activePage + 1);
+            }
+        });
+
+        // Tạo phân trang và hiển thị trang đầu tiên khi tải trang
+        updatePagination();
+        showPage(1);
+    });
+
+
+
+
+
+    $(document).ready(function() {
+        var debounceTime = 1000; // 10 giây
+        var debounceTimeout;
+
+        // Cập nhật danh sách tìm kiếm gần đây từ localStorage
+        function updateRecentSearchList() {
+            var recentSearches = JSON.parse(localStorage.getItem('recentSearches')) || [];
+            var $list = $('#search-results-2 .recent-search-list');
+            $list.empty(); // Xóa danh sách hiện tại
+
+            recentSearches.forEach(function(item, index) {
+                var $item = $('<div>', {
+                    class: 'recent-search-item'
+                });
+                var $text = $('<div>', {
+                    class: 'search-item-text',
+                    text: item
+                });
+                var $icon = $('<div>', {
+                        class: 'search-item-icon'
+                    })
+                    .append(
+                        '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+                        '<path d="M8 16L16 8M16 16L8 8" stroke="#666666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />' +
+                        '</svg>');
+
+                // Thêm sự kiện xóa cho icon
+                $icon.on('click', function() {
+                    removeRecentSearch(index); // Xóa mục khi nhấp vào icon
+                });
+
+                $item.append($text).append($icon);
+                $list.append($item);
+            });
+        }
+
+        // Lưu tìm kiếm gần đây vào localStorage
+        function saveRecentSearch(query) {
+            var recentSearches = JSON.parse(localStorage.getItem('recentSearches')) || [];
+
+            // Nếu tìm kiếm đã có trong danh sách, loại bỏ nó
+            recentSearches = recentSearches.filter(function(search) {
+                return search.toLowerCase() !== query.toLowerCase();
+            });
+
+            // Thêm tìm kiếm mới vào đầu danh sách
+            recentSearches.unshift(query);
+
+            // Lưu danh sách vào localStorage
+            localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
+        }
+
+        // Xóa tìm kiếm khỏi localStorage
+        function removeRecentSearch(index) {
+            var recentSearches = JSON.parse(localStorage.getItem('recentSearches')) || [];
+
+            // Xóa mục tại vị trí chỉ định
+            recentSearches.splice(index, 1);
+
+            // Cập nhật lại localStorage và danh sách hiển thị
+            localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
+            updateRecentSearchList(); // Cập nhật danh sách hiển thị
+        }
+
+        // Xử lý khi người dùng nhập vào ô tìm kiếm
+        $('#search-input-1').on('input', function() {
+            var query = $(this).val();
+
+            // Xóa timeout cũ nếu có
+            clearTimeout(debounceTimeout);
+
+            // Hiển thị icon nếu có dữ liệu nhập
+            if (query.trim() !== '') {
+                $('.hidden-icon').show();
+                $('#search-results-2').hide(); // Ẩn danh sách tìm kiếm gần đây
+
+                // Đặt timeout mới để lưu tìm kiếm sau khoảng thời gian debounce
+                debounceTimeout = setTimeout(function() {
+                    if (query.trim() !== '') {
+                        saveRecentSearch(query);
+                        updateRecentSearchList(); // Cập nhật danh sách hiển thị sau khi lưu
+                    }
+                }, debounceTime);
+            } else {
+                $('.hidden-icon').hide();
+                $('#search-results-2')
+                    .show(); // Hiển thị danh sách tìm kiếm gần đây nếu ô tìm kiếm trống
+            }
+
+            // Gửi yêu cầu AJAX để tìm kiếm kết quả
+            $.ajax({
+                url: '/PHU_THO_TOURIST/tai-lieu', // Cập nhật URL chính xác
+                method: 'GET',
+                data: {
+                    query: query
+                },
+                success: function(response) {
+                    $('#search-results-3').html(response)
+                        .show(); // Hiển thị search-results sau khi nhận được kết quả
+                    if (response.trim() === '<p>Không có kết quả tìm kiếm</p>') {
+                        $('#search-results-2')
+                            .hide(); // Ẩn danh sách tìm kiếm gần đây nếu không có kết quả tìm kiếm
+                    }
+                },
+
+            });
+        });
+
+        // Hiển thị danh sách tìm kiếm gần đây khi nhấp vào ô tìm kiếm
+        $('#search-input-1').on('focus', function() {
+            $('#search-results-2').show(); // Hiển thị danh sách tìm kiếm gần đây
+            updateRecentSearchList(); // Cập nhật danh sách tìm kiếm gần đây
+        });
+
+        // Xóa nội dung ô tìm kiếm khi nhấp vào icon
+        $('.hidden-icon').on('click', function() {
+            $('#search-input-1').val(''); // Xóa nội dung ô tìm kiếm
+            $('#search-results-3').empty().hide(); // Xóa kết quả tìm kiếm và ẩn
+            $('#search-results-2').show(); // Hiển thị danh sách tìm kiếm gần đây
+            $('.hidden-icon').hide(); // Ẩn icon
+        });
+
+        // Ẩn kết quả tìm kiếm và icon khi nhấp ra ngoài ô tìm kiếm và icon
+        $(document).on('click', function(event) {
+            var $target = $(event.target);
+
+            if (!$target.closest('#search-input-1').length && !$target.closest('.hidden-icon')
+                .length) {
+                $('#search-results-3').hide(); // Ẩn kết quả tìm kiếm
+                $('.hidden-icon').hide(); // Ẩn icon
+                $('#search-results-2').hide();
+            }
+        });
+
+        // Cập nhật danh sách tìm kiếm gần đây khi trang tải
+        updateRecentSearchList();
+    });
+
+
+
+    $(document).ready(function() {
+        $('.download-link').on('click', function(e) {
+            e.preventDefault(); // Ngăn chặn hành động mặc định (chuyển hướng trang)
+
+            var url = $(this).attr('href'); // Lấy đường dẫn của tài liệu
+
+            // Thực hiện hành động khác, như log, confirm, hoặc gửi AJAX (nếu cần)
+            console.log("File is being downloaded from: " + url);
+
+            // Sau đó, bạn có thể tự động mở URL để bắt đầu tải về:
+            window.location.href = url;
+        });
+    });
+    </script>
 
 </body>
 

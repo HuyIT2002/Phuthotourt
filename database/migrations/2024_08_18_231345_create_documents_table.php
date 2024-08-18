@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('contents', function (Blueprint $table) {
-            $table->increments('content_id');
-            $table->string('content');
-            $table->string('description');
+        Schema::create('documents', function (Blueprint $table) {
+            $table->increments('document_id');
+            $table->string('document_name');
+            $table->string('document_url');
             $table->string('image_url');
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contents');
+        Schema::dropIfExists('documents');
     }
 };

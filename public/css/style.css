@@ -2344,6 +2344,14 @@ th.datepicker-switch {
 }
 
 .text-tai-lieu {
+   width: 115px;
+    height: 34px;
+    color: white;
+    font-size: 14.20px;
+    font-family: Roboto;
+    font-weight: 700;
+    word-wrap: break-wor;
+    text-align: center;
     word-wrap: break-word;
 }
 
@@ -2458,7 +2466,7 @@ th.datepicker-switch {
 
 .container-table {
     width: 1126px;
-    height: 564px;
+    height: 600px;
     border-radius: 8px;
     overflow: hidden;
     display: inline-flex;
@@ -2518,8 +2526,8 @@ table {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 3%;
-    margin-left: 81%;
+    margin-top: 1%;
+   margin-left: 77%;
     cursor: pointer;
 }
 
@@ -2582,7 +2590,7 @@ table {
     align-items: center;
     gap: 8px;
     display: inline-flex;
-    margin-top: -35.1%;
+       margin-top: -35%;
     margin-left: 5%;
 }
 

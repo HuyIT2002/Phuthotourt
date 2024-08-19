@@ -1,12 +1,14 @@
 @if(isset($posts_all) && $posts_all->count() > 0)
 @foreach($posts_all as $posts_alls)
-<div class="col-lg-3 col-md-4 col-sm-6 mb-4 custom-margin"
-    data-post="{{ $posts_alls->post_id }}">
+<div class="col-lg-3 col-md-4 col-sm-6 mb-4 custom-margin" data-post="{{ $posts_alls->post_id }}">
 
     <div class="custom-container-8">
         <div class="image-wrapper-8">
             <img src="{{ asset('/public/images/bai-viet/' . $posts_alls->image_url) }}">
-            <div class="overlay">Click để xem
+            <div class="overlay"><a href="{{ route('chi-tiet-bai-viet', ['id' => $posts_alls->post_id]) }}"
+                    class="no-style-link">
+                    Click để xem
+                </a>
             </div>
         </div>
         <div class="info-wrapper-8">

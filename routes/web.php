@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\DocumentController;
 /*
 |--------------------------------------------------------------------------
@@ -25,10 +26,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 
 Route::get('/bai-viet', [PostController::class, 'index'])->name('bai-viet');
-// Route::get('/bai-viet', [PostController::class, 'fillter'])->name('bai-viet');
-Route::get('/chi-tiet-bai-viet', function () {
-    return view('bai-viet.chi-tiet-bai-viet');
-})->name('chi-tiet-bai-viet');
+Route::get('/chi-tiet-bai-viet/{id}', [ArticleController::class, 'show'])->name('chi-tiet-bai-viet');
 
 Route::get('/tai-lieu', [DocumentController::class, 'index'])->name('tai-lieu');
 

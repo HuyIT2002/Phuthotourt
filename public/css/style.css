@@ -2740,7 +2740,7 @@ table {
     display: flex;
     justify-content: center;
     /* Căn giữa hình ảnh trong phần tử này */
-    margin-top: 48px;
+    margin-top: 18px;
 }
 
 .responsive-image {
@@ -3970,4 +3970,13 @@ label.custom-file-upload {
 }
 .item-box.item-box-active .svg-image {
     filter: invert(5) sepia(6) saturate(0) hue-rotate(0deg);
+}
+.no-style-link {
+    color: inherit; /* Sử dụng màu của phần tử cha hoặc màu của văn bản */
+    text-decoration: none; /* Loại bỏ gạch chân */
+}
+
+.overlay a {
+    color: white;
+    text-decoration: none; /* Loại bỏ gạch chân */
 }
